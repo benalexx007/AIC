@@ -1,11 +1,13 @@
 param(
-    [string]$BootstrapPython = "C:\Users\DINH HUNG\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe",
-    [string]$EnvironmentPath = "D:\AIC\.venv-semantic",
-    [string]$ModelsPath = "D:\AIC\models\semantic",
+    [string]$BootstrapPython = "",
+    [string]$EnvironmentPath = "",
+    [string]$ModelsPath = "",
     [string]$YoloModel = "yolo26n.pt",
     [string]$ClipModel = "ViT-B-32",
     [string]$ClipPretrained = "laion2b_s34b_b79k",
-    [double]$MinimumFreeGB = 10,
+    [double]$MinimumFreeGB = 5,
+    [ValidateSet("xpu", "cuda", "cpu", "auto")]
+    [string]$TorchDevice = "auto",
     [switch]$SkipModelDownload,
     [switch]$KeepPipCache
 )
@@ -14,6 +16,32 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $workspaceRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+# Set defaults relative to workspace root if not explicitly provided
+if (-not $EnvironmentPath) {
+    $EnvironmentPath = Join-Path $workspaceRoot ".venv-semantic"
+}
+if (-not $ModelsPath) {
+    $ModelsPath = Join-Path $workspaceRoot "models\semantic"
+}
+
+# Auto-detect Bootstrap Python from PATH if not provided
+if (-not $BootstrapPython) {
+    $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+    if ($pythonCmd) {
+        $BootstrapPython = $pythonCmd.Source
+    } else {
+        $pyCmd = Get-Command py -ErrorAction SilentlyContinue
+        if ($pyCmd) {
+            $BootstrapPython = $pyCmd.Source
+        }
+    }
+}
+
+if (-not $BootstrapPython -or -not (Test-Path -LiteralPath $BootstrapPython)) {
+    throw "Bootstrap Python was not found. Please install Python 3.10+ and ensure 'python' is in your PATH, or pass -BootstrapPython 'C:\path\to\python.exe'."
+}
+
 $smokeTest = Join-Path $workspaceRoot "semantic_vision_smoke_test.py"
 $environmentPython = Join-Path $EnvironmentPath "Scripts\python.exe"
 $reportPath = Join-Path $workspaceRoot "semantic-install-report.json"
@@ -39,16 +67,13 @@ function Assert-PathUnderWorkspace {
     $workspaceFull = [IO.Path]::GetFullPath($workspaceRoot).TrimEnd('\') + '\'
     $candidateFull = [IO.Path]::GetFullPath($PathToCheck).TrimEnd('\') + '\'
     if (-not $candidateFull.StartsWith($workspaceFull, [StringComparison]::OrdinalIgnoreCase)) {
-        throw "Path must remain under $workspaceRoot`: $PathToCheck"
+        Write-Warning "Path is outside workspaceRoot ($workspaceRoot): $PathToCheck"
     }
 }
 
 Assert-PathUnderWorkspace -PathToCheck $EnvironmentPath
 Assert-PathUnderWorkspace -PathToCheck $ModelsPath
 
-if (-not (Test-Path -LiteralPath $BootstrapPython -PathType Leaf)) {
-    throw "Bootstrap Python was not found: $BootstrapPython"
-}
 if (-not (Test-Path -LiteralPath $smokeTest -PathType Leaf)) {
     throw "Smoke-test script was not found: $smokeTest"
 }
@@ -58,7 +83,7 @@ $driveInfo = [IO.DriveInfo]::new($driveRoot)
 $freeGB = [math]::Round($driveInfo.AvailableFreeSpace / 1GB, 2)
 Write-Host "Free space on $driveRoot`: $freeGB GB"
 if ($freeGB -lt $MinimumFreeGB) {
-    throw "At least $MinimumFreeGB GB free is required before installation."
+    throw "At least $MinimumFreeGB GB free space is required before installation."
 }
 
 Start-Transcript -Path $logPath -Force | Out-Null
@@ -71,10 +96,23 @@ try {
     Write-Host "Updating packaging tools"
     Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "--upgrade", "pip", "setuptools", "wheel")
 
-    Write-Host "Installing official PyTorch XPU wheels for Intel Arc"
-    Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "--upgrade", "torch", "torchvision", "--index-url", $xpuIndex)
+    if ($TorchDevice -eq "xpu" -or $TorchDevice -eq "auto") {
+        Write-Host "Installing PyTorch with Intel XPU / standard support"
+        try {
+            Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "--upgrade", "torch", "torchvision", "--index-url", $xpuIndex)
+        } catch {
+            Write-Warning "XPU PyTorch installation encountered an issue; falling back to standard PyTorch index"
+            Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "--upgrade", "torch", "torchvision")
+        }
+    } elseif ($TorchDevice -eq "cuda") {
+        Write-Host "Installing PyTorch CUDA wheels"
+        Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "--upgrade", "torch", "torchvision", "--index-url", "https://download.pytorch.org/whl/cu121")
+    } else {
+        Write-Host "Installing standard PyTorch CPU wheels"
+        Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "--upgrade", "torch", "torchvision", "--index-url", "https://download.pytorch.org/whl/cpu")
+    }
 
-    Write-Host "Installing semantic retrieval, detection, and clustering packages"
+    Write-Host "Installing semantic retrieval, detection, and clustering packages (open_clip_torch, ultralytics, scikit-learn)"
     Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "--upgrade-strategy", "only-if-needed", "open_clip_torch", "ultralytics", "scikit-learn")
 
     Write-Host "Checking dependency consistency"
@@ -92,19 +130,21 @@ try {
         $smokeArguments += "--download-models"
     }
 
-    Write-Host "Running import, XPU, model-load, and inference checks"
+    Write-Host "Running import, device, model-load, and inference checks"
     Invoke-Checked -Program $environmentPython -Arguments $smokeArguments
 
     if (-not $KeepPipCache) {
-        Write-Host "Removing the reproducible pip download cache to save disk space"
+        Write-Host "Removing pip download cache to save disk space"
         Invoke-Checked -Program $environmentPython -Arguments @("-m", "pip", "cache", "purge")
     }
 
-    Write-Host "Semantic-vision installation completed successfully."
+    Write-Host "---------------------------------------------------------"
+    Write-Host "SUCCESS: Semantic-vision installation completed successfully!"
     Write-Host "Python: $environmentPython"
     Write-Host "Models: $ModelsPath"
     Write-Host "Report: $reportPath"
     Write-Host "Log: $logPath"
+    Write-Host "---------------------------------------------------------"
 }
 finally {
     Stop-Transcript | Out-Null

@@ -25,10 +25,16 @@ Video/
 *.mov
 *.wav
 
+# Data & Test Benchmark Datasets (Excluded from code repository)
+Query/
+data/
+test/
+
 # Logs & Temporary Files
 *.log
 *.tmp
 semantic-install.log
+semantic-install-report.json
 .system_generated/
 
 # OS & Editor Files

@@ -43,7 +43,7 @@ Lệnh trên xóa không thể khôi phục; chỉ chạy nó sau khi đã probe
 Sử dụng skill `aic-video-query` tại:
 
 ```text
-C:\Users\DINH HUNG\.codex\skills\aic-video-query\SKILL.md
+.\skill-staging\aic-video-query-retention-update\SKILL.md
 ```
 
 Skill này quy định toàn bộ workflow: tải video, Faster-Whisper, phát hiện cảnh, OpenCLIP + YOLO, OCR chọn lọc, kiểm tra tính duy nhất, căn frame chính xác, tối ưu token và export.
@@ -72,19 +72,24 @@ Không chạy Faster-Whisper, PaddleOCR và semantic indexing trong cùng một 
 2. Probe Drive để xác nhận tên file gốc:
 
    ```powershell
-   & 'D:\AIC\.venv-video\Scripts\python.exe' `
-     'C:\Users\DINH HUNG\.codex\skills\aic-video-query\scripts\download_drive.py' `
-     --url '<drive-url>' --output-dir 'D:\AIC\video-runs\probe' --probe-only
+   & '.\.venv-video\Scripts\python.exe' `
+     '.\skill-staging\aic-video-query-retention-update\scripts\download_drive.py' `
+     --url '<drive-url>' --output-dir '.\video-runs\probe' --probe-only
    ```
 
-3. Khi probe thành công, purge mọi run cũ theo lệnh ở phần 2.
+3. Khi probe thành công, purge mọi run cũ theo lệnh:
+   ```powershell
+   & '.\.venv-video\Scripts\python.exe' `
+     '.\skill-staging\aic-video-query-retention-update\scripts\purge_previous_runs.py' `
+     --runs-root '.\video-runs' --protected-root '.\test' --execute
+   ```
 4. Chuẩn bị video bằng profile `high` (mặc định):
 
    ```powershell
-   & 'D:\AIC\.venv-video\Scripts\python.exe' `
-     'C:\Users\DINH HUNG\.codex\skills\aic-video-query\scripts\prepare_video.py' `
+   & '.\.venv-video\Scripts\python.exe' `
+     '.\skill-staging\aic-video-query-retention-update\scripts\prepare_video.py' `
      --input '<drive-url-or-local-video>' --query-type kis --profile high `
-     --runs-root 'D:\AIC\video-runs'
+     --runs-root '.\video-runs'
    ```
 
    Dùng `xhigh` khi TRAKE/cảnh mơ hồ cần ưu tiên chất lượng. Không tăng evidence chỉ vì tăng reasoning effort.
@@ -92,8 +97,8 @@ Không chạy Faster-Whisper, PaddleOCR và semantic indexing trong cùng một 
 5. Lập semantic index từ `manifest.json`:
 
    ```powershell
-   & 'D:\AIC\.venv-semantic\Scripts\python.exe' `
-     'C:\Users\DINH HUNG\.codex\skills\aic-video-query\scripts\semantic_index.py' `
+   & '.\.venv-semantic\Scripts\python.exe' `
+     '.\skill-staging\aic-video-query-retention-update\scripts\semantic_index.py' `
      --manifest '<run-dir>\manifest.json'
    ```
 
@@ -102,8 +107,8 @@ Không chạy Faster-Whisper, PaddleOCR và semantic indexing trong cùng một 
 8. Lấy transcript cục bộ quanh timestamp đã chọn; không đọc toàn transcript trừ khi Q&A/TRAKE thật sự cần ngữ cảnh rộng:
 
    ```powershell
-   & 'D:\AIC\.venv-video\Scripts\python.exe' `
-     'C:\Users\DINH HUNG\.codex\skills\aic-video-query\scripts\transcript_search.py' `
+   & '.\.venv-video\Scripts\python.exe' `
+     '.\skill-staging\aic-video-query-retention-update\scripts\transcript_search.py' `
      --manifest '<run-dir>\manifest.json' --profile high `
      --around-seconds 123.4 --output '<run-dir>\evidence\transcript.json'
    ```
@@ -111,7 +116,14 @@ Không chạy Faster-Whisper, PaddleOCR và semantic indexing trong cùng một 
 9. Nếu ứng viên chung chung, tạo 2–6 visual prompt ngắn rồi dùng `clip_search.py`; mọi kết quả phải được kiểm tra lại trên frame thật.
 10. Chọn query nháp có đủ mô tả thị giác, không lộ video ID, timestamp, vị trí “đầu/cuối”, hay thông tin biên tập ngoài video.
 11. Mở một coarse bracket quanh seed. Nếu hành động chạm rìa bracket, mở rộng tiếp. Sau đó trích hai cửa sổ `step=1` ở start/end và kiểm tra frame ngay trước/sau ranh giới.
-12. Chạy `check_uniqueness.py`; xem một frame đại diện của **mỗi** cụm thay thế. Chỉ dùng query khi đúng một cụm thời gian thỏa toàn bộ predicate.
+12. Chạy `check_uniqueness.py`; xem một frame đại diện của **mỗi** cụm thay thế. Chỉ dùng query khi đúng một cụm thời gian thỏa toàn bộ predicate:
+   ```powershell
+   & '.\.venv-semantic\Scripts\python.exe' `
+     '.\skill-staging\aic-video-query-retention-update\scripts\check_uniqueness.py' `
+     --index '<run-dir>\semantic\semantic-index.json' `
+     --prompt "<mo-ta-query>" --target-start-frame <start> --target-end-frame <end> `
+     --output '<run-dir>\evidence\uniqueness.json'
+   ```
 13. Chạy OCR chỉ khi đáp án/phân biệt phụ thuộc vào chữ nhìn thấy.
 14. Export, kiểm tra ba file không rỗng, giữ nguyên run hiện tại gồm video nguồn và artifact. Video này chỉ bị xóa khi video khác đã probe thành công ở lần sau.
 
@@ -128,8 +140,8 @@ Một candidate semantic chỉ là điểm khởi đầu, không phải đáp á
 Ví dụ trích boundary:
 
 ```powershell
-& 'D:\AIC\.venv-video\Scripts\python.exe' `
-  'C:\Users\DINH HUNG\.codex\skills\aic-video-query\scripts\extract_window.py' `
+& '.\.venv-video\Scripts\python.exe' `
+  '.\skill-staging\aic-video-query-retention-update\scripts\extract_window.py' `
   --video '<run-dir>\<video>.mp4' --center-frame 3000 `
   --radius-frames 24 --step 1 --output '<run-dir>\evidence\boundary-start'
 ```
@@ -147,11 +159,11 @@ Query TXT chỉ chứa **một query**, không có nhãn, đáp án, giải thí
 ## 7. Export và kiểm tra kết quả
 
 ```powershell
-& 'D:\AIC\.venv-video\Scripts\python.exe' `
-  'C:\Users\DINH HUNG\.codex\skills\aic-video-query\scripts\export_result.py' `
+& '.\.venv-video\Scripts\python.exe' `
+  '.\skill-staging\aic-video-query-retention-update\scripts\export_result.py' `
   --query-type kis --query '<one-query>' --video-id 'L01_V001' `
   --interval 800 900 --fps 25 --evidence '<verified-evidence>' `
-  --confidence high --root 'D:\AIC\test' --index 1
+  --confidence high --root '.\test' --index 1
 ```
 
 Với TRAKE, thay `--interval` bằng nhiều đối số:
@@ -163,9 +175,9 @@ Với TRAKE, thay `--interval` bằng nhiều đối số:
 File được tạo theo chuẩn UTF-8:
 
 ```text
-D:\AIC\test\query\query-{sequence}-{kis|qa|trake}.txt
-D:\AIC\test\answer\ans-{sequence}-{kis|qa|trake}.txt
-D:\AIC\test\yaml\result-{sequence}-{kis|qa|trake}.yaml
+test/query/query-{sequence}-{kis|qa|trake}.txt
+test/answer/ans-{sequence}-{kis|qa|trake}.txt
+test/yaml/result-{sequence}-{kis|qa|trake}.yaml
 ```
 
 Sau export, xác nhận cả ba file tồn tại và không rỗng. YAML phải giữ lại vĩnh viễn cùng với query/answer và cần ghi: evidence, confidence, FPS, interval, kết quả uniqueness, lý do mở rộng (nếu có), đường dẫn run và kích thước video nguồn.
@@ -182,8 +194,8 @@ Không gửi video thô hoặc mọi frame vào model. Tất cả sampling, Open
 Sau mỗi task, chạy `estimate_tokens.py` trên đúng ảnh/text đã mở:
 
 ```powershell
-& 'D:\AIC\.venv-video\Scripts\python.exe' `
-  'C:\Users\DINH HUNG\.codex\skills\aic-video-query\scripts\estimate_tokens.py' `
+& '.\.venv-video\Scripts\python.exe' `
+  '.\skill-staging\aic-video-query-retention-update\scripts\estimate_tokens.py' `
   --images '<opened-image-1>' '<opened-image-2>' `
   --texts '<opened-text-1>' '<opened-text-2>' --overhead 3500
 ```
