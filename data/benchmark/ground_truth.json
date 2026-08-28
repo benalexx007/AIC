@@ -1,0 +1,615 @@
+{
+  "benchmark_version": "1.0",
+  "created_by": "Team AIC 2026",
+  "total_queries": 47,
+  "test_cases": [
+    {
+      "query_id": "test-kis-01",
+      "task_type": "kis",
+      "query_text": "Trong một căn nhà, người phụ nữ dùng hai tay quấn và chỉnh tấm xà rông màu vàng cam quanh eo người đàn ông mặc áo xanh.",
+      "ground_truth": {
+        "video_id": "L28_V009",
+        "start_frame": 15866,
+        "end_frame": 15977
+      }
+    },
+    {
+      "query_id": "test-qa-02",
+      "task_type": "qa",
+      "query_text": "Khi hai người đàn ông cùng di chuyển chiếc xe máy chở đầy măng, người ở phía trước đội gì trên đầu?",
+      "ground_truth": {
+        "video_id": "L27_V002",
+        "start_frame": 910,
+        "end_frame": 959,
+        "frame_idx": 934,
+        "answer": "mũ bảo hiểm"
+      }
+    },
+    {
+      "query_id": "test-trake-03",
+      "task_type": "trake",
+      "query_text": "Hãy tìm các đoạn trong video có chuỗi hành động nấu ăn theo đúng thứ tự: đầu bếp đổ hành tây thái hạt lựu vào chảo, cho thịt bò bằm vào, lần lượt thêm đậu Hà Lan rồi cà rốt thái hạt lựu, sau đó cho mì Ý đã luộc vào cùng chảo.",
+      "ground_truth": {
+        "video_id": "L26_V008",
+        "events": [
+          {
+            "event_id": "E1",
+            "start_frame": 3977,
+            "end_frame": 4023
+          },
+          {
+            "event_id": "E2",
+            "start_frame": 4208,
+            "end_frame": 4221
+          },
+          {
+            "event_id": "E3",
+            "start_frame": 4661,
+            "end_frame": 4675
+          },
+          {
+            "event_id": "E4",
+            "start_frame": 4714,
+            "end_frame": 4729
+          },
+          {
+            "event_id": "E5",
+            "start_frame": 4841,
+            "end_frame": 4902
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "test-kis-04",
+      "task_type": "kis",
+      "query_text": "Trong cảnh cận cảnh, người đầu bếp dùng đôi găng tay lót nồi kẻ caro để nghiêng nồi thủy tinh màu nâu, rót hỗn hợp thạch matcha màu xanh vào khuôn sứ trắng hình chữ nhật.",
+      "ground_truth": {
+        "video_id": "L26_V355",
+        "start_frame": 4662,
+        "end_frame": 4727
+      }
+    },
+    {
+      "query_id": "test-kis-05",
+      "task_type": "kis",
+      "query_text": "Cận cảnh một bàn tay dùng dụng cụ cán gỗ phết hỗn hợp màu hồng lên mặt trong của một lá trầu.",
+      "ground_truth": {
+        "video_id": "L27_V012",
+        "start_frame": 11686,
+        "end_frame": 11732
+      }
+    },
+    {
+      "query_id": "test-kis-06",
+      "task_type": "kis",
+      "query_text": "Cận cảnh đôi đũa gỗ gấp đôi chiếc bánh xèo màu vàng để phủ lên phần nhân trong chảo.",
+      "ground_truth": {
+        "video_id": "L27_V013",
+        "start_frame": 10112,
+        "end_frame": 10140
+      }
+    },
+    {
+      "query_id": "test-qa-07",
+      "task_type": "qa",
+      "query_text": "Trong cuộc trò chuyện dưới giàn nho, khi người dẫn chương trình hỏi mỗi ngày chủ vườn bắt đầu công việc từ thời điểm nào và đến bao giờ mới xong, chủ vườn trả lời như thế nào?",
+      "ground_truth": {
+        "video_id": "L29_V013",
+        "start_frame": 21438,
+        "end_frame": 22339,
+        "frame_idx": 21888,
+        "answer": "Bắt đầu khoảng 4–5 giờ sáng và kết thúc vào khoảng 9 giờ tối."
+      }
+    },
+    {
+      "query_id": "test-kis-08",
+      "task_type": "kis",
+      "query_text": "Trong cảnh quay cận, một nữ sinh mặc đồng phục xanh trắng, trùm khăn trắng và đeo kính râm cầm chiếc điện thoại màu tím sát mặt rồi dùng ngón tay chạm vào màn hình.",
+      "ground_truth": {
+        "video_id": "L22_V003",
+        "start_frame": 17762,
+        "end_frame": 17787
+      }
+    },
+    {
+      "query_id": "test-trake-09",
+      "task_type": "trake",
+      "query_text": "Đầu tiên, lực lượng chức năng kiểm tra một căn phòng chật kín thùng carton và sách; tiếp theo, những đôi tay lần lượt mở và đối chiếu các cuốn sách lấy từ hộp; sau đó, một người đàn ông đeo kính ngồi trước các thùng hàng để xem một cuốn sách; kế đến, một người đàn ông mặc áo sơ mi trắng được phỏng vấn cạnh chậu cây xanh; cuối cùng, máy quay cận cảnh nhiều chồng sách giáo khoa trên kệ và bàn.",
+      "ground_truth": {
+        "video_id": "L22_V006",
+        "events": [
+          {
+            "event_id": "E1",
+            "start_frame": 32918,
+            "end_frame": 32969
+          },
+          {
+            "event_id": "E2",
+            "start_frame": 32970,
+            "end_frame": 33163
+          },
+          {
+            "event_id": "E3",
+            "start_frame": 33164,
+            "end_frame": 33255
+          },
+          {
+            "event_id": "E4",
+            "start_frame": 34006,
+            "end_frame": 34229
+          },
+          {
+            "event_id": "E5",
+            "start_frame": 34230,
+            "end_frame": 34475
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "test-kis-10",
+      "task_type": "kis",
+      "query_text": "Trong một phóng sự, một người đàn ông đội mũ và đeo kính dùng máy đánh chữ cổ điển để tạo các bức tranh chân dung và phong cảnh từ hàng nghìn ký tự, xen kẽ cảnh anh gõ phím, hình vẽ cuộn trên máy và các tác phẩm hoàn thiện.",
+      "ground_truth": {
+        "video_id": "L22_V001",
+        "start_frame": 14158,
+        "end_frame": 15797
+      }
+    },
+    {
+      "query_id": "test-kis-11",
+      "task_type": "kis",
+      "query_text": "Cảnh quay từ trên cao (góc nhìn flycam nhìn thẳng xuống) một nhóm 4 vận động viên đua xe đạp nối đuôi nhau chạy trên đường nhựa đi ngang qua một cây hoa giấy màu tím nở rộ ở lề đường bên phải.",
+      "ground_truth": {
+        "video_id": "L23_V017",
+        "start_frame": 347,
+        "end_frame": 410
+      }
+    },
+    {
+      "query_id": "test-trake-12",
+      "task_type": "trake",
+      "query_text": "E1: Góc quay flycam từ trên cao nhìn thẳng xuống mặt đường ghi lại đoàn tay đua đang tăng tốc nước rút về đích; E2: tiếp theo, góc quay trực diện từ phía trước ghi lại đoàn đông các tay đua đang dồn sức đạp nước rút về đích giữa hai hàng rào cờ phướn màu vàng cam; E3: sau đó, cảnh quay cận cảnh tay đua mặc áo xanh dương giơ cao nắm đấm ăn mừng chiến thắng khi đạp xe qua hàng rào khán giả cổ vũ; E4: cuối cùng, góc quay chậm đặt sát mặt đường nhựa ghi lại các tay đua lần lượt đạp xe vượt qua vạch đích màu vàng dưới cổng vòm Đích màu đỏ cam.",
+      "ground_truth": {
+        "video_id": "L23_V018",
+        "events": [
+          {
+            "event_id": "E1",
+            "start_frame": 9815,
+            "end_frame": 10516
+          },
+          {
+            "event_id": "E2",
+            "start_frame": 10517,
+            "end_frame": 10894
+          },
+          {
+            "event_id": "E3",
+            "start_frame": 11204,
+            "end_frame": 11299
+          },
+          {
+            "event_id": "E4",
+            "start_frame": 11546,
+            "end_frame": 12074
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "test-kis-13",
+      "task_type": "kis",
+      "query_text": "Một nữ phóng viên đeo kính râm đen, choàng khăn rằn kẻ caro ở cổ và mặc áo thun màu cam đang cầm micro nói trước ống kính.",
+      "ground_truth": {
+        "video_id": "L23_V023",
+        "start_frame": 9707,
+        "end_frame": 9788
+      }
+    },
+    {
+      "query_id": "test-qa-14",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay dàn nhạc lân mặc đồng phục đỏ viền vàng đánh nhạc đệm cho tiết mục múa lân, người đứng ở vị trí gần ống kính nhất bên trái chơi loại nhạc cụ gì?",
+      "ground_truth": {
+        "video_id": "L24_V020",
+        "start_frame": 2684,
+        "end_frame": 3164,
+        "frame_idx": 2800,
+        "answer": "trống"
+      }
+    },
+    {
+      "query_id": "test-kis-15",
+      "task_type": "kis",
+      "query_text": "Cảnh quay cận cảnh một cậu bé mặc áo kẻ sọc có vạt màu nâu dùng hai dùi gỗ đánh vào mặt chiếc trống lân lớn đặt phía trước.",
+      "ground_truth": {
+        "video_id": "L24_V041",
+        "start_frame": 745,
+        "end_frame": 769
+      }
+    },
+    {
+      "query_id": "test-qa-16",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh góc chiếc đệm bảo hộ màu xanh đặt dưới sàn diễn, loài hoa màu vàng nào đang được đặt tại đây?",
+      "ground_truth": {
+        "video_id": "L24_V026",
+        "start_frame": 13072,
+        "end_frame": 13181,
+        "frame_idx": 13126,
+        "answer": "hoa cúc"
+      }
+    },
+    {
+      "query_id": "test-qa-17",
+      "task_type": "qa",
+      "query_text": "Trong đoạn clip giới thiệu trường đại học, ở cảnh quay toàn cảnh khán phòng có diễn giả đứng phát biểu trên bục sân khấu, tên của cựu Thủ tướng Israel xuất hiện trên màn chiếu là gì?",
+      "ground_truth": {
+        "video_id": "L25_V067",
+        "start_frame": 2019,
+        "end_frame": 2039,
+        "frame_idx": 2029,
+        "answer": "EHUD BARAK"
+      }
+    },
+    {
+      "query_id": "test-trake-18",
+      "task_type": "trake",
+      "query_text": "E1: Góc quay từ trên cao nhìn thẳng xuống mặt sân bóng rổ màu xanh lá cây và đỏ ghi lại các vận động viên đang thi đấu ném bóng về phía rổ; E2: tiếp theo, một nam sinh mặc áo sơ mi trắng đang ngồi chơi đàn đại dương cầm (piano) màu đen; E3: sau đó, ba nam sinh ngồi thành hàng cùng chơi đàn guitar acoustic (guitar thùng); E4: cuối cùng, một nam sinh đeo kính mặc áo sơ mi trắng đang dùng dùi đánh vào dàn trống.",
+      "ground_truth": {
+        "video_id": "L25_V041",
+        "events": [
+          {
+            "event_id": "E1",
+            "start_frame": 7933,
+            "end_frame": 7973
+          },
+          {
+            "event_id": "E2",
+            "start_frame": 7978,
+            "end_frame": 8025
+          },
+          {
+            "event_id": "E3",
+            "start_frame": 8029,
+            "end_frame": 8062
+          },
+          {
+            "event_id": "E4",
+            "start_frame": 8067,
+            "end_frame": 8096
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "test-kis-19",
+      "task_type": "kis",
+      "query_text": "Hai người đàn ông đứng cạnh nhau cùng cầm tấm biển trao học bổng màu xanh có dòng chữ TRAO TẶNG QUỸ HỌC BỔNG TÀI NĂNG TRẺ.",
+      "ground_truth": {
+        "video_id": "L25_V063",
+        "start_frame": 2316,
+        "end_frame": 2342
+      }
+    },
+    {
+      "query_id": "test-qa-20",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay toàn cảnh phòng thực hành công nghệ có một nữ sinh đứng phía sau xem điện thoại, con robot hình người đứng trên sàn gỗ có hai tông màu chính nào?",
+      "ground_truth": {
+        "video_id": "L25_V044",
+        "start_frame": 2730,
+        "end_frame": 2748,
+        "frame_idx": 2739,
+        "answer": "cam và trắng"
+      }
+    },
+    {
+      "query_id": "test-kis-21",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh chiếc đùi dê màu vàng óng đặt trên vỉ nướng bên trong lò nướng điện, có người dùng cây cọ quét đầu màu xanh lá phết nước sốt lên thịt.",
+      "ground_truth": {
+        "video_id": "L26_V073",
+        "start_frame": 5722,
+        "end_frame": 5908
+      }
+    },
+    {
+      "query_id": "test-kis-22",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh chiếc chảo nhỏ màu đen đặt trên bếp gas đang chiên một quả trứng ốp la có lòng đỏ tròn màu vàng cam.",
+      "ground_truth": {
+        "video_id": "L26_V076",
+        "start_frame": 5981,
+        "end_frame": 6047
+      }
+    },
+    {
+      "query_id": "test-kis-23",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh nồi thủy tinh màu nâu đặt trên bếp đang luộc các cọng rau cải ngồng màu xanh lá trong nước sôi.",
+      "ground_truth": {
+        "video_id": "L26_V080",
+        "start_frame": 4128,
+        "end_frame": 4220
+      }
+    },
+    {
+      "query_id": "test-kis-24",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh đôi bàn tay dùng bản dao đập dập các nhánh tiêu xanh được bọc trong túi nilon trên thớt gỗ.",
+      "ground_truth": {
+        "video_id": "L26_V177",
+        "start_frame": 2213,
+        "end_frame": 2292
+      }
+    },
+    {
+      "query_id": "test-kis-25",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh chiếc chảo viền đỏ được nghiêng để trút dầu và các lá xanh qua chiếc rây lọc đặt trên tô trắng.",
+      "ground_truth": {
+        "video_id": "L26_V163",
+        "start_frame": 4496,
+        "end_frame": 4557
+      }
+    },
+    {
+      "query_id": "test-qa-26",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh chiếc đĩa tròn màu xanh đậm chứa các quả trứng vịt lộn màu trắng trước khi luộc, có tất cả bao nhiêu quả trứng trên chiếc đĩa này?",
+      "ground_truth": {
+        "video_id": "L26_V173",
+        "start_frame": 1565,
+        "end_frame": 1595,
+        "frame_idx": 1580,
+        "answer": "4 quả"
+      }
+    },
+    {
+      "query_id": "test-kis-27",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh dùng dao thái từng lát đậu xanh mỏng phủ lên mặt đĩa xôi nếp màu vàng lót lá chuối xanh.",
+      "ground_truth": {
+        "video_id": "L26_V271",
+        "start_frame": 6676,
+        "end_frame": 6727
+      }
+    },
+    {
+      "query_id": "test-kis-28",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh hai khúc cá thu tẩm bột đang được chiên trong chảo dầu sôi trên bếp.",
+      "ground_truth": {
+        "video_id": "L26_V245",
+        "start_frame": 5211,
+        "end_frame": 5297
+      }
+    },
+    {
+      "query_id": "test-qa-29",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh chiếc đĩa sứ trắng đựng nguyên liệu gồm xà lách xoăn và một quả dưa leo nguyên vẹn, quả màu đỏ đặt trên đĩa là quả gì?",
+      "ground_truth": {
+        "video_id": "L26_V295",
+        "start_frame": 1996,
+        "end_frame": 2056,
+        "frame_idx": 2026,
+        "answer": "cà chua"
+      }
+    },
+    {
+      "query_id": "test-qa-30",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh trên thớt gỗ có các cọng hành lá màu xanh, người đầu bếp đang dùng dao cắt đôi quả gì?",
+      "ground_truth": {
+        "video_id": "L26_V360",
+        "start_frame": 3012,
+        "end_frame": 3047,
+        "frame_idx": 3030,
+        "answer": "quả tắc"
+      }
+    },
+    {
+      "query_id": "test-kis-31",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh trút các quả ớt hiểm xanh và đỏ vào chảo xốt màu vàng đang sôi trên bếp.",
+      "ground_truth": {
+        "video_id": "L26_V384",
+        "start_frame": 5606,
+        "end_frame": 5668
+      }
+    },
+    {
+      "query_id": "test-qa-32",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh trên thớt gỗ, người đầu bếp dùng dao cắt đôi loại quả màu đỏ nhỏ nào?",
+      "ground_truth": {
+        "video_id": "L26_V364",
+        "start_frame": 3840,
+        "end_frame": 3985,
+        "frame_idx": 3910,
+        "answer": "cà chua bi"
+      }
+    },
+    {
+      "query_id": "test-kis-33",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh người đầu bếp dùng đũa gạt các miếng cá lóc từ đĩa lót lá chuối xanh vào chảo chống dính trên bếp.",
+      "ground_truth": {
+        "video_id": "L26_V476",
+        "start_frame": 3488,
+        "end_frame": 3536
+      }
+    },
+    {
+      "query_id": "test-kis-34",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh dùng dao thái từng lát mỏng củ cải đỏ (radish) trên thớt gỗ.",
+      "ground_truth": {
+        "video_id": "L26_V478",
+        "start_frame": 3352,
+        "end_frame": 3427
+      }
+    },
+    {
+      "query_id": "test-qa-35",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh trên thớt gỗ, người đầu bếp dùng dao cắt lát mỏng loại củ màu cam nào đã được tỉa hoa?",
+      "ground_truth": {
+        "video_id": "L26_V473",
+        "start_frame": 3317,
+        "end_frame": 3384,
+        "frame_idx": 3350,
+        "answer": "cà rốt"
+      }
+    },
+    {
+      "query_id": "test-qa-36",
+      "task_type": "qa",
+      "query_text": "Trong cảnh phỏng vấn nhà sư mặc áo nâu bên trong hang động, pháp danh của vị Đại đức xuất hiện trên bảng tên ở góc dưới màn hình là gì?",
+      "ground_truth": {
+        "video_id": "L27_V008",
+        "start_frame": 4412,
+        "end_frame": 4756,
+        "frame_idx": 4500,
+        "answer": "ĐẠI ĐỨC THÍCH MINH TUỆ"
+      }
+    },
+    {
+      "query_id": "test-kis-37",
+      "task_type": "kis",
+      "query_text": "Góc quay từ trên cao nhìn thẳng xuống một chiếc xuồng chở đầy các quả khóm (dứa) xếp ngay ngắn trên dòng kênh, bên cạnh có người đội mũ màu xanh lá cây.",
+      "ground_truth": {
+        "video_id": "L27_V013",
+        "start_frame": 2382,
+        "end_frame": 2454
+      }
+    },
+    {
+      "query_id": "test-kis-38",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh vỉ nướng than hồng đang nướng các khúc bắp (ngô) màu vàng và các lát cà tím tròn, có người dùng kẹp kim loại để trở các khúc bắp.",
+      "ground_truth": {
+        "video_id": "L27_V015",
+        "start_frame": 11961,
+        "end_frame": 12059
+      }
+    },
+    {
+      "query_id": "test-kis-39",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh bề mặt tấm bia đá cổ màu đen có khắc các dòng ký tự chữ Phạn (chữ cổ) và có một vết lõm sứt mẻ ở phần giữa bên phải.",
+      "ground_truth": {
+        "video_id": "L28_V012",
+        "start_frame": 5145,
+        "end_frame": 5290
+      }
+    },
+    {
+      "query_id": "test-qa-40",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh tấm biển kim loại chữ nổi màu vàng đặt trước vách núi dẫn vào hang động, tên của hang động này là gì?",
+      "ground_truth": {
+        "video_id": "L28_V018",
+        "start_frame": 19091,
+        "end_frame": 19138,
+        "frame_idx": 19115,
+        "answer": "ĐỘNG KIM CƯƠNG"
+      }
+    },
+    {
+      "query_id": "test-kis-41",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh đôi bàn tay dùng thanh gỗ có răng cưa để gõ tạo các đường vân trang trí lên bề mặt chiếc chum gốm đất sét tròn đặt trên đùi.",
+      "ground_truth": {
+        "video_id": "L28_V019",
+        "start_frame": 20233,
+        "end_frame": 20314
+      }
+    },
+    {
+      "query_id": "test-kis-42",
+      "task_type": "kis",
+      "query_text": "Cảnh người đàn ông mặc áo dài màu xanh dương có hoa văn chấm tròn trắng dùng một chiếc dùi gỗ đánh vào tâm mặt chiếc trống đại lớn đặt trong điện thờ.",
+      "ground_truth": {
+        "video_id": "L29_V005",
+        "start_frame": 17179,
+        "end_frame": 17257
+      }
+    },
+    {
+      "query_id": "test-kis-43",
+      "task_type": "kis",
+      "query_text": "Cảnh quay bức tượng một con cua biển khổng lồ có hai chiếc càng lớn màu đỏ đặt trên bệ đá trước rặng cây rừng đước, phía trước có tấm biển nhỏ hình bầu dục ghi chữ CÀ MAU.",
+      "ground_truth": {
+        "video_id": "L29_V002",
+        "start_frame": 3705,
+        "end_frame": 3808
+      }
+    },
+    {
+      "query_id": "test-qa-44",
+      "task_type": "qa",
+      "query_text": "Trong cảnh quay cận cảnh chiếc rổ nhựa màu vàng đựng ba khía đặt trên bàn cân, màn hình số điện tử của chiếc cân hiển thị con số nào?",
+      "ground_truth": {
+        "video_id": "L29_V015",
+        "start_frame": 11202,
+        "end_frame": 11295,
+        "frame_idx": 11250,
+        "answer": "25.54"
+      }
+    },
+    {
+      "query_id": "test-kis-45",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh đôi bàn tay đang giữ mở một cuốn sổ lưu bút cũ, trong đó góc dưới bên trái của trang sách có dán một bức ảnh chân dung đen trắng nhỏ.",
+      "ground_truth": {
+        "video_id": "L30_V074",
+        "start_frame": 4300,
+        "end_frame": 4424
+      }
+    },
+    {
+      "query_id": "test-trake-46",
+      "task_type": "trake",
+      "query_text": "E1: Bàn có đặt biển chữ đỏ KHU VỰC XÉT NGHIỆM MÁU nơi nhân viên y tế áo xanh lấy mẫu máu; E2: tiếp theo, người phụ nữ mặc áo trắng ngồi ở ghế nhựa cầm tờ giấy đăng ký hiến máu trên tay; E3: sau đó, toàn cảnh khu vực các giường xếp hiến máu có tấm băng rôn lớn màu trắng chữ đỏ ghi NGÀY HIẾN MÁU TÌNH NGUYỆN treo trên tường phía sau; E4: cuối cùng, người mặc áo thun trắng có in hình khuôn mặt hoạt hình nằm trên giường xếp hiến máu bên cạnh các nhân viên y tế áo xanh.",
+      "ground_truth": {
+        "video_id": "L30_V005",
+        "events": [
+          {
+            "event_id": "E1",
+            "start_frame": 553,
+            "end_frame": 588
+          },
+          {
+            "event_id": "E2",
+            "start_frame": 589,
+            "end_frame": 704
+          },
+          {
+            "event_id": "E3",
+            "start_frame": 705,
+            "end_frame": 843
+          },
+          {
+            "event_id": "E4",
+            "start_frame": 1459,
+            "end_frame": 1568
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "test-kis-47",
+      "task_type": "kis",
+      "query_text": "Cảnh cận cảnh hai chú mèo lông trắng trên mặt bàn gỗ, trong đó có một chú mèo mặc chiếc váy xòe màu hồng phấn và có bàn tay đeo đồng hồ đang vuốt ve chúng.",
+      "ground_truth": {
+        "video_id": "L30_V087",
+        "start_frame": 3760,
+        "end_frame": 3858
+      }
+    }
+  ]
+}

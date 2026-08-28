@@ -1,0 +1,17 @@
+﻿sequence: 32
+query_type: qa
+query_vi: Trong cảnh quay cận cảnh trên thớt gỗ, người đầu bếp dùng dao cắt đôi loại quả màu đỏ nhỏ nào?
+video_id: L26_V364
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 3840
+  - 3985
+  answer: cà chua bi
+answer_submission: L26_V364, [3840, 3985], cà chua bi
+evidence: D:\AIC\video-runs\drive-video-qa-high-20260818-161255\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-32-qa.txt
+  answer: D:\AIC\test\answer\ans-32-qa.txt
+  yaml: D:\AIC\test\yaml\result-32-qa.yaml

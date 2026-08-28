@@ -1,0 +1,16 @@
+﻿sequence: 22
+query_type: kis
+query_vi: Cảnh cận cảnh chiếc chảo nhỏ màu đen đặt trên bếp gas đang chiên một quả trứng ốp la có lòng đỏ tròn màu vàng cam.
+video_id: L26_V076
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5981
+  - 6047
+answer_submission: L26_V076, [5981, 6047]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-130959\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-22-kis.txt
+  answer: D:\AIC\test\answer\ans-22-kis.txt
+  yaml: D:\AIC\test\yaml\result-22-kis.yaml

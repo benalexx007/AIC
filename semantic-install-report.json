@@ -1,0 +1,37 @@
+{
+  "created_at_utc": "2026-08-15T16:51:18.876073+00:00",
+  "python": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "torch": "2.13.0+xpu",
+    "torchvision": "0.28.0+xpu",
+    "open_clip_torch": "3.3.0",
+    "ultralytics": "8.4.120",
+    "scikit_learn": "1.9.0"
+  },
+  "xpu": {
+    "available": true,
+    "device_name": "Intel(R) Arc(TM) Graphics",
+    "tensor_test": true
+  },
+  "models_dir": "D:\\AIC\\models\\semantic",
+  "models_downloaded": true,
+  "model_checks": {
+    "yolo": {
+      "model": "yolo26n.pt",
+      "checkpoint": "D:\\AIC\\models\\semantic\\yolo26n.pt",
+      "dummy_inference_results": 1,
+      "device": "cpu"
+    },
+    "openclip": {
+      "model": "ViT-B-32",
+      "pretrained": "laion2b_s34b_b79k",
+      "cache": "D:\\AIC\\models\\semantic\\openclip",
+      "embedding_shape": [
+        1,
+        512
+      ],
+      "device": "xpu"
+    }
+  }
+}

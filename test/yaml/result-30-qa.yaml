@@ -1,0 +1,17 @@
+﻿sequence: 30
+query_type: qa
+query_vi: Trong cảnh quay cận cảnh trên thớt gỗ có các cọng hành lá màu xanh, người đầu bếp đang dùng dao cắt đôi quả gì?
+video_id: L26_V360
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 3012
+  - 3047
+  answer: quả tắc
+answer_submission: L26_V360, [3012, 3047], quả tắc
+evidence: D:\AIC\video-runs\drive-video-qa-high-20260818-150911\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-30-qa.txt
+  answer: D:\AIC\test\answer\ans-30-qa.txt
+  yaml: D:\AIC\test\yaml\result-30-qa.yaml

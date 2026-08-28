@@ -1,0 +1,26 @@
+﻿sequence: 3
+query_type: kis
+query_vi: Trong một căn nhà, người phụ nữ dùng hai tay quấn và chỉnh tấm xà rông màu vàng cam quanh eo người đàn ông mặc áo xanh.
+video_id: L28_V009
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 15866
+  - 15977
+answer_submission: L28_V009, [15866, 15977]
+evidence: 'Corrected adaptive temporal expansion; supersedes sequence 2. Seed frame 15932. Coarse bracket 15725-16025 showed the action continuing beyond the former core. Step-1 start boundary proves frame 15865 is negative (woman holds the cloth before placing it around the man) and frame 15866 is the first frame with the cloth being wrapped/adjusted at his waist. Step-1 end boundary proves frame 15977 is the last wide frame where she adjusts it with both hands and frame 15978 cuts to a close-up where that predicate is no longer visible. Final visible event duration: 112 frames, 4.48 s.'
+confidence: high
+files:
+  query: D:\AIC\test\query\query-3-kis.txt
+  answer: D:\AIC\test\answer\ans-3-kis.txt
+  yaml: D:\AIC\test\yaml\result-3-kis.yaml
+cleanup:
+  source_video: D:\AIC\video-runs\drive-video-kis-high-20260816-010417\L28_V009.mp4
+  deleted: true
+  deleted_size_bytes: 275803635
+  deleted_at_utc: '2026-08-15T19:00:24.406446+00:00'
+  recoverable: false
+  retained_outputs:
+  - D:\AIC\test\query\query-3-kis.txt
+  - D:\AIC\test\answer\ans-3-kis.txt
+  - D:\AIC\test\yaml\result-3-kis.yaml

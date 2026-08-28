@@ -1,0 +1,16 @@
+﻿sequence: 37
+query_type: kis
+query_vi: Góc quay từ trên cao nhìn thẳng xuống một chiếc xuồng chở đầy các quả khóm (dứa) xếp ngay ngắn trên dòng kênh, bên cạnh có người đội mũ màu xanh lá cây.
+video_id: L27_V013
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 2382
+  - 2454
+answer_submission: L27_V013, [2382, 2454]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-172758\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-37-kis.txt
+  answer: D:\AIC\test\answer\ans-37-kis.txt
+  yaml: D:\AIC\test\yaml\result-37-kis.yaml

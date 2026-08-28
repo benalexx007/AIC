@@ -1,0 +1,17 @@
+﻿sequence: 7
+query_type: qa
+query_vi: Trong cuộc trò chuyện dưới giàn nho, khi người dẫn chương trình hỏi mỗi ngày chủ vườn bắt đầu công việc từ thời điểm nào và đến bao giờ mới xong, chủ vườn trả lời như thế nào?
+video_id: L29_V013
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 21438
+  - 22339
+  answer: Bắt đầu khoảng 4–5 giờ sáng và kết thúc vào khoảng 9 giờ tối.
+answer_submission: L29_V013, [21438, 22339], Bắt đầu khoảng 4–5 giờ sáng và kết thúc vào khoảng 9 giờ tối.
+evidence: 'Khoảng frame 21438–22339 (857.52–893.56 giây) bao trọn câu hỏi và câu trả lời. Transcript: 857.55–865.55 người dẫn hỏi công việc mỗi ngày bắt đầu từ khi nào và đến bao giờ; 865.55–873.55 chủ vườn nói bắt đầu khoảng 4–5 giờ sáng; 875.55–893.55 mô tả chăm quán, ra vườn cắt tỉa/bón phân/tưới nước và kết thúc khoảng 9 giờ tối. Quan sát khung hình xác nhận cuộc trò chuyện giữa người dẫn và chủ vườn dưới giàn nho. Cổng uniqueness toàn video đã kiểm tra các cụm thay thế ở khoảng 95, 198, 446 và 816 giây; chúng chỉ giống bối cảnh nhưng không có cùng quan hệ hỏi–đáp. Interval kết thúc trước câu hỏi tiếp theo bắt đầu ở 893.55 giây.'
+confidence: high
+files:
+  query: D:\AIC\test\query\query-7-qa.txt
+  answer: D:\AIC\test\answer\ans-7-qa.txt
+  yaml: D:\AIC\test\yaml\result-7-qa.yaml

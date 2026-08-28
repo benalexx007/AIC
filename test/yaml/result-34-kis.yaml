@@ -1,0 +1,16 @@
+﻿sequence: 34
+query_type: kis
+query_vi: Cảnh cận cảnh dùng dao thái từng lát mỏng củ cải đỏ (radish) trên thớt gỗ.
+video_id: L26_V478
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 3352
+  - 3427
+answer_submission: L26_V478, [3352, 3427]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-164121\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-34-kis.txt
+  answer: D:\AIC\test\answer\ans-34-kis.txt
+  yaml: D:\AIC\test\yaml\result-34-kis.yaml

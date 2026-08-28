@@ -1,0 +1,16 @@
+﻿sequence: 42
+query_type: kis
+query_vi: Cảnh người đàn ông mặc áo dài màu xanh dương có hoa văn chấm tròn trắng dùng một chiếc dùi gỗ đánh vào tâm mặt chiếc trống đại lớn đặt trong điện thờ.
+video_id: L29_V005
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 17179
+  - 17257
+answer_submission: L29_V005, [17179, 17257]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-201732\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-42-kis.txt
+  answer: D:\AIC\test\answer\ans-42-kis.txt
+  yaml: D:\AIC\test\yaml\result-42-kis.yaml

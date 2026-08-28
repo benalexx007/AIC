@@ -1,0 +1,17 @@
+﻿sequence: 16
+query_type: qa
+query_vi: Trong cảnh quay cận cảnh góc chiếc đệm bảo hộ màu xanh đặt dưới sàn diễn, loài hoa màu vàng nào đang được đặt tại đây?
+video_id: L24_V026
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 13072
+  - 13181
+  answer: hoa cúc
+answer_submission: L24_V026, [13072, 13181], hoa cúc
+evidence: D:\AIC\video-runs\drive-video-qa-high-20260817-214544\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-16-qa.txt
+  answer: D:\AIC\test\answer\ans-16-qa.txt
+  yaml: D:\AIC\test\yaml\result-16-qa.yaml

@@ -1,0 +1,16 @@
+﻿sequence: 28
+query_type: kis
+query_vi: Cảnh cận cảnh hai khúc cá thu tẩm bột đang được chiên trong chảo dầu sôi trên bếp.
+video_id: L26_V245
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5211
+  - 5297
+answer_submission: L26_V245, [5211, 5297]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-143741\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-28-kis.txt
+  answer: D:\AIC\test\answer\ans-28-kis.txt
+  yaml: D:\AIC\test\yaml\result-28-kis.yaml

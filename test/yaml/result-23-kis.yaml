@@ -1,0 +1,16 @@
+﻿sequence: 23
+query_type: kis
+query_vi: Cảnh cận cảnh nồi thủy tinh màu nâu đặt trên bếp đang luộc các cọng rau cải ngồng màu xanh lá trong nước sôi.
+video_id: L26_V080
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 4128
+  - 4220
+answer_submission: L26_V080, [4128, 4220]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-132249\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-23-kis.txt
+  answer: D:\AIC\test\answer\ans-23-kis.txt
+  yaml: D:\AIC\test\yaml\result-23-kis.yaml

@@ -1,0 +1,16 @@
+﻿sequence: 31
+query_type: kis
+query_vi: Cảnh cận cảnh trút các quả ớt hiểm xanh và đỏ vào chảo xốt màu vàng đang sôi trên bếp.
+video_id: L26_V384
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5606
+  - 5668
+answer_submission: L26_V384, [5606, 5668]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-152414\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-31-kis.txt
+  answer: D:\AIC\test\answer\ans-31-kis.txt
+  yaml: D:\AIC\test\yaml\result-31-kis.yaml

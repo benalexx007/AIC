@@ -1,0 +1,16 @@
+﻿sequence: 15
+query_type: kis
+query_vi: Cảnh quay cận cảnh một cậu bé mặc áo kẻ sọc có vạt màu nâu dùng hai dùi gỗ đánh vào mặt chiếc trống lân lớn đặt phía trước.
+video_id: L24_V041
+fps: 30.0
+ground_truth:
+  frame_interval:
+  - 745
+  - 769
+answer_submission: L24_V041, [745, 769]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260817-212938\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-15-kis.txt
+  answer: D:\AIC\test\answer\ans-15-kis.txt
+  yaml: D:\AIC\test\yaml\result-15-kis.yaml

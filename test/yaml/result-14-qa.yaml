@@ -1,0 +1,17 @@
+﻿sequence: 14
+query_type: qa
+query_vi: Trong cảnh quay dàn nhạc lân mặc đồng phục đỏ viền vàng đánh nhạc đệm cho tiết mục múa lân, người đứng ở vị trí gần ống kính nhất bên trái chơi loại nhạc cụ gì?
+video_id: L24_V020
+fps: 30.0
+ground_truth:
+  frame_interval:
+  - 2684
+  - 3164
+  answer: trống
+answer_submission: L24_V020, [2684, 3164], trống
+evidence: D:\AIC\video-runs\drive-video-qa-high-20260817-202313\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-14-qa.txt
+  answer: D:\AIC\test\answer\ans-14-qa.txt
+  yaml: D:\AIC\test\yaml\result-14-qa.yaml

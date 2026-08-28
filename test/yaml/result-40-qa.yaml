@@ -1,0 +1,17 @@
+﻿sequence: 40
+query_type: qa
+query_vi: Trong cảnh quay cận cảnh tấm biển kim loại chữ nổi màu vàng đặt trước vách núi dẫn vào hang động, tên của hang động này là gì?
+video_id: L28_V018
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 19091
+  - 19138
+  answer: ĐỘNG KIM CƯƠNG
+answer_submission: L28_V018, [19091, 19138], ĐỘNG KIM CƯƠNG
+evidence: D:\AIC\video-runs\drive-video-qa-high-20260818-190054\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-40-qa.txt
+  answer: D:\AIC\test\answer\ans-40-qa.txt
+  yaml: D:\AIC\test\yaml\result-40-qa.yaml

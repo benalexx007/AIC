@@ -1,0 +1,17 @@
+﻿sequence: 29
+query_type: qa
+query_vi: Trong cảnh quay cận cảnh chiếc đĩa sứ trắng đựng nguyên liệu gồm xà lách xoăn và một quả dưa leo nguyên vẹn, quả màu đỏ đặt trên đĩa là quả gì?
+video_id: L26_V295
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 1996
+  - 2056
+  answer: cà chua
+answer_submission: L26_V295, [1996, 2056], cà chua
+evidence: D:\AIC\video-runs\drive-video-qa-high-20260818-145303\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-29-qa.txt
+  answer: D:\AIC\test\answer\ans-29-qa.txt
+  yaml: D:\AIC\test\yaml\result-29-qa.yaml

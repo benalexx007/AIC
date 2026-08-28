@@ -1,0 +1,16 @@
+﻿sequence: 25
+query_type: kis
+query_vi: Cảnh cận cảnh chiếc chảo viền đỏ được nghiêng để trút dầu và các lá xanh qua chiếc rây lọc đặt trên tô trắng.
+video_id: L26_V163
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 4496
+  - 4557
+answer_submission: L26_V163, [4496, 4557]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-134912\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-25-kis.txt
+  answer: D:\AIC\test\answer\ans-25-kis.txt
+  yaml: D:\AIC\test\yaml\result-25-kis.yaml

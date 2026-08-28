@@ -1,0 +1,57 @@
+﻿sequence: 2
+query_type: qa
+query_vi: Sau khi thu gom các khúc măng vào một chiếc giỏ lớn, hai người rời khỏi khu vực bằng phương tiện gì?
+video_id: L27_V002
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 910
+  - 959
+  answer: xe máy
+answer_submission: L27_V002, [910, 959], xe máy
+evidence: OpenCLIP retrieval and the semantic summary located the two-person departure scene. Coarse bracket frames 671-1171 contained negative context on both sides. Step-1 verification shows frame 909 still displays only the filled basket; frame 910 is the first frame showing both men departing on the motorcycle with the basket behind them. Frame 959 is the last transition frame where the motorcycle remains visible; frame 960 changes to an outdoor cooking scene. The answer xe máy is visually stable throughout frames 910-959 (50 frames, 2.00 s).
+confidence: high
+files:
+  query: D:\AIC\test\query\query-2-qa.txt
+  answer: D:\AIC\test\answer\ans-2-qa.txt
+  yaml: D:\AIC\test\yaml\result-2-qa.yaml
+cleanup:
+  source_video: D:\AIC\video-runs\drive-video-qa-high-20260816-095305\L27_V002.mp4
+  deleted: true
+  deleted_size_bytes: 161543910
+  deleted_at_utc: '2026-08-16T03:06:42.675416+00:00'
+  recoverable: false
+  retained_outputs:
+  - D:\AIC\test\query\query-2-qa.txt
+  - D:\AIC\test\answer\ans-2-qa.txt
+  - D:\AIC\test\yaml\result-2-qa.yaml
+revisions:
+- revision: 1
+  status: active
+  reason: Replaced a non-unique QA query after full-video duplicate-cluster review.
+  query_vi: Khi hai người đàn ông cùng di chuyển chiếc xe máy chở đầy măng, người ở phía trước đội gì trên đầu?
+  ground_truth:
+    frame_interval:
+    - 910
+    - 959
+    answer: mũ bảo hiểm
+  answer_submission: L27_V002, [910, 959], mũ bảo hiểm
+  uniqueness_audit:
+    report: D:\AIC\video-runs\drive-video-qa-high-20260816-095305\semantic\uniqueness-revision-2.json
+    target_cluster_seconds:
+    - 36.4
+    - 38.36
+    reviewed_alternate_clusters:
+    - sampled_seconds:
+      - 235.0
+      - 249.0
+      verdict: rejected
+      reason: Only one helmeted rider is transporting the basket; no second man follows behind supporting it.
+    - sampled_seconds:
+      - 111.0
+      - 113.0
+      verdict: rejected
+      reason: Two men handle an empty basket, but there is no motorcycle and neither man wears a helmet.
+    decision: pass
+  evidence: Frame 909 shows only the filled basket and is the negative frame before the target event. Frames 910-959 show two men jointly moving the motorcycle loaded with bamboo shoots; the front man visibly wears a helmet. Frame 960 changes to a different outdoor cooking scene. Existing dense step-1 frames were reused; the source video, semantic index, transcript, OCR, and detections were not regenerated.
+  confidence: high

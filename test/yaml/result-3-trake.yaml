@@ -1,0 +1,34 @@
+﻿sequence: 3
+query_type: trake
+query_vi: 'Hãy tìm các đoạn trong video có chuỗi hành động nấu ăn theo đúng thứ tự: đầu bếp đổ hành tây thái hạt lựu vào chảo, cho thịt bò bằm vào, lần lượt thêm đậu Hà Lan rồi cà rốt thái hạt lựu, sau đó cho mì Ý đã luộc vào cùng chảo.'
+video_id: L26_V008
+fps: 25.0
+ground_truth:
+  event_intervals:
+  - - 3977
+    - 4023
+  - - 4208
+    - 4221
+  - - 4661
+    - 4675
+  - - 4714
+    - 4729
+  - - 4841
+    - 4902
+answer_submission: L26_V008, [3977, 4023], [4208, 4221], [4661, 4675], [4714, 4729], [4841, 4902]
+evidence: 'Video L26_V008, FPS 25.0. Semantic retrieval used OpenCLIP ViT-B-32 plus YOLO proposals and Faster-Whisper transcript. Transcript supports the ordered recipe: onion 158.50-161.10s; beef 167.47-169.19s; peas/carrots 184.27-189.23s; spaghetti 192.25-196.25s. Exact step-1 visual boundaries: E1 onion [3977,4023] (1.88s), frame 3976 has tilted bowl but no onion transferred; frame 3977 is first visible onion entering pan; frame 4023 remains the final emptying posture; frame 4024 cuts to stirring. E2 ground beef [4208,4221] (0.56s), frame 4207 has beef still contained with no clear entry; frame 4208 first clearly shows beef entering/touching the pan; frame 4221 still shows the bowl being emptied; frame 4222 starts withdrawal. E3 peas [4661,4675] (0.60s), frame 4660 has no peas falling; frame 4661 starts the stream; frame 4675 retains the last visible falling peas; frame 4676 is withdrawal with no transfer. E4 diced carrots [4714,4729] (0.64s), frame 4713 has no carrot in transfer; frame 4714 first clearly shows carrots entering; frame 4729 is the final tilted/emptying frame; frame 4730 is upright withdrawal. E5 cooked spaghetti [4841,4902] (2.48s), frame 4840 is still stirring the filling; frame 4841 cuts to the plate/chopsticks actively transferring noodles over the pan; frame 4902 is the final transfer frame; frame 4903 begins plate withdrawal. Short E2-E4 intervals are verified instantaneous ingredient-addition transitions with negative adjacent frames. Full-video uniqueness gate rerun on target span [3977,4902] with two complete five-step paraphrases. One alternate proposal at frame 5975 was manually reviewed: it shows placing a fried egg on the finished plated spaghetti, not the ordered onion-beef-peas-carrots-spaghetti sequence. Therefore exactly one temporal cluster satisfies all predicates.'
+confidence: high
+files:
+  query: D:\AIC\test\query\query-3-trake.txt
+  answer: D:\AIC\test\answer\ans-3-trake.txt
+  yaml: D:\AIC\test\yaml\result-3-trake.yaml
+cleanup:
+  source_video: D:\AIC\video-runs\drive-video-trake-high-20260816-124506\L26_V008.mp4
+  deleted: true
+  deleted_size_bytes: 70084103
+  deleted_at_utc: '2026-08-16T06:10:28.778157+00:00'
+  recoverable: false
+  retained_outputs:
+  - D:\AIC\test\query\query-3-trake.txt
+  - D:\AIC\test\answer\ans-3-trake.txt
+  - D:\AIC\test\yaml\result-3-trake.yaml

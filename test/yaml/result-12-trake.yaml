@@ -1,0 +1,22 @@
+﻿sequence: 12
+query_type: trake
+query_vi: 'E1: Góc quay flycam từ trên cao nhìn thẳng xuống mặt đường ghi lại đoàn tay đua đang tăng tốc nước rút về đích; E2: tiếp theo, góc quay trực diện từ phía trước ghi lại đoàn đông các tay đua đang dồn sức đạp nước rút về đích giữa hai hàng rào cờ phướn màu vàng cam; E3: sau đó, cảnh quay cận cảnh tay đua mặc áo xanh dương giơ cao nắm đấm ăn mừng chiến thắng khi đạp xe qua hàng rào khán giả cổ vũ; E4: cuối cùng, góc quay chậm đặt sát mặt đường nhựa ghi lại các tay đua lần lượt đạp xe vượt qua vạch đích màu vàng dưới cổng vòm Đích màu đỏ cam.'
+video_id: L23_V018
+fps: 25.0
+ground_truth:
+  event_intervals:
+  - - 9815
+    - 10516
+  - - 10517
+    - 10894
+  - - 11204
+    - 11299
+  - - 11546
+    - 12074
+answer_submission: L23_V018, [9815, 10516], [10517, 10894], [11204, 11299], [11546, 12074]
+evidence: D:\AIC\video-runs\drive-video-trake-high-20260817-185049\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-12-trake.txt
+  answer: D:\AIC\test\answer\ans-12-trake.txt
+  yaml: D:\AIC\test\yaml\result-12-trake.yaml

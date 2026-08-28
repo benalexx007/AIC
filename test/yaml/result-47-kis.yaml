@@ -1,0 +1,16 @@
+﻿sequence: 47
+query_type: kis
+query_vi: Cảnh cận cảnh hai chú mèo lông trắng trên mặt bàn gỗ, trong đó có một chú mèo mặc chiếc váy xòe màu hồng phấn và có bàn tay đeo đồng hồ đang vuốt ve chúng.
+video_id: L30_V087
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 3760
+  - 3858
+answer_submission: L30_V087, [3760, 3858]
+evidence: D:\AIC\video-runs\drive-video-kis-high-20260818-230429\manifest.json
+confidence: high
+files:
+  query: D:\AIC\test\query\query-47-kis.txt
+  answer: D:\AIC\test\answer\ans-47-kis.txt
+  yaml: D:\AIC\test\yaml\result-47-kis.yaml

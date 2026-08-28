@@ -1,0 +1,4 @@
+interface:
+  display_name: "AIC Video Query"
+  short_description: "Semantic AIC queries from long videos"
+  default_prompt: "Use $aic-video-query to semantically index this video and create the requested grounded AIC query."

@@ -1,0 +1,38 @@
+# Virtual Environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+.pytest_cache/
+
+# Large Model Weights & Tools Binaries
+models/
+tools/
+
+# Video Temp / Processing Runs
+video-runs/
+tmp/
+Video/
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.wav
+
+# Logs & Temporary Files
+*.log
+*.tmp
+semantic-install.log
+.system_generated/
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
