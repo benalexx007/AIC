@@ -412,5 +412,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao (Sub-Centimeter Accessory Localization & Jersey-Helmet Combinatorial Binding) trong MOD-VIS triet tieu cac he thong nhan dien tong quan."
+  },
+  {
+    "sample_id": "query-p2-15-kis",
+    "evaluated_at_utc": "2026-08-31T11:07:41.147311+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-15-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-15-kis.csv",
+    "query_text": "Cảnh phim lần lượt giới thiệu các nguyên liệu của món ăn qua 3 chuyển cảnh: máy quay chéo lên và kết thúc ở nguyên liệu hải sản đầu tiên; quay từ trên xuống cận cảnh nguyên liệu hải sản thứ hai rồi chuyển sang các nguyên liệu nhiều màu sắc; cuối cùng là cú máy tĩnh toàn cảnh toàn bộ nguyên liệu.",
+    "target_video_id": "L26_V356",
+    "seed_frame_csv_line1": 1270,
+    "extracted_intervals": [
+      {
+        "start_frame": 1000,
+        "end_frame": 1350,
+        "event_desc": "3 chuyen canh gioi thieu nguyen lieu: quay cheo len dung o hai san dau tien, quay tren xuong can canh hai san thu hai va rau cu, cu may tinh toan canh"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Phan loai dong luc hoc may quay (goc thap lia cheo, goc cao tu tren xuong, goc tinh toan canh) va lien ket chung loai nguyen lieu (hai san, rau cu sac mau)",
+        "MOD-AUD": "Nhac nen gioi thieu nguyen lieu chuong trinh am thuc",
+        "MOD-OCR": "Logo HTV Online",
+        "MOD-WORD": "Su dung thuat ngu dien anh chuyen nghiep (chuyen canh, may quay cheo len, cu may tinh toan canh)",
+        "MOD-FLOW": "Ngu phap dung phim 3 cu may (Montage Sequence Grammar) trinh dien tuan tu nguyen lieu tu chi tiet den tong the"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca 3 cu may (lia cheo dung o hai san dau tien, tren xuong hai san thu 2 va rau cu, cu may tinh toan canh flat-lay) deu khop 100% frame 1000-1350 cua video L26_V356"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Ngu Phap Dien Anh & Chuoi Dong Luc Hoc May Quay (Cinematographic Camera Kinematics & Multi-Shot Grammar) trong MOD-FLOW buoc he thong phai phan tich duoc vector chuyen dong camera qua tung cu may."
   }
 ]

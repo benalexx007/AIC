@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 11:04:34 UTC  
-> **Tổng số mẫu đã đánh giá:** 14 | **Đã học (Learned):** 12 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 11:07:41 UTC  
+> **Tổng số mẫu đã đánh giá:** 15 | **Đã học (Learned):** 13 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -21,6 +21,7 @@
 | `query-p2-12-qa` | `L26_V192` | `5120` | `[4900, 5350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Count... |
 | `query-p2-13-kis` | `L26_V422` | `4292` | `[4200, 4700]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Trans... |
 | `query-p2-14-kis` | `L23_V010` | `625` | `[575, 725]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao... |
+| `query-p2-15-kis` | `L26_V356` | `1270` | `[1000, 1350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Ngu Phap Dien Anh & Chuoi Dong Luc Hoc May Quay (Cinematographic Camera... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -230,3 +231,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: To hop vi tu mieu ta mau sac da lop (ao xanh, non do, non trang, ao vang, soi day trang gan co)
   - `MOD-FLOW`: Goc quay can canh bam sat doan dua di chuyen toc do cao trong 6 giay
 - **Bài học chắt lọc:** Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao (Sub-Centimeter Accessory Localization & Jersey-Helmet Combinatorial Binding) trong MOD-VIS triet tieu cac he thong nhan dien tong quan.
+
+### Mẫu `query-p2-15-kis` (L26_V356)
+- **Query:** Cảnh phim lần lượt giới thiệu các nguyên liệu của món ăn qua 3 chuyển cảnh: máy quay chéo lên và kết thúc ở nguyên liệu hải sản đầu tiên; quay từ trên xuống cận cảnh nguyên liệu hải sản thứ hai rồi chuyển sang các nguyên liệu nhiều màu sắc; cuối cùng là cú máy tĩnh toàn cảnh toàn bộ nguyên liệu.
+- **Dòng 1 CSV:** Video `L26_V356`, Seed Frame `1270`
+- **Intervals:** [{"start_frame": 1000, "end_frame": 1350, "event_desc": "3 chuyen canh gioi thieu nguyen lieu: quay cheo len dung o hai san dau tien, quay tren xuong can canh hai san thu hai va rau cu, cu may tinh toan canh"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca 3 cu may (lia cheo dung o hai san dau tien, tren xuong hai san thu 2 va rau cu, cu may tinh toan canh flat-lay) deu khop 100% frame 1000-1350 cua video L26_V356
+- **Phân tích Module:**
+  - `MOD-VIS`: Phan loai dong luc hoc may quay (goc thap lia cheo, goc cao tu tren xuong, goc tinh toan canh) va lien ket chung loai nguyen lieu (hai san, rau cu sac mau)
+  - `MOD-AUD`: Nhac nen gioi thieu nguyen lieu chuong trinh am thuc
+  - `MOD-OCR`: Logo HTV Online
+  - `MOD-WORD`: Su dung thuat ngu dien anh chuyen nghiep (chuyen canh, may quay cheo len, cu may tinh toan canh)
+  - `MOD-FLOW`: Ngu phap dung phim 3 cu may (Montage Sequence Grammar) trinh dien tuan tu nguyen lieu tu chi tiet den tong the
+- **Bài học chắt lọc:** Ky thuat Ngu Phap Dien Anh & Chuoi Dong Luc Hoc May Quay (Cinematographic Camera Kinematics & Multi-Shot Grammar) trong MOD-FLOW buoc he thong phai phan tich duoc vector chuyen dong camera qua tung cu may.
