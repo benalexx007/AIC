@@ -37,6 +37,8 @@ Vượt qua các mô hình Vision-Language cơ bản (như OpenAI CLIP ViT-B/32,
    * Trong bối cảnh có nhiều đối tượng cùng thực hiện hoạt động chung (thể thao, đám đông), gán tổ hợp thuộc tính trang phục kép cho từng chủ thể (*áo đỏ + nón trắng*, *áo xanh đậm*, *áo đen phối cam*) đi liền với vi hành động cục bộ diễn ra trong tích tắc (*lấy nước rưới vào mặt*, *đuổi theo người phía trước*). Ép hệ thống giải phải thực hiện liên kết thuộc tính không gian - thời gian (Spatiotemporal Attribute Binding).
 6. **Extreme Pose & Anomaly Action Localization (Nhận diện tư thế bất thường / Hành vi phi chuẩn):**
    * Khai thác các tư thế vật lý hiếm hoặc nguy hiểm nằm ngoài phân phối chuẩn của con người khi điều khiển phương tiện hoặc thao tác đồ vật (*nằm dài trên yên xe máy phóng tốc độ cao*, *buông tay lái*, *đu người ngoài thành xe*). Kỹ thuật này triệt tiêu các mô hình Pose Estimation / Action Classifier chỉ được học trên hành vi chuẩn mực thông thường.
+7. **Wide-to-Close Scale Transition & Micro-Morphology (Biến thiên tỉ lệ khung hình Rộng $\rightarrow$ Cận cảnh & Hình thái vi mô):**
+   * Khai thác sự biến đổi góc máy từ góc trung/toàn cảnh (thao tác tổng quan của người) cắt nhanh sang góc máy cận cảnh/siêu cận cảnh (macro close-up trực diện trên bề mặt vật thể/món ăn/công cụ). Ép mô hình giải phải nhận diện được hình thái đặc thù cục bộ của thực thể (ví dụ các lát cắt dồi trường hình ống màu trắng, cuống bông hẹ xanh dài) ngay cả khi tỉ lệ phóng to làm biến mất toàn bộ bối cảnh không gian và nhân vật xung quanh.
 
 ---
 

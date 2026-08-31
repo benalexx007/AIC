@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 10:06:25 UTC  
-> **Tổng số mẫu đã đánh giá:** 9 | **Đã học (Learned):** 7 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 10:12:38 UTC  
+> **Tổng số mẫu đã đánh giá:** 10 | **Đã học (Learned):** 8 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -16,6 +16,7 @@
 | `query-p2-7-qa` | `L21_V009` | `21172` | `[20950, 21250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW... |
 | `query-p2-8-trake` | `L27_V011` | `3827` | `[3820, 4200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ord... |
 | `query-p2-9-qa` | `L26_V161` | `2712` | `[2640, 2800]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Br... |
+| `query-p2-10-kis` | `L26_V120` | `5350` | `[5180, 5450]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot S... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -149,3 +150,20 @@ E4: Cảnh đầu tiên có trái dâu bòn bon.
   - `MOD-WORD`: Cau hoi QA huong vao danh tinh loai ca qua viec mo ta to hop nguyen lieu phu tro
   - `MOD-FLOW`: Cau noi hanh dong - sieu du lieu (Action-to-Metadata Cross-Bridge) ket noi doan so che voi bang thanh phan
 - **Bài học chắt lọc:** Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Bridge) trong MOD-FLOW buoc he thong phai ket noi thao tac che bien thuc te voi bang nguyen lieu OCR hoac loi thoai gioi thieu.
+
+### Mẫu `query-p2-10-kis` (L26_V120)
+- **Query:** Một đầu bếp chế biến món ăn trong chảo, với các miếng dồi trường màu trắng và rau xanh.
+Đầu bếp cho bông hẹ vào chảo đang có dồi trường rồi dùng dụng cụ đảo các nguyên liệu.
+Các đoạn bông hẹ dài màu xanh được trộn cùng những miếng dồi trường trắng trong chảo.
+Máy quay chuyển sang cận cảnh chảo khi đầu bếp tiếp tục xào và trộn hai nguyên liệu.
+- **Dòng 1 CSV:** Video `L26_V120`, Seed Frame `5350`
+- **Intervals:** [{"start_frame": 5180, "end_frame": 5450, "event_desc": "Dau bep cho bong he vao chao doi truong dao deu tu goc quay trung sang can canh chao xao tron hai nguyen lieu"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (che bien doi truong trang voi rau xanh, cho bong he vao dao chao, tron doi truong voi bong he, chuyen goc quay can canh) deu khop 100% frame 5180-5450 cua video L26_V120
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien hinh thai nguyen lieu dac thu (mieng doi truong hinh ong mau trang, cuong bong he xanh dai) va su chuyen doi ty le goc may tu goc trung sang can canh chao xao
+  - `MOD-AUD`: Tieng xao chao xeo xeo va giong huong dan nau an cua dau bep
+  - `MOD-OCR`: Logo Mon Ngon Moi Ngay
+  - `MOD-WORD`: Su dung thuat ngu am thuc dac thu (doi truong, bong he) kem trinh tu vi ngu thao tac xao tron
+  - `MOD-FLOW`: Dien tien 4 buoc mo ta nhip nhang theo dong thoi gian tu cho nguyen lieu den dao chao va chuyen can canh
+- **Bài học chắt lọc:** Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot Scale Transition & Micro-Ingredient Morphology) trong MOD-VIS va MOD-FLOW buoc he thong phai nhan dien duoc hinh thai vat the khi phong to va mat boi canh nguoi.

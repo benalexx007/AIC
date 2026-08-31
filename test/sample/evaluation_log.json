@@ -262,5 +262,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Bridge) trong MOD-FLOW buoc he thong phai ket noi thao tac che bien thuc te voi bang nguyen lieu OCR hoac loi thoai gioi thieu."
+  },
+  {
+    "sample_id": "query-p2-10-kis",
+    "evaluated_at_utc": "2026-08-31T10:12:38.618461+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-10-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-10-kis.csv",
+    "query_text": "Một đầu bếp chế biến món ăn trong chảo, với các miếng dồi trường màu trắng và rau xanh.\nĐầu bếp cho bông hẹ vào chảo đang có dồi trường rồi dùng dụng cụ đảo các nguyên liệu.\nCác đoạn bông hẹ dài màu xanh được trộn cùng những miếng dồi trường trắng trong chảo.\nMáy quay chuyển sang cận cảnh chảo khi đầu bếp tiếp tục xào và trộn hai nguyên liệu.",
+    "target_video_id": "L26_V120",
+    "seed_frame_csv_line1": 5350,
+    "extracted_intervals": [
+      {
+        "start_frame": 5180,
+        "end_frame": 5450,
+        "event_desc": "Dau bep cho bong he vao chao doi truong dao deu tu goc quay trung sang can canh chao xao tron hai nguyen lieu"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien hinh thai nguyen lieu dac thu (mieng doi truong hinh ong mau trang, cuong bong he xanh dai) va su chuyen doi ty le goc may tu goc trung sang can canh chao xao",
+        "MOD-AUD": "Tieng xao chao xeo xeo va giong huong dan nau an cua dau bep",
+        "MOD-OCR": "Logo Mon Ngon Moi Ngay",
+        "MOD-WORD": "Su dung thuat ngu am thuc dac thu (doi truong, bong he) kem trinh tu vi ngu thao tac xao tron",
+        "MOD-FLOW": "Dien tien 4 buoc mo ta nhip nhang theo dong thoi gian tu cho nguyen lieu den dao chao va chuyen can canh"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (che bien doi truong trang voi rau xanh, cho bong he vao dao chao, tron doi truong voi bong he, chuyen goc quay can canh) deu khop 100% frame 5180-5450 cua video L26_V120"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot Scale Transition & Micro-Ingredient Morphology) trong MOD-VIS va MOD-FLOW buoc he thong phai nhan dien duoc hinh thai vat the khi phong to va mat boi canh nguoi."
   }
 ]
