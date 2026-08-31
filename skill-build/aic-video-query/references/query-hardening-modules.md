@@ -149,6 +149,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * Miêu tả chi tiết thao tác thị giác vi mô gắn với danh sách và số lượng nguyên phụ liệu (*nhét tiêu xanh, lá chanh, sả vào bụng 4 con cá*), nhưng mục tiêu câu hỏi lại nhắm vào định danh thực thể chính (*đây là loài cá gì?*). Bắt buộc hệ thống giải phải định vị được phân đoạn thao tác rồi truy vết ngược về bảng thông tin OCR (Ingredient Card) hoặc lời thoại thuyết minh ở đầu chương trình để trích xuất đáp án.
 6. **Cinematographic Camera Kinematics & Multi-Shot Montage Grammar (Ngữ pháp dựng phim & Chuỗi động lực học máy quay):**
    * Cấu trúc câu hỏi ràng buộc sự liên kết của chuỗi $K$ cú máy liên tiếp ($K \ge 3$) với các vector chuyển động máy quay cụ thể (*lia chéo góc thấp hướng lên $\rightarrow$ góc cao quét từ trên xuống $\rightarrow$ cú máy tĩnh toàn cảnh flat-lay*) kết hợp biến đổi tiêu điểm đối tượng qua từng cú máy. Ép hệ thống giải phải phân tích được ngữ pháp biên tập video (Shot Boundary & Video Syntax) và vector chuyển động thị giác của camera (Camera Motion Dynamics).
+7. **Multi-Hop Cross-Scene Geographic Landmark Bridge (Cầu nối truy vết địa danh đa chặng):**
+   * Cấu trúc câu hỏi QA xâu chuỗi hai phân cảnh hành động cách xa nhau trong phóng sự (ví dụ: *mạnh thường quân hỗ trợ ngoài vỉa hè $\rightarrow$ chuyển sang trò chuyện cùng tình nguyện viên quốc tế trong phòng nghỉ*) và đặt câu hỏi truy xuất địa danh/tên đường cụ thể của địa điểm. Buộc hệ thống giải phải theo dõi toàn bộ diễn tiến phóng sự và liên kết dữ liệu OCR mặt tiền hoặc lời thoại thuyết minh.
 
 ---
 

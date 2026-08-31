@@ -532,5 +532,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di Dong (Dynamic Digital Traffic Light Countdown & Dynamic Formation Chase Cam) trong MOD-OCR buoc he thong OCR phai doc duoc ky tu LED phat sang nho tren cot den ngoai canh di dong."
+  },
+  {
+    "sample_id": "query-p2-19-qa",
+    "evaluated_at_utc": "2026-08-31T15:38:51.166605+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-19-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-19-qa.csv",
+    "query_text": "Đoạn phim ghi lại cảnh mạnh thường quân hỗ trợ một quán trọ dành cho người cao tuổi, sau đó chuyển sang cảnh một cụ ông trò chuyện với nhóm người nước ngoài. Hỏi quán trọ được nhắc đến trong đoạn phim nằm trên đường nào?",
+    "target_video_id": "L30_V043",
+    "seed_frame_csv_line1": 2681,
+    "extracted_intervals": [
+      {
+        "start_frame": 2500,
+        "end_frame": 3750,
+        "event_desc": "Manh thuong quan ho tro quan tro nguoi cao tuoi ban buoi gay quy chuyen sang canh tro chuyen voi tinh nguyen vien quoc te tai quan tro duong Ly Thuong Kiet"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Chuyen canh tu hoat dong gay quy ban buoi ngoai via he sang khong gian phong ngu tap the tro chuyen voi nguoi nuoc ngoai",
+        "MOD-AUD": "Loi thuyet minh ve hoat dong tinh nguyen quoc te va ho tro cua manh thuong quan cho quan tro",
+        "MOD-OCR": "Doc thong tin bien hieu va so nha mat tien quan tro: 552/1A5 Ly Thuong Kiet (Quan tro Sai Gon Bao Dung)",
+        "MOD-WORD": "Cau hoi QA dia danh xau chuoi 2 phan canh lien tiep trong phong su xa hoi",
+        "MOD-FLOW": "Cau noi da chang (Multi-Hop Bridge) ket noi hoat dong tai tro -> tro chuyen quoc te -> dia chi mat tien"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (manh thuong quan ho tro, quan tro nguoi cao tuoi, tro chuyen nguoi nuoc ngoai, dia chi duong Ly Thuong Kiet) deu khop 100% video L30_V043"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Cau Noi Truy Vet Dia Danh Da Chang (Multi-Hop Cross-Scene Geographic Landmark Bridge) trong MOD-FLOW va MOD-OCR ep mo hinh phai theo doi toan bo dien tien phong su va doc bien hieu mat tien ngoai canh."
   }
 ]

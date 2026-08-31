@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 15:29:17 UTC  
-> **Tổng số mẫu đã đánh giá:** 18 | **Đã học (Learned):** 16 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 15:38:51 UTC  
+> **Tổng số mẫu đã đánh giá:** 19 | **Đã học (Learned):** 17 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -25,6 +25,7 @@
 | `query-p2-16-kis` | `L29_V014` | `20484` | `[20300, 20650]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Mang Do Vat Hau Canh Don Dieu & Boi Canh Lang Nghe Dan Gian (B... |
 | `query-p2-17-kis` | `L30_V026` | `2392` | `[2300, 2550]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typo... |
 | `query-p2-18-kis` | `L23_V017` | `2560` | `[2480, 2680]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di D... |
+| `query-p2-19-qa` | `L30_V043` | `2681` | `[2500, 3750]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Truy Vet Dia Danh Da Chang (Multi-Hop Cross-Scene Geographic La... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -290,3 +291,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Ket hop doi hinh the thao (1 truoc 3 sau), dia danh do thi (Ho Tung Mau) va diem neo OCR thoi gian thuc (den xanh 13s)
   - `MOD-FLOW`: Theo doi hanh trinh re phai cua nhom tay dua qua giao lo trong 8 giay
 - **Bài học chắt lọc:** Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di Dong (Dynamic Digital Traffic Light Countdown & Dynamic Formation Chase Cam) trong MOD-OCR buoc he thong OCR phai doc duoc ky tu LED phat sang nho tren cot den ngoai canh di dong.
+
+### Mẫu `query-p2-19-qa` (L30_V043)
+- **Query:** Đoạn phim ghi lại cảnh mạnh thường quân hỗ trợ một quán trọ dành cho người cao tuổi, sau đó chuyển sang cảnh một cụ ông trò chuyện với nhóm người nước ngoài. Hỏi quán trọ được nhắc đến trong đoạn phim nằm trên đường nào?
+- **Dòng 1 CSV:** Video `L30_V043`, Seed Frame `2681`
+- **Intervals:** [{"start_frame": 2500, "end_frame": 3750, "event_desc": "Manh thuong quan ho tro quan tro nguoi cao tuoi ban buoi gay quy chuyen sang canh tro chuyen voi tinh nguyen vien quoc te tai quan tro duong Ly Thuong Kiet"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (manh thuong quan ho tro, quan tro nguoi cao tuoi, tro chuyen nguoi nuoc ngoai, dia chi duong Ly Thuong Kiet) deu khop 100% video L30_V043
+- **Phân tích Module:**
+  - `MOD-VIS`: Chuyen canh tu hoat dong gay quy ban buoi ngoai via he sang khong gian phong ngu tap the tro chuyen voi nguoi nuoc ngoai
+  - `MOD-AUD`: Loi thuyet minh ve hoat dong tinh nguyen quoc te va ho tro cua manh thuong quan cho quan tro
+  - `MOD-OCR`: Doc thong tin bien hieu va so nha mat tien quan tro: 552/1A5 Ly Thuong Kiet (Quan tro Sai Gon Bao Dung)
+  - `MOD-WORD`: Cau hoi QA dia danh xau chuoi 2 phan canh lien tiep trong phong su xa hoi
+  - `MOD-FLOW`: Cau noi da chang (Multi-Hop Bridge) ket noi hoat dong tai tro -> tro chuyen quoc te -> dia chi mat tien
+- **Bài học chắt lọc:** Ky thuat Cau Noi Truy Vet Dia Danh Da Chang (Multi-Hop Cross-Scene Geographic Landmark Bridge) trong MOD-FLOW va MOD-OCR ep mo hinh phai theo doi toan bo dien tien phong su va doc bien hieu mat tien ngoai canh.
