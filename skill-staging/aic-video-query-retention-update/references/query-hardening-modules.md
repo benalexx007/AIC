@@ -33,6 +33,8 @@ Vượt qua các mô hình Vision-Language cơ bản (như OpenAI CLIP ViT-B/32,
    * Đặt điều kiện vào các chi tiết phản chiếu qua gương/kính (reflection), bóng đổ (shadows), hoặc vật thể bị che khuất $\ge 50\%$ bởi đối tượng khác ở tiền cảnh.
 4. **Fine-Grained Attribute Binding (Ràng buộc thuộc tính tinh vi):**
    * Trong một khung hình có 3 người cùng mặc áo tối màu, gán các thuộc tính cực kỳ chi tiết (màu viền cổ áo, hoa văn trên cúc áo, loại quai túi xách) để loại bỏ mọi sự nhầm lẫn chéo.
+5. **Multi-Entity Apparel Binding & Micro-Action Coupling (Phân tách trang phục kép & Vi hành động đa thực thể):**
+   * Trong bối cảnh có nhiều đối tượng cùng thực hiện hoạt động chung (thể thao, đám đông), gán tổ hợp thuộc tính trang phục kép cho từng chủ thể (*áo đỏ + nón trắng*, *áo xanh đậm*, *áo đen phối cam*) đi liền với vi hành động cục bộ diễn ra trong tích tắc (*lấy nước rưới vào mặt*, *đuổi theo người phía trước*). Ép hệ thống giải phải thực hiện liên kết thuộc tính không gian - thời gian (Spatiotemporal Attribute Binding).
 
 ---
 

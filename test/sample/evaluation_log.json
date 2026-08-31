@@ -112,5 +112,35 @@
     },
     "learning_decision": "REJECTED",
     "distilled_insights": "Rejected due to Tier < 3 or Accuracy < 85%"
+  },
+  {
+    "sample_id": "query-p2-5-kis",
+    "evaluated_at_utc": "2026-08-31T08:14:26.372605+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-5-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-5-kis.csv",
+    "query_text": "Một người áo đỏ, đội nón màu trắng, đang lấy nước rưới vào mặt của mình. Khung hình có hai người đi xe đạp, người mặc áo xanh đậm đang đuổi theo người mặc áo đen phối cam.",
+    "target_video_id": "L21_V022",
+    "seed_frame_csv_line1": 26076,
+    "extracted_intervals": [
+      {
+        "start_frame": 25830,
+        "end_frame": 26130,
+        "event_desc": "Hai tay dua xe dap (ao xanh dam duoi theo ao den phoi cam) va canh cua-ro ao do non trang tuoi nuoc vao mat"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Phan tach trang phuc da thuc the chi tiet (ao do + non trang, ao xanh dam, ao den phoi cam) ket hop vi hanh dong tuoi nuoc vao mat khi dang chay xe dap",
+        "MOD-AUD": "Binh luan the thao giai dua xe dap La Vuelta",
+        "MOD-OCR": "Bang do thong tin giai dua La Vuelta, Cabeza de carrera",
+        "MOD-WORD": "Mo ta chinh xac mau sac phoi trang phuc va tu ngu hanh dong tuong tac (duoi theo, ruoi nuoc vao mat)",
+        "MOD-FLOW": "Ghep noi hai goc quay nhanh (top 2 tay dua tach top va cua-ro ao do giai nhiet) trong cung mot ban tin 10 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac vi tu (ao do non trang ruoi nuoc vao mat, 2 nguoi di xe dap ao xanh dam duoi ao den phoi cam) deu khop 100% chinh xac trong frame 25830-26130 cua video L21_V022"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grained Apparel & Micro-Action Coupling) buoc he thong giai phai rang buoc thuoc tinh cap doi tuong (Attribute Binding) va dinh vi vi hanh dong trong thoi gian cuc ngan."
   }
 ]

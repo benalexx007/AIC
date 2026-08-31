@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 08:04:33 UTC  
-> **Tổng số mẫu đã đánh giá:** 4 | **Đã học (Learned):** 2 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 08:14:26 UTC  
+> **Tổng số mẫu đã đánh giá:** 5 | **Đã học (Learned):** 3 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -11,6 +11,7 @@
 | `query-p2-2-kis` | `L21_V013` | `22410` | `[22335, 22985]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh vi Hai Dau Ranh Gioi Thoi Gian (Dual-Boundary Temporal Framing) bu... |
 | `query-p2-3-kis` | `L24_V017` | `270` | `[240, 360]` | Tier 2 | 60.0% | ❌ REJECTED | Rejected due to Tier < 3 or Accuracy < 85%... |
 | `query-p2-4-kis` | `L25_V083` | `67` | `` | Tier 1 | 0.0% | ❌ REJECTED | Rejected due to Tier < 3 or Accuracy < 85%... |
+| `query-p2-5-kis` | `L21_V022` | `26076` | `[25830, 26130]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grai... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -70,3 +71,17 @@
   - `MOD-WORD`: Khong ap dung (video khong khop)
   - `MOD-FLOW`: Khong ap dung
 - **Bài học chắt lọc:** Rejected due to Tier < 3 or Accuracy < 85%
+
+### Mẫu `query-p2-5-kis` (L21_V022)
+- **Query:** Một người áo đỏ, đội nón màu trắng, đang lấy nước rưới vào mặt của mình. Khung hình có hai người đi xe đạp, người mặc áo xanh đậm đang đuổi theo người mặc áo đen phối cam.
+- **Dòng 1 CSV:** Video `L21_V022`, Seed Frame `26076`
+- **Intervals:** [{"start_frame": 25830, "end_frame": 26130, "event_desc": "Hai tay dua xe dap (ao xanh dam duoi theo ao den phoi cam) va canh cua-ro ao do non trang tuoi nuoc vao mat"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac vi tu (ao do non trang ruoi nuoc vao mat, 2 nguoi di xe dap ao xanh dam duoi ao den phoi cam) deu khop 100% chinh xac trong frame 25830-26130 cua video L21_V022
+- **Phân tích Module:**
+  - `MOD-VIS`: Phan tach trang phuc da thuc the chi tiet (ao do + non trang, ao xanh dam, ao den phoi cam) ket hop vi hanh dong tuoi nuoc vao mat khi dang chay xe dap
+  - `MOD-AUD`: Binh luan the thao giai dua xe dap La Vuelta
+  - `MOD-OCR`: Bang do thong tin giai dua La Vuelta, Cabeza de carrera
+  - `MOD-WORD`: Mo ta chinh xac mau sac phoi trang phuc va tu ngu hanh dong tuong tac (duoi theo, ruoi nuoc vao mat)
+  - `MOD-FLOW`: Ghep noi hai goc quay nhanh (top 2 tay dua tach top va cua-ro ao do giai nhiet) trong cung mot ban tin 10 giay
+- **Bài học chắt lọc:** Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grained Apparel & Micro-Action Coupling) buoc he thong giai phai rang buoc thuoc tinh cap doi tuong (Attribute Binding) va dinh vi vi hanh dong trong thoi gian cuc ngan.
