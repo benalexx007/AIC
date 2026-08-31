@@ -172,5 +172,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Action Localization) buoc mo hinh phai nhan dien duoc cac tu the phi chuan nam ngoai phan phoi du lieu thong thuong."
+  },
+  {
+    "sample_id": "query-p2-7-qa",
+    "evaluated_at_utc": "2026-08-31T09:53:48.824026+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-7-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-7-qa.csv",
+    "query_text": "Đoạn clip được quay từ bên trong một chiếc xe ô tô tự lái, có thể thấy rõ vô lăng được xoay để chiếc xe rẽ sang phải. Sau đó, góc quay chuyển ra ngoài, bắt trọn cảnh chiếc xe màu trắng rẽ trái, và ở góc trên khung hình có một dưới một biển hiệu đỏ gồm 6 ký tự chữ Hán. Con số được viết trên phần hông xe màu trắng là số mấy?",
+    "target_video_id": "L21_V009",
+    "seed_frame_csv_line1": 21172,
+    "extracted_intervals": [
+      {
+        "start_frame": 20950,
+        "end_frame": 21250,
+        "event_desc": "Canh quay cabin xe tu lai re phai chuyen sang goc ngoai xe trang re trai duoi bien hieu chu Han 6 ky tu, tren hong xe ghi so 1204"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Chuyen doi goc nhin noi-ngoai cabin (Interior POV sang Exterior POV) voi cay coi tien canh che khuat mot phan xe",
+        "MOD-AUD": "Thuyet minh tin tuc xe tu hanh",
+        "MOD-OCR": "Doc ky tu chu Han phi Latin dem so luong (6 chu '复合宴会中心') lam neo dinh vi ket hop doc ma so nho in tren hong xe ('1204')",
+        "MOD-WORD": "Dat cau hoi QA ket hop neo khong gian (hong xe) va rang buoc bien hieu ngoai canh",
+        "MOD-FLOW": "Lien ket truyen canh tu ben trong buong lai ra goc nhin toan canh ben ngoai de tra loi cau hoi chi tiet"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca thong tin (cabin vo lang tu xoay, goc ngoai xe trang re trai, bien do 6 chu Han, dap an so tren hong xe 1204) khop 100% hoan hao trong frame 20950-21250 cua video L21_V009"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW ket hop Dem Ky Tu Phi Latin & Doc So Than Xe trong MOD-OCR buoc he thong giai phai tracking thuc the xuyen goc quay va doc OCR cuc bo do phan giai cao."
   }
 ]

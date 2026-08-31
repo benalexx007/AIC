@@ -75,6 +75,8 @@ Vượt qua các công cụ OCR thông thường (PaddleOCR, EasyOCR, CRNN) ch�
    * Ký tự trên biển quảng cáo bị cây cối che khuất một nửa; chỉ khi camera lia qua nhiều frame thì người giải mới ghép đủ các chữ cái để suy ra từ hoàn chỉnh.
 4. **Technical Codes & Semantic Acronyms (Ký hiệu kỹ thuật & Chữ viết tắt):**
    * Mã số hiệu chuyến bay, mã vạch/QR ở góc bao bì, đuôi biển số xe kết hợp chữ viết tắt tỉnh thành.
+5. **Foreign Script Character Count & Fine Print Body Target (Đếm ký tự phi Latin & Đọc mã số nhỏ trên thân vỏ đối tượng):**
+   * Sử dụng đặc trưng số lượng ký tự phi Latin (*"biển hiệu màu đỏ gồm 6 ký tự chữ Hán"*) làm mốc neo không gian duy nhất trong hậu cảnh, sau đó đặt câu hỏi về các mã số nhỏ in trên thân vỏ phương tiện/đối tượng (*"con số trên hông xe"*). Kỹ thuật này thách thức các công cụ OCR thông thường vốn chỉ nhận diện bảng chữ cái chuẩn.
 
 ---
 
@@ -123,6 +125,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * Triệt tiêu hoàn toàn khả năng giải bằng tìm kiếm đơn điểm (Single-frame similarity search); bắt buộc hệ thống giải phải tìm độc lập hai điểm biên A và B rồi cắt chính xác phân đoạn bao trùm.
 2. **Cầu Nối Đa Phương Thức Bắc Cầu (Multi-Modal Bridge):**
    * Sự kiện ở Phân đoạn 1 chỉ được giải mã trọn vẹn khi kết hợp với manh mối âm thanh hoặc OCR xuất hiện ở Phân đoạn 2.
+3. **Chuyển Tiếp Đa Góc Nhìn Xuyên Buồng Lái - Ngoại Cảnh (Cross-Perspective POV Shift / Interior-Exterior Continuity):**
+   * Xâu chuỗi 2 góc quay tương phản của cùng một sự kiện: bắt đầu từ góc nhìn nội bộ (First-Person Interior POV - vô lăng tự xoay trong cabin xe tự lái) rồi cắt sang góc nhìn toàn cảnh ngoại vi (Third-Person Exterior POV - chiếc xe rẽ trên đường phố). Buộc mô hình giải phải theo dõi thực thể xuyên góc máy (Cross-view Entity Tracking) thay vì trích xuất đặc trưng rời rạc.
 
 ---
 

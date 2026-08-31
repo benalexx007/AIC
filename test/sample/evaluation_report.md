@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 09:42:48 UTC  
-> **Tổng số mẫu đã đánh giá:** 6 | **Đã học (Learned):** 4 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 09:53:48 UTC  
+> **Tổng số mẫu đã đánh giá:** 7 | **Đã học (Learned):** 5 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -13,6 +13,7 @@
 | `query-p2-4-kis` | `L25_V083` | `67` | `` | Tier 1 | 0.0% | ❌ REJECTED | Rejected due to Tier < 3 or Accuracy < 85%... |
 | `query-p2-5-kis` | `L21_V022` | `26076` | `[25830, 26130]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grai... |
 | `query-p2-6-kis` | `L21_V018` | `15780` | `[15616, 16480]` | Tier 3 | 85.0% | ✅ **LEARNED** | Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Ac... |
+| `query-p2-7-qa` | `L21_V009` | `21172` | `[20950, 21250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -100,3 +101,17 @@
   - `MOD-WORD`: Mo ta goc quay goc (nguoi di duong phia sau ghi lai) va vi ngu dong tu the hiem (nam dai tren yen)
   - `MOD-FLOW`: Dong chay tu su kien giao thong tren duong cao toc co cau vuot bo hanh
 - **Bài học chắt lọc:** Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Action Localization) buoc mo hinh phai nhan dien duoc cac tu the phi chuan nam ngoai phan phoi du lieu thong thuong.
+
+### Mẫu `query-p2-7-qa` (L21_V009)
+- **Query:** Đoạn clip được quay từ bên trong một chiếc xe ô tô tự lái, có thể thấy rõ vô lăng được xoay để chiếc xe rẽ sang phải. Sau đó, góc quay chuyển ra ngoài, bắt trọn cảnh chiếc xe màu trắng rẽ trái, và ở góc trên khung hình có một dưới một biển hiệu đỏ gồm 6 ký tự chữ Hán. Con số được viết trên phần hông xe màu trắng là số mấy?
+- **Dòng 1 CSV:** Video `L21_V009`, Seed Frame `21172`
+- **Intervals:** [{"start_frame": 20950, "end_frame": 21250, "event_desc": "Canh quay cabin xe tu lai re phai chuyen sang goc ngoai xe trang re trai duoi bien hieu chu Han 6 ky tu, tren hong xe ghi so 1204"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca thong tin (cabin vo lang tu xoay, goc ngoai xe trang re trai, bien do 6 chu Han, dap an so tren hong xe 1204) khop 100% hoan hao trong frame 20950-21250 cua video L21_V009
+- **Phân tích Module:**
+  - `MOD-VIS`: Chuyen doi goc nhin noi-ngoai cabin (Interior POV sang Exterior POV) voi cay coi tien canh che khuat mot phan xe
+  - `MOD-AUD`: Thuyet minh tin tuc xe tu hanh
+  - `MOD-OCR`: Doc ky tu chu Han phi Latin dem so luong (6 chu '复合宴会中心') lam neo dinh vi ket hop doc ma so nho in tren hong xe ('1204')
+  - `MOD-WORD`: Dat cau hoi QA ket hop neo khong gian (hong xe) va rang buoc bien hieu ngoai canh
+  - `MOD-FLOW`: Lien ket truyen canh tu ben trong buong lai ra goc nhin toan canh ben ngoai de tra loi cau hoi chi tiet
+- **Bài học chắt lọc:** Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW ket hop Dem Ky Tu Phi Latin & Doc So Than Xe trong MOD-OCR buoc he thong giai phai tracking thuc the xuyen goc quay va doc OCR cuc bo do phan giai cao.
