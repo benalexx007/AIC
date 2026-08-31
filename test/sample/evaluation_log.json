@@ -142,5 +142,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grained Apparel & Micro-Action Coupling) buoc he thong giai phai rang buoc thuoc tinh cap doi tuong (Attribute Binding) va dinh vi vi hanh dong trong thoi gian cuc ngan."
+  },
+  {
+    "sample_id": "query-p2-6-kis",
+    "evaluated_at_utc": "2026-08-31T09:42:47.988597+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-6-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-6-kis.csv",
+    "query_text": "Đoạn video do người đi đường phía sau ghi lại cho thấy 2 thanh niên điều khiển xe máy bất ngờ nằm dài trên yên và phóng với tốc độ cao. Xuất hiện trong khung hình còn có một chiếc ô tô màu xanh cùng một người đi xe máy mặc áo xanh khác. Có 2 vòng tròn màu đỏ xuất hiện để khoanh vùng vị trí 2 thanh niên này.",
+    "target_video_id": "L21_V018",
+    "seed_frame_csv_line1": 15780,
+    "extracted_intervals": [
+      {
+        "start_frame": 15616,
+        "end_frame": 16480,
+        "event_desc": "Video quay tu phia sau canh 2 thanh nien nam dai tren yen xe may chay toc do cao canh o to xanh va nguoi mac ao xanh"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien tu the phi chuan muc cuc do (nam dai tren yen xe may chay toc do cao tren quoc lo), phan biet xe o to mau xanh va nguoi chay xe may mac ao xanh xung quanh",
+        "MOD-AUD": "Giong doc thoi su 60 giay HTV9",
+        "MOD-OCR": "TP HCM: DIEU TRA 2 THANH NIEN NAM DAI TREN XE MAY",
+        "MOD-WORD": "Mo ta goc quay goc (nguoi di duong phia sau ghi lai) va vi ngu dong tu the hiem (nam dai tren yen)",
+        "MOD-FLOW": "Dong chay tu su kien giao thong tren duong cao toc co cau vuot bo hanh"
+      },
+      "accuracy_score": 85.0,
+      "accuracy_analysis": "Cac vi tu chu dao (quay tu phia sau, 2 thanh nien nam dai tren yen phong toc do cao, o to xanh, nguoi di xe may ao xanh) khop 100% trong frame 15616-16480. Chi tiet vong tron do khoanh vung khong xuat hien tren ban phat song nay. Do chinh xac dat 85.0%"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Action Localization) buoc mo hinh phai nhan dien duoc cac tu the phi chuan nam ngoai phan phoi du lieu thong thuong."
   }
 ]

@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 08:14:26 UTC  
-> **Tổng số mẫu đã đánh giá:** 5 | **Đã học (Learned):** 3 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 09:42:48 UTC  
+> **Tổng số mẫu đã đánh giá:** 6 | **Đã học (Learned):** 4 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -12,6 +12,7 @@
 | `query-p2-3-kis` | `L24_V017` | `270` | `[240, 360]` | Tier 2 | 60.0% | ❌ REJECTED | Rejected due to Tier < 3 or Accuracy < 85%... |
 | `query-p2-4-kis` | `L25_V083` | `67` | `` | Tier 1 | 0.0% | ❌ REJECTED | Rejected due to Tier < 3 or Accuracy < 85%... |
 | `query-p2-5-kis` | `L21_V022` | `26076` | `[25830, 26130]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grai... |
+| `query-p2-6-kis` | `L21_V018` | `15780` | `[15616, 16480]` | Tier 3 | 85.0% | ✅ **LEARNED** | Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Ac... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -85,3 +86,17 @@
   - `MOD-WORD`: Mo ta chinh xac mau sac phoi trang phuc va tu ngu hanh dong tuong tac (duoi theo, ruoi nuoc vao mat)
   - `MOD-FLOW`: Ghep noi hai goc quay nhanh (top 2 tay dua tach top va cua-ro ao do giai nhiet) trong cung mot ban tin 10 giay
 - **Bài học chắt lọc:** Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grained Apparel & Micro-Action Coupling) buoc he thong giai phai rang buoc thuoc tinh cap doi tuong (Attribute Binding) va dinh vi vi hanh dong trong thoi gian cuc ngan.
+
+### Mẫu `query-p2-6-kis` (L21_V018)
+- **Query:** Đoạn video do người đi đường phía sau ghi lại cho thấy 2 thanh niên điều khiển xe máy bất ngờ nằm dài trên yên và phóng với tốc độ cao. Xuất hiện trong khung hình còn có một chiếc ô tô màu xanh cùng một người đi xe máy mặc áo xanh khác. Có 2 vòng tròn màu đỏ xuất hiện để khoanh vùng vị trí 2 thanh niên này.
+- **Dòng 1 CSV:** Video `L21_V018`, Seed Frame `15780`
+- **Intervals:** [{"start_frame": 15616, "end_frame": 16480, "event_desc": "Video quay tu phia sau canh 2 thanh nien nam dai tren yen xe may chay toc do cao canh o to xanh va nguoi mac ao xanh"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 85.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Cac vi tu chu dao (quay tu phia sau, 2 thanh nien nam dai tren yen phong toc do cao, o to xanh, nguoi di xe may ao xanh) khop 100% trong frame 15616-16480. Chi tiet vong tron do khoanh vung khong xuat hien tren ban phat song nay. Do chinh xac dat 85.0%
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien tu the phi chuan muc cuc do (nam dai tren yen xe may chay toc do cao tren quoc lo), phan biet xe o to mau xanh va nguoi chay xe may mac ao xanh xung quanh
+  - `MOD-AUD`: Giong doc thoi su 60 giay HTV9
+  - `MOD-OCR`: TP HCM: DIEU TRA 2 THANH NIEN NAM DAI TREN XE MAY
+  - `MOD-WORD`: Mo ta goc quay goc (nguoi di duong phia sau ghi lai) va vi ngu dong tu the hiem (nam dai tren yen)
+  - `MOD-FLOW`: Dong chay tu su kien giao thong tren duong cao toc co cau vuot bo hanh
+- **Bài học chắt lọc:** Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Action Localization) buoc mo hinh phai nhan dien duoc cac tu the phi chuan nam ngoai phan phoi du lieu thong thuong.
