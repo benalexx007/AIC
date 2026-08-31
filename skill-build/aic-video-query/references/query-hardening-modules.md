@@ -105,6 +105,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * Chèn các từ ngữ dễ gợi liên tưởng đến một phân cảnh phổ biến khác trong video (ví dụ: nhắc đến *"cảnh chợ hoa"* trong một câu hỏi thực chất nằm ở phân cảnh *"trong nhà bếp"* qua một vật thể liên đới), khiến các hệ thống search top-100 bị hút về phân cảnh bẫy.
 5. **Cultural & Domain Defamiliarization (Lạ hóa thực thể văn hóa / biểu diễn đặc thù):**
    * Thay vì dùng danh từ định danh phổ biến (ví dụ: *'con lân sư rồng'*, *'đạo cụ biểu diễn'*, *'võ phục'*), miêu tả bằng hình học, màu sắc và thuộc tính thuần túy (*'con vật màu vàng'*, *'vật trông như trái bí đỏ'*). Kỹ thuật này vô hiệu hóa nhãn phân lớp định sẵn của Object Detection/CLIP và bắt buộc hệ thống giải phải suy luận thị giác nguyên bản.
+6. **Pure Geometric & Chromatic Entity Anonymization (Ẩn danh hóa thực thể bằng hình học & màu sắc thuần túy):**
+   * Triệt tiêu hoàn toàn danh từ định danh riêng biệt (*cá xiên que, ớt băm, ngò rí, bột chiên giòn*) và thay thế 100% bằng tập hợp thuộc tính hình học và màu sắc cơ bản (*'nguyên liệu dài được xiên que'*, *'hỗn hợp màu xanh lá cây và màu đỏ băm nhỏ'*, *'bột trắng'*). Kỹ thuật này làm vô hiệu hóa các bộ mở rộng từ khóa (LLM Expansion) và ép các mô hình Vision-Language phải suy luận trực tiếp trên đặc trưng thị giác nguyên thủy.
 
 ---
 

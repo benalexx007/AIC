@@ -292,5 +292,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot Scale Transition & Micro-Ingredient Morphology) trong MOD-VIS va MOD-FLOW buoc he thong phai nhan dien duoc hinh thai vat the khi phong to va mat boi canh nguoi."
+  },
+  {
+    "sample_id": "query-p2-11-kis",
+    "evaluated_at_utc": "2026-08-31T10:26:15.264051+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-11-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-11-kis.csv",
+    "query_text": "Trong video, người đầu bếp cầm một nguyên liệu dài đã được xiên que và lăn qua hỗn hợp màu xanh lá cây và màu đỏ đã băm nhỏ.\nNguyên liệu sau đó được chuyển sang một đĩa chứa bột trắng để phủ bên ngoài.\nNgười đầu bếp cầm que xiên và xoay nguyên liệu qua lại nhiều lần trên lớp bột.\nCuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng và đặt riêng sang một chiếc đĩa.",
+    "target_video_id": "L26_V392",
+    "seed_frame_csv_line1": 4022,
+    "extracted_intervals": [
+      {
+        "start_frame": 3620,
+        "end_frame": 3880,
+        "event_desc": "Dau bep cam nguyen lieu dai xien que lan qua hon hop xanh do bam nho roi phu bot trang tren dia"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Thao tac tay vi mo lien hoan (lan que xien qua hon hop xanh do, xoay tron tren dia bot trang, dat sang dia rieng)",
+        "MOD-AUD": "Loi thuyet minh huong dan uop ca cua dau bep",
+        "MOD-OCR": "Bang meo vat nau an (Sau khi tam xien ca qua bot tam kho chien gion...)",
+        "MOD-WORD": "An danh hoa thuc the triet de bang hinh hoc va mau sac (nguyen lieu dai xien que, hon hop xanh do bam nho, bot trang)",
+        "MOD-FLOW": "Tien trinh 4 buoc bien doi trang thai vat ly cua nguyen lieu theo thoi gian thuc"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca 4 vi tu (lan que qua hon hop xanh do, chuyen sang dia bot trang, xoay qua lai phu bot, dat sang dia rieng) deu khop 100% frame 3620-3880 cua video L26_V392"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric & Chromatic Entity Anonymization) trong MOD-WORD triet tieu hoan toan danh tu dac thu, ep he thong phai suy luan truc tiep tren dac trung thi giac goc."
   }
 ]

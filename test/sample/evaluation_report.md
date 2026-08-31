@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 10:12:38 UTC  
-> **Tổng số mẫu đã đánh giá:** 10 | **Đã học (Learned):** 8 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 10:26:15 UTC  
+> **Tổng số mẫu đã đánh giá:** 11 | **Đã học (Learned):** 9 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -17,6 +17,7 @@
 | `query-p2-8-trake` | `L27_V011` | `3827` | `[3820, 4200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ord... |
 | `query-p2-9-qa` | `L26_V161` | `2712` | `[2640, 2800]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Br... |
 | `query-p2-10-kis` | `L26_V120` | `5350` | `[5180, 5450]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot S... |
+| `query-p2-11-kis` | `L26_V392` | `4022` | `[3620, 3880]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric ... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -167,3 +168,20 @@ Máy quay chuyển sang cận cảnh chảo khi đầu bếp tiếp tục xào v
   - `MOD-WORD`: Su dung thuat ngu am thuc dac thu (doi truong, bong he) kem trinh tu vi ngu thao tac xao tron
   - `MOD-FLOW`: Dien tien 4 buoc mo ta nhip nhang theo dong thoi gian tu cho nguyen lieu den dao chao va chuyen can canh
 - **Bài học chắt lọc:** Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot Scale Transition & Micro-Ingredient Morphology) trong MOD-VIS va MOD-FLOW buoc he thong phai nhan dien duoc hinh thai vat the khi phong to va mat boi canh nguoi.
+
+### Mẫu `query-p2-11-kis` (L26_V392)
+- **Query:** Trong video, người đầu bếp cầm một nguyên liệu dài đã được xiên que và lăn qua hỗn hợp màu xanh lá cây và màu đỏ đã băm nhỏ.
+Nguyên liệu sau đó được chuyển sang một đĩa chứa bột trắng để phủ bên ngoài.
+Người đầu bếp cầm que xiên và xoay nguyên liệu qua lại nhiều lần trên lớp bột.
+Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng và đặt riêng sang một chiếc đĩa.
+- **Dòng 1 CSV:** Video `L26_V392`, Seed Frame `4022`
+- **Intervals:** [{"start_frame": 3620, "end_frame": 3880, "event_desc": "Dau bep cam nguyen lieu dai xien que lan qua hon hop xanh do bam nho roi phu bot trang tren dia"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca 4 vi tu (lan que qua hon hop xanh do, chuyen sang dia bot trang, xoay qua lai phu bot, dat sang dia rieng) deu khop 100% frame 3620-3880 cua video L26_V392
+- **Phân tích Module:**
+  - `MOD-VIS`: Thao tac tay vi mo lien hoan (lan que xien qua hon hop xanh do, xoay tron tren dia bot trang, dat sang dia rieng)
+  - `MOD-AUD`: Loi thuyet minh huong dan uop ca cua dau bep
+  - `MOD-OCR`: Bang meo vat nau an (Sau khi tam xien ca qua bot tam kho chien gion...)
+  - `MOD-WORD`: An danh hoa thuc the triet de bang hinh hoc va mau sac (nguyen lieu dai xien que, hon hop xanh do bam nho, bot trang)
+  - `MOD-FLOW`: Tien trinh 4 buoc bien doi trang thai vat ly cua nguyen lieu theo thoi gian thuc
+- **Bài học chắt lọc:** Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric & Chromatic Entity Anonymization) trong MOD-WORD triet tieu hoan toan danh tu dac thu, ep he thong phai suy luan truc tiep tren dac trung thi giac goc.
