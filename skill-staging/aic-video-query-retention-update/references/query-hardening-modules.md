@@ -39,6 +39,8 @@ Vượt qua các mô hình Vision-Language cơ bản (như OpenAI CLIP ViT-B/32,
    * Khai thác các tư thế vật lý hiếm hoặc nguy hiểm nằm ngoài phân phối chuẩn của con người khi điều khiển phương tiện hoặc thao tác đồ vật (*nằm dài trên yên xe máy phóng tốc độ cao*, *buông tay lái*, *đu người ngoài thành xe*). Kỹ thuật này triệt tiêu các mô hình Pose Estimation / Action Classifier chỉ được học trên hành vi chuẩn mực thông thường.
 7. **Wide-to-Close Scale Transition & Micro-Morphology (Biến thiên tỉ lệ khung hình Rộng $\rightarrow$ Cận cảnh & Hình thái vi mô):**
    * Khai thác sự biến đổi góc máy từ góc trung/toàn cảnh (thao tác tổng quan của người) cắt nhanh sang góc máy cận cảnh/siêu cận cảnh (macro close-up trực diện trên bề mặt vật thể/món ăn/công cụ). Ép mô hình giải phải nhận diện được hình thái đặc thù cục bộ của thực thể (ví dụ các lát cắt dồi trường hình ống màu trắng, cuống bông hẹ xanh dài) ngay cả khi tỉ lệ phóng to làm biến mất toàn bộ bối cảnh không gian và nhân vật xung quanh.
+8. **Geometric Array Counting & Transparent Occlusion Distortion (Đếm mảng bố trí hình học & Biến dạng nắp trong suốt):**
+   * Định dạng câu hỏi đếm số lượng vật thể/ngăn khuôn bố trí theo mạng hình học đối xứng (ví dụ khuôn tròn 7 ngăn: 1 tâm + 6 ngoài), đồng thời lồng ghép điều kiện kiểm chứng thành phần vi mô trên từng ô (*mỗi chiếc bánh có 1 hạt sen*) dưới nắp kính có hơi nước ngưng tụ hoặc phản quang. Ép mô hình giải phải thực hiện đếm không gian chính xác (Spatial Visual Counting) và xử lý hình ảnh qua mặt phẳng khúc xạ/phản xạ.
 
 ---
 

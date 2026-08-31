@@ -322,5 +322,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric & Chromatic Entity Anonymization) trong MOD-WORD triet tieu hoan toan danh tu dac thu, ep he thong phai suy luan truc tiep tren dac trung thi giac goc."
+  },
+  {
+    "sample_id": "query-p2-12-qa",
+    "evaluated_at_utc": "2026-08-31T10:33:14.222339+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-12-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-12-qa.csv",
+    "query_text": "Đoạn video mô tả quá trình làm bánh, bánh được tạo ra có màu tím, nguyên liệu bên trong có giá, cà rốt, và bên trong mỗi bánh đều có 1 hạt sen. Mỗi lần khuôn này làm được bao nhiêu cái bánh?",
+    "target_video_id": "L26_V192",
+    "seed_frame_csv_line1": 5120,
+    "extracted_intervals": [
+      {
+        "start_frame": 4900,
+        "end_frame": 5350,
+        "event_desc": "Qua trinh do bot tim vao khuon banh 7 ngan tron, them nhan gia ca rot va 1 hat sen len moi banh roi day nap thuy tinh"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Dem so luong ngan khuon bo tri hinh hoc (1 tam + 6 ngoai = 7 ngan), nhan dien hat sen va bien dang hoi nuoc duoi nap thuy tinh",
+        "MOD-AUD": "Loi thuyet minh huong dan lam banh khot / banh xeo tim",
+        "MOD-OCR": "Logo chuong trinh Mon Ngon Moi Ngay",
+        "MOD-WORD": "Cau hoi QA ve so luong banh duoc san xuat tren moi luot khuon ket hop 3 rang buoc nguyen lieu",
+        "MOD-FLOW": "Tien trinh do bot -> cho nhan -> dat hat sen -> day nap kin va quan sat so luong banh hoan chinh"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca thong tin (bot tim, nhan gia ca rot, 1 hat sen tren moi banh, dap an 7 cai banh trong khuon) deu khop 100% frame 4900-5350 cua video L26_V192"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Counting & Transparent Occlusion Distortion) trong MOD-VIS buoc mo hinh phai co nang luc dem khong gian chinh xac va xu ly quang hoc bien dang."
   }
 ]

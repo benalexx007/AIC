@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 10:26:15 UTC  
-> **Tổng số mẫu đã đánh giá:** 11 | **Đã học (Learned):** 9 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 10:33:14 UTC  
+> **Tổng số mẫu đã đánh giá:** 12 | **Đã học (Learned):** 10 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -18,6 +18,7 @@
 | `query-p2-9-qa` | `L26_V161` | `2712` | `[2640, 2800]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Br... |
 | `query-p2-10-kis` | `L26_V120` | `5350` | `[5180, 5450]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot S... |
 | `query-p2-11-kis` | `L26_V392` | `4022` | `[3620, 3880]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric ... |
+| `query-p2-12-qa` | `L26_V192` | `5120` | `[4900, 5350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Count... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -185,3 +186,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: An danh hoa thuc the triet de bang hinh hoc va mau sac (nguyen lieu dai xien que, hon hop xanh do bam nho, bot trang)
   - `MOD-FLOW`: Tien trinh 4 buoc bien doi trang thai vat ly cua nguyen lieu theo thoi gian thuc
 - **Bài học chắt lọc:** Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric & Chromatic Entity Anonymization) trong MOD-WORD triet tieu hoan toan danh tu dac thu, ep he thong phai suy luan truc tiep tren dac trung thi giac goc.
+
+### Mẫu `query-p2-12-qa` (L26_V192)
+- **Query:** Đoạn video mô tả quá trình làm bánh, bánh được tạo ra có màu tím, nguyên liệu bên trong có giá, cà rốt, và bên trong mỗi bánh đều có 1 hạt sen. Mỗi lần khuôn này làm được bao nhiêu cái bánh?
+- **Dòng 1 CSV:** Video `L26_V192`, Seed Frame `5120`
+- **Intervals:** [{"start_frame": 4900, "end_frame": 5350, "event_desc": "Qua trinh do bot tim vao khuon banh 7 ngan tron, them nhan gia ca rot va 1 hat sen len moi banh roi day nap thuy tinh"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca thong tin (bot tim, nhan gia ca rot, 1 hat sen tren moi banh, dap an 7 cai banh trong khuon) deu khop 100% frame 4900-5350 cua video L26_V192
+- **Phân tích Module:**
+  - `MOD-VIS`: Dem so luong ngan khuon bo tri hinh hoc (1 tam + 6 ngoai = 7 ngan), nhan dien hat sen va bien dang hoi nuoc duoi nap thuy tinh
+  - `MOD-AUD`: Loi thuyet minh huong dan lam banh khot / banh xeo tim
+  - `MOD-OCR`: Logo chuong trinh Mon Ngon Moi Ngay
+  - `MOD-WORD`: Cau hoi QA ve so luong banh duoc san xuat tren moi luot khuon ket hop 3 rang buoc nguyen lieu
+  - `MOD-FLOW`: Tien trinh do bot -> cho nhan -> dat hat sen -> day nap kin va quan sat so luong banh hoan chinh
+- **Bài học chắt lọc:** Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Counting & Transparent Occlusion Distortion) trong MOD-VIS buoc mo hinh phai co nang luc dem khong gian chinh xac va xu ly quang hoc bien dang.
