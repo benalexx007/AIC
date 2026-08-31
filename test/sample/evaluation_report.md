@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 15:20:41 UTC  
-> **Tổng số mẫu đã đánh giá:** 16 | **Đã học (Learned):** 14 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 15:23:26 UTC  
+> **Tổng số mẫu đã đánh giá:** 17 | **Đã học (Learned):** 15 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -23,6 +23,7 @@
 | `query-p2-14-kis` | `L23_V010` | `625` | `[575, 725]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao... |
 | `query-p2-15-kis` | `L26_V356` | `1270` | `[1000, 1350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Ngu Phap Dien Anh & Chuoi Dong Luc Hoc May Quay (Cinematographic Camera... |
 | `query-p2-16-kis` | `L29_V014` | `20484` | `[20300, 20650]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Mang Do Vat Hau Canh Don Dieu & Boi Canh Lang Nghe Dan Gian (B... |
+| `query-p2-17-kis` | `L30_V026` | `2392` | `[2300, 2550]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typo... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -260,3 +261,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Su dung tu ngu noi that dan gian Nam Bo (bo van ngua) va mo ta khong gian nong thon
   - `MOD-FLOW`: Bo tri khong gian da tang: tien canh (nan tre), trung canh (2 nguoi phu nu tren van ngua), hau canh (day thot go tren cua so lon)
 - **Bài học chắt lọc:** Ky thuat Diem Neo Mang Do Vat Hau Canh Don Dieu & Boi Canh Lang Nghe Dan Gian (Background Monotonous Object Array & Vernacular Folk Craft Context) trong MOD-VIS ep he thong phai phan tich toan bo cau truc khong gian hau canh.
+
+### Mẫu `query-p2-17-kis` (L30_V026)
+- **Query:** Sân khấu với dòng chữ nổi 3D to, ánh kim phủ kim tuyến có nội dung: “SẮC CỔ ...” đặt ở mép trước sân khấu.
+- **Dòng 1 CSV:** Video `L30_V026`, Seed Frame `2392`
+- **Intervals:** [{"start_frame": 2300, "end_frame": 2550, "event_desc": "San khau trinh dien co dong chu noi 3D kim tuyen SAC CO VIEN XUA dat o mep truoc san khau"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Dong chu 3D anh kim phu kim tuyen 'SAC CO VIEN XUA' dat o mep truoc san khau khop 100% frame 2300-2550 cua video L30_V026
+- **Phân tích Module:**
+  - `MOD-VIS`: Chu noi 3D phu kim tuyen lap lanh phan chieu anh den san khau o mep truoc runway
+  - `MOD-AUD`: Am nhac bieu dien thoi trang co phuc
+  - `MOD-OCR`: Nhan dang chu 3D vat ly tren san khau qua diem neo tien to ban phan 'SAC CO ...' (SAC CO VIEN XUA)
+  - `MOD-WORD`: Su dung dau ba cham che giau phan con lai cua cum tu 3D
+  - `MOD-FLOW`: Dinh vi chuoi bieu dien thoi trang co phuc tren san khau theo chieu ngang
+- **Bài học chắt lọc:** Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typography & Partial OCR Prefix Anchor) trong MOD-OCR buoc he thong OCR phai nhan dang ky tu 3D vat ly co be mat phan quang lap lanh.

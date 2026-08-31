@@ -87,6 +87,8 @@ Vượt qua các công cụ OCR thông thường (PaddleOCR, EasyOCR, CRNN) ch�
    * Mã số hiệu chuyến bay, mã vạch/QR ở góc bao bì, đuôi biển số xe kết hợp chữ viết tắt tỉnh thành.
 5. **Foreign Script Character Count & Fine Print Body Target (Đếm ký tự phi Latin & Đọc mã số nhỏ trên thân vỏ đối tượng):**
    * Sử dụng đặc trưng số lượng ký tự phi Latin (*"biển hiệu màu đỏ gồm 6 ký tự chữ Hán"*) làm mốc neo không gian duy nhất trong hậu cảnh, sau đó đặt câu hỏi về các mã số nhỏ in trên thân vỏ phương tiện/đối tượng (*"con số trên hông xe"*). Kỹ thuật này thách thức các công cụ OCR thông thường vốn chỉ nhận diện bảng chữ cái chuẩn.
+6. **3D Stage Physical Typography & Partial OCR Prefix Anchor (Chữ nổi 3D vật lý sân khấu & Điểm neo tiền tố bán phần):**
+   * Trích xuất chữ điêu khắc khối 3D vật lý (Stage 3D Physical Letters) có phủ kim tuyến lấp lánh phản chiếu ánh sáng sân khấu, đồng thời chỉ cung cấp tiền tố ngắn gọn kèm dấu ba chấm (*'SẮC CỔ ...'* thay vì toàn bộ cụm từ). Kỹ thuật này làm vô hiệu hóa các thuật toán so khớp chuỗi ký tự chính xác (Exact Match) và bắt buộc mô hình phải giải mã ký tự 3D biến dạng quang học phức tạp.
 
 ---
 

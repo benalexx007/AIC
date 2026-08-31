@@ -472,5 +472,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Diem Neo Mang Do Vat Hau Canh Don Dieu & Boi Canh Lang Nghe Dan Gian (Background Monotonous Object Array & Vernacular Folk Craft Context) trong MOD-VIS ep he thong phai phan tich toan bo cau truc khong gian hau canh."
+  },
+  {
+    "sample_id": "query-p2-17-kis",
+    "evaluated_at_utc": "2026-08-31T15:23:26.246760+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-17-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-17-kis.csv",
+    "query_text": "Sân khấu với dòng chữ nổi 3D to, ánh kim phủ kim tuyến có nội dung: “SẮC CỔ ...” đặt ở mép trước sân khấu.",
+    "target_video_id": "L30_V026",
+    "seed_frame_csv_line1": 2392,
+    "extracted_intervals": [
+      {
+        "start_frame": 2300,
+        "end_frame": 2550,
+        "event_desc": "San khau trinh dien co dong chu noi 3D kim tuyen SAC CO VIEN XUA dat o mep truoc san khau"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Chu noi 3D phu kim tuyen lap lanh phan chieu anh den san khau o mep truoc runway",
+        "MOD-AUD": "Am nhac bieu dien thoi trang co phuc",
+        "MOD-OCR": "Nhan dang chu 3D vat ly tren san khau qua diem neo tien to ban phan 'SAC CO ...' (SAC CO VIEN XUA)",
+        "MOD-WORD": "Su dung dau ba cham che giau phan con lai cua cum tu 3D",
+        "MOD-FLOW": "Dinh vi chuoi bieu dien thoi trang co phuc tren san khau theo chieu ngang"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Dong chu 3D anh kim phu kim tuyen 'SAC CO VIEN XUA' dat o mep truoc san khau khop 100% frame 2300-2550 cua video L30_V026"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typography & Partial OCR Prefix Anchor) trong MOD-OCR buoc he thong OCR phai nhan dang ky tu 3D vat ly co be mat phan quang lap lanh."
   }
 ]
