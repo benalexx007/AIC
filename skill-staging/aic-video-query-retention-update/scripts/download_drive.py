@@ -39,35 +39,50 @@ def is_folder_url(url: str) -> bool:
 
 
 def resolve_file_id_from_folder(folder_url_or_id: str, target_filename: str) -> str:
-    import gdown
-    folder_files = gdown.download_folder(url=folder_url_or_id, skip_download=True, quiet=True)
-    if not folder_files:
-        raise RuntimeError(f"Could not retrieve any file listing from folder: {folder_url_or_id}")
+    from gdown.download_folder import _get_session, _parse_embedded_folder_view, _extract_folder_id
+
+    folder_id = folder_url_or_id if not folder_url_or_id.startswith("http") else _extract_folder_id(folder_url_or_id)
+    sess, _ = _get_session(proxy=None, use_cookies=True, user_agent=USER_AGENT)
     
     target_clean = target_filename.strip()
-    # 1. Exact match
-    for item in folder_files:
-        item_name = Path(item.path).name
-        if item_name == target_clean:
-            return item.id
+    target_stem = Path(target_clean).stem.lower()
+    prefix_match = re.match(r"^([a-zA-Z0-9]+)_", target_clean)
+    target_prefix = prefix_match.group(1).lower() if prefix_match else ""
+    
+    queue = [folder_id]
+    visited = set()
+    
+    while queue:
+        current_id = queue.pop(0)
+        if current_id in visited:
+            continue
+        visited.add(current_id)
+        
+        try:
+            _, children = _parse_embedded_folder_view(sess, current_id)
+        except Exception:
+            continue
             
-    # 2. Case-insensitive match
-    for item in folder_files:
-        item_name = Path(item.path).name
-        if item_name.lower() == target_clean.lower():
-            return item.id
-
-    # 3. Stem match (without extension)
-    for item in folder_files:
-        item_name = Path(item.path).name
-        if Path(item_name).stem.lower() == Path(target_clean).stem.lower():
-            return item.id
-
-    available = [Path(item.path).name for item in folder_files[:10]]
-    raise FileNotFoundError(
-        f"File '{target_clean}' was not found in folder. Found {len(folder_files)} files. "
-        f"Sample files in folder: {available}"
-    )
+        child_dirs_priority = []
+        child_dirs_other = []
+        for cid, cname, ctype in children:
+            if ctype == "application/vnd.google-apps.folder":
+                name_lower = cname.lower()
+                if "keyframe" in name_lower or "map-" in name_lower:
+                    continue  # Explicitly skip keyframes per specification
+                if target_prefix and target_prefix in name_lower:
+                    child_dirs_priority.append(cid)
+                else:
+                    child_dirs_other.append(cid)
+            else:
+                c_stem = Path(cname).stem.lower()
+                if cname.lower() == target_clean.lower() or c_stem == target_stem:
+                    return cid
+                    
+        # Process prioritized folders first (e.g. matching batch L24)
+        queue = child_dirs_priority + queue + child_dirs_other
+        
+    raise FileNotFoundError(f"File '{target_filename}' was not found in video folders of {folder_url_or_id}")
 
 
 def extract_drive_id(url: str, filename: str | None = None) -> str:

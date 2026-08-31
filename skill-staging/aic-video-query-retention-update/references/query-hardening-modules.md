@@ -95,6 +95,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * *Ví dụ:* *"Sau khi âm thanh kim loại va chạm vang lên chấm dứt, người vừa đánh rơi nó mới bắt đầu cúi gập người tìm kiếm dưới gầm bàn."*
 4. **Adversarial Distractor Injection (Cài cắm từ khóa bẫy):**
    * Chèn các từ ngữ dễ gợi liên tưởng đến một phân cảnh phổ biến khác trong video (ví dụ: nhắc đến *"cảnh chợ hoa"* trong một câu hỏi thực chất nằm ở phân cảnh *"trong nhà bếp"* qua một vật thể liên đới), khiến các hệ thống search top-100 bị hút về phân cảnh bẫy.
+5. **Cultural & Domain Defamiliarization (Lạ hóa thực thể văn hóa / biểu diễn đặc thù):**
+   * Thay vì dùng danh từ định danh phổ biến (ví dụ: *'con lân sư rồng'*, *'đạo cụ biểu diễn'*, *'võ phục'*), miêu tả bằng hình học, màu sắc và thuộc tính thuần túy (*'con vật màu vàng'*, *'vật trông như trái bí đỏ'*). Kỹ thuật này vô hiệu hóa nhãn phân lớp định sẵn của Object Detection/CLIP và bắt buộc hệ thống giải phải suy luận thị giác nguyên bản.
 
 ---
 
