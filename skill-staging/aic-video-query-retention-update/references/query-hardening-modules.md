@@ -113,6 +113,13 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
   $$\text{Chỉ có OCR} \to 4 \text{ đoạn giống nhau (Không Unique)}$$
   $$\mathbf{Hình\ ảnh \cap Âm\ thanh \cap OCR \cap Logic\ Kể\ chuyện} \to \mathbf{Duy\ nhất\ 1\ khoảng\ Frame\ (100\%\ Unique)}$$
 
+### 🔑 Các Kỹ Thuật Điều Phối Dòng Chảy Kể Chuyện Cốt Lõi (`MOD-FLOW` Patterns):
+1. **Định Vị Hai Đầu Ranh Giới Thời Gian (Dual-Boundary Temporal Framing / Start-End Anchor Pairing):**
+   * Cấu trúc: *"Đoạn clip bắt đầu với cảnh [Sự kiện A]... Đoạn clip kết thúc với cảnh [Sự kiện B]"*.
+   * Triệt tiêu hoàn toàn khả năng giải bằng tìm kiếm đơn điểm (Single-frame similarity search); bắt buộc hệ thống giải phải tìm độc lập hai điểm biên A và B rồi cắt chính xác phân đoạn bao trùm.
+2. **Cầu Nối Đa Phương Thức Bắc Cầu (Multi-Modal Bridge):**
+   * Sự kiện ở Phân đoạn 1 chỉ được giải mã trọn vẹn khi kết hợp với manh mối âm thanh hoặc OCR xuất hiện ở Phân đoạn 2.
+
 ---
 
 ## 📊 Bảng Phân Cấp Độ Khó (Difficulty Tiers)

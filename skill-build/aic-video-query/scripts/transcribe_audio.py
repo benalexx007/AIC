@@ -18,6 +18,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model-root", default=r"D:\AIC\models\whisper")
     parser.add_argument("--language", default=None)
     parser.add_argument("--compute-type", default="int8")
+    parser.add_argument("--beam-size", type=int, default=1)
     return parser.parse_args()
 
 
@@ -42,7 +43,7 @@ def main() -> int:
     segments_iter, info = model.transcribe(
         args.audio,
         language=args.language,
-        beam_size=5,
+        beam_size=args.beam_size,
         vad_filter=True,
         vad_parameters={"min_silence_duration_ms": 500},
         word_timestamps=False,
