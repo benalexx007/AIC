@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 15:38:51 UTC  
-> **Tổng số mẫu đã đánh giá:** 19 | **Đã học (Learned):** 17 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 15:51:47 UTC  
+> **Tổng số mẫu đã đánh giá:** 20 | **Đã học (Learned):** 18 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -26,6 +26,7 @@
 | `query-p2-17-kis` | `L30_V026` | `2392` | `[2300, 2550]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typo... |
 | `query-p2-18-kis` | `L23_V017` | `2560` | `[2480, 2680]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di D... |
 | `query-p2-19-qa` | `L30_V043` | `2681` | `[2500, 3750]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Truy Vet Dia Danh Da Chang (Multi-Hop Cross-Scene Geographic La... |
+| `query-p2-20-kis` | `L25_V060` | `33600` | `[33200, 34500]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Suy Luan Bang Bieu Da Cot & Ma Hoa Mau Sac Du Lieu (Multi-Column Tabula... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -305,3 +306,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Cau hoi QA dia danh xau chuoi 2 phan canh lien tiep trong phong su xa hoi
   - `MOD-FLOW`: Cau noi da chang (Multi-Hop Bridge) ket noi hoat dong tai tro -> tro chuyen quoc te -> dia chi mat tien
 - **Bài học chắt lọc:** Ky thuat Cau Noi Truy Vet Dia Danh Da Chang (Multi-Hop Cross-Scene Geographic Landmark Bridge) trong MOD-FLOW va MOD-OCR ep mo hinh phai theo doi toan bo dien tien phong su va doc bien hieu mat tien ngoai canh.
+
+### Mẫu `query-p2-20-kis` (L25_V060)
+- **Query:** Clip bài giảng môn Địa lí, có 1 bảng số liệu về mạng lưới đô thị ở Việt Nam. Bảng này thể hiện sự khác nhau về phân bố đô thị giữa các vùng bằng màu sắc: 3 vùng có nhiều đô thị nhất thì con số thể hiện số lượng đô thị được in màu đỏ, còn 2 vùng có ít đô thị nhất thì con số này được in màu xanh. Từ bảng số liệu ta còn có thể thấy rằng vùng có ít đô thị nhất lại là vùng có dân số đô thi cao nhất.
+- **Dòng 1 CSV:** Video `L25_V060`, Seed Frame `33600`
+- **Intervals:** [{"start_frame": 33200, "end_frame": 34500, "event_desc": "Slide bai giang Dia li ve mang luoi do thi: bang so lieu to mau do 3 vung nhieu do thi nhat (172, 124, 148) va to mau xanh 2 vung it nhat (58, 47 - Dong Nam Bo dan so cao nhat)"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca thong tin (bai giang Dia li, bang mang luoi do thi, 3 so in do, 2 so in xanh, vung it do thi nhat Dong Nam Bo 47 lai co dan so cao nhat 10493,2) deu khop 100% frame 33200-34500 cua video L25_V060
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien mau sac chu so trong bang (3 so mau do, 2 so mau xanh) va bo cuc slide bai giang dien tu
+  - `MOD-AUD`: Loi giang cua giao vien Dia ly ve su phan bo khong dong deu cua do thi va dan so do thi
+  - `MOD-OCR`: Doc va phan tich cau truc bang so lieu da cot (Cac vung, Tong so do thi, Dan so do thi), nhan dien so lieu to mau va suy luan tuong phan lien cot
+  - `MOD-WORD`: Dien dat menh de suy luan bang bieu so lieu phan tich chuyen sau (vung it do thi nhat lai co dan so do thi cao nhat)
+  - `MOD-FLOW`: Phan tich slide thuyet trinh giang day chuyen de THPT trong 52 giay
+- **Bài học chắt lọc:** Ky thuat Suy Luan Bang Bieu Da Cot & Ma Hoa Mau Sac Du Lieu (Multi-Column Tabular OCR Reasoning & Color-Coded Statistical Highlighting) trong MOD-OCR buoc he thong phai nhan dien cau truc bang va suy luan logic so lieu.

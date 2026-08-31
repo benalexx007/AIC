@@ -91,6 +91,8 @@ Vượt qua các công cụ OCR thông thường (PaddleOCR, EasyOCR, CRNN) ch�
    * Trích xuất chữ điêu khắc khối 3D vật lý (Stage 3D Physical Letters) có phủ kim tuyến lấp lánh phản chiếu ánh sáng sân khấu, đồng thời chỉ cung cấp tiền tố ngắn gọn kèm dấu ba chấm (*'SẮC CỔ ...'* thay vì toàn bộ cụm từ). Kỹ thuật này làm vô hiệu hóa các thuật toán so khớp chuỗi ký tự chính xác (Exact Match) và bắt buộc mô hình phải giải mã ký tự 3D biến dạng quang học phức tạp.
 7. **Dynamic Digital 7-Segment LED Traffic Signal Countdown Reader (Đọc số đếm ngược đèn tín hiệu giao thông LED 7 đoạn ngoài trời):**
    * Khai thác các con số đếm ngược thời gian phát sáng dạng LED 7 đoạn trên các cột đèn tín hiệu giao thông tại ngã tư (*đèn xanh đếm ngược đến 13 giây*) trong bối cảnh máy quay gắn trên phương tiện di chuyển với vận tốc cao và rung lắc mạnh. Kỹ thuật này triệt tiêu các mô hình OCR văn bản thông thường và đòi hỏi năng lực nhận dạng ký tự quang học phát quang ma trận (Luminous Matrix OCR).
+8. **Multi-Column Tabular OCR Reasoning & Color-Coded Statistical Highlighting (Suy luận bảng biểu thống kê đa cột & Phân hóa màu sắc số liệu):**
+   * Trích xuất và suy luận trên dữ liệu cấu trúc bảng nhiều cột trong các video bài giảng/thuyết trình số liệu, đặt ràng buộc phân hóa ngữ nghĩa theo màu sắc phông chữ số liệu (*Top 3 in đỏ, Bottom 2 in xanh*) kết hợp mệnh đề **suy luận logic tương phản liên cột** (*'vùng có số lượng đô thị ít nhất ở cột A lại có quy mô dân số đô thị cao nhất ở cột B'*). Kỹ thuật này triệt tiêu các bộ OCR văn bản thuần túy và bắt buộc mô hình phải giải mã được cấu trúc bảng (Table Structure Parsing) và thực hiện suy luận logic số liệu đa biến.
 
 ---
 
