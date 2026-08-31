@@ -502,5 +502,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typography & Partial OCR Prefix Anchor) trong MOD-OCR buoc he thong OCR phai nhan dang ky tu 3D vat ly co be mat phan quang lap lanh."
+  },
+  {
+    "sample_id": "query-p2-18-kis",
+    "evaluated_at_utc": "2026-08-31T15:29:17.946686+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-18-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-18-kis.csv",
+    "query_text": "Đoạn phim quay từ phía sau nhóm dẫn đầu, gồm 1 tay đua dẫn trước và 3 tay đua bám phía sau, khi cả nhóm rẽ phải vào đường Hồ Tùng Mậu tại giao lộ có đèn xanh đang đếm ngược đến 13 giây.",
+    "target_video_id": "L23_V017",
+    "seed_frame_csv_line1": 2560,
+    "extracted_intervals": [
+      {
+        "start_frame": 2480,
+        "end_frame": 2680,
+        "event_desc": "May quay phia sau nhom dan dau (1 dan truoc + 3 bam sau) re phai vao duong Ho Tung Mau tai den xanh dem nguoc 13 giay"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Doi hinh di dong bat doi xung (1 dan truoc + 3 bam sau) quay tu goc may xe mo to chay phia sau re phai tai giao lo rong",
+        "MOD-AUD": "Loi thuyet minh cua binh luan vien ve doan dua re vao duong Ho Tung Mau va tieng xe mo to",
+        "MOD-OCR": "Doc so led dem nguoc tren cot den tin hieu giao thong: den xanh so 13",
+        "MOD-WORD": "Ket hop doi hinh the thao (1 truoc 3 sau), dia danh do thi (Ho Tung Mau) va diem neo OCR thoi gian thuc (den xanh 13s)",
+        "MOD-FLOW": "Theo doi hanh trinh re phai cua nhom tay dua qua giao lo trong 8 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (may quay phia sau, 1 tay dua truoc 3 tay dua sau, re phai vao duong Ho Tung Mau, den xanh dem nguoc 13s) deu khop 100% frame 2480-2680 cua video L23_V017"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di Dong (Dynamic Digital Traffic Light Countdown & Dynamic Formation Chase Cam) trong MOD-OCR buoc he thong OCR phai doc duoc ky tu LED phat sang nho tren cot den ngoai canh di dong."
   }
 ]

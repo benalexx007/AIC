@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 15:23:26 UTC  
-> **Tổng số mẫu đã đánh giá:** 17 | **Đã học (Learned):** 15 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 15:29:17 UTC  
+> **Tổng số mẫu đã đánh giá:** 18 | **Đã học (Learned):** 16 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -24,6 +24,7 @@
 | `query-p2-15-kis` | `L26_V356` | `1270` | `[1000, 1350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Ngu Phap Dien Anh & Chuoi Dong Luc Hoc May Quay (Cinematographic Camera... |
 | `query-p2-16-kis` | `L29_V014` | `20484` | `[20300, 20650]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Mang Do Vat Hau Canh Don Dieu & Boi Canh Lang Nghe Dan Gian (B... |
 | `query-p2-17-kis` | `L30_V026` | `2392` | `[2300, 2550]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typo... |
+| `query-p2-18-kis` | `L23_V017` | `2560` | `[2480, 2680]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di D... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -275,3 +276,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Su dung dau ba cham che giau phan con lai cua cum tu 3D
   - `MOD-FLOW`: Dinh vi chuoi bieu dien thoi trang co phuc tren san khau theo chieu ngang
 - **Bài học chắt lọc:** Ky thuat Chu Noi 3D San Khau & Diem Neo Tien To Ban Phan (3D Stage Physical Typography & Partial OCR Prefix Anchor) trong MOD-OCR buoc he thong OCR phai nhan dang ky tu 3D vat ly co be mat phan quang lap lanh.
+
+### Mẫu `query-p2-18-kis` (L23_V017)
+- **Query:** Đoạn phim quay từ phía sau nhóm dẫn đầu, gồm 1 tay đua dẫn trước và 3 tay đua bám phía sau, khi cả nhóm rẽ phải vào đường Hồ Tùng Mậu tại giao lộ có đèn xanh đang đếm ngược đến 13 giây.
+- **Dòng 1 CSV:** Video `L23_V017`, Seed Frame `2560`
+- **Intervals:** [{"start_frame": 2480, "end_frame": 2680, "event_desc": "May quay phia sau nhom dan dau (1 dan truoc + 3 bam sau) re phai vao duong Ho Tung Mau tai den xanh dem nguoc 13 giay"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (may quay phia sau, 1 tay dua truoc 3 tay dua sau, re phai vao duong Ho Tung Mau, den xanh dem nguoc 13s) deu khop 100% frame 2480-2680 cua video L23_V017
+- **Phân tích Module:**
+  - `MOD-VIS`: Doi hinh di dong bat doi xung (1 dan truoc + 3 bam sau) quay tu goc may xe mo to chay phia sau re phai tai giao lo rong
+  - `MOD-AUD`: Loi thuyet minh cua binh luan vien ve doan dua re vao duong Ho Tung Mau va tieng xe mo to
+  - `MOD-OCR`: Doc so led dem nguoc tren cot den tin hieu giao thong: den xanh so 13
+  - `MOD-WORD`: Ket hop doi hinh the thao (1 truoc 3 sau), dia danh do thi (Ho Tung Mau) va diem neo OCR thoi gian thuc (den xanh 13s)
+  - `MOD-FLOW`: Theo doi hanh trinh re phai cua nhom tay dua qua giao lo trong 8 giay
+- **Bài học chắt lọc:** Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di Dong (Dynamic Digital Traffic Light Countdown & Dynamic Formation Chase Cam) trong MOD-OCR buoc he thong OCR phai doc duoc ky tu LED phat sang nho tren cot den ngoai canh di dong.

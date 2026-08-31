@@ -89,6 +89,8 @@ Vượt qua các công cụ OCR thông thường (PaddleOCR, EasyOCR, CRNN) ch�
    * Sử dụng đặc trưng số lượng ký tự phi Latin (*"biển hiệu màu đỏ gồm 6 ký tự chữ Hán"*) làm mốc neo không gian duy nhất trong hậu cảnh, sau đó đặt câu hỏi về các mã số nhỏ in trên thân vỏ phương tiện/đối tượng (*"con số trên hông xe"*). Kỹ thuật này thách thức các công cụ OCR thông thường vốn chỉ nhận diện bảng chữ cái chuẩn.
 6. **3D Stage Physical Typography & Partial OCR Prefix Anchor (Chữ nổi 3D vật lý sân khấu & Điểm neo tiền tố bán phần):**
    * Trích xuất chữ điêu khắc khối 3D vật lý (Stage 3D Physical Letters) có phủ kim tuyến lấp lánh phản chiếu ánh sáng sân khấu, đồng thời chỉ cung cấp tiền tố ngắn gọn kèm dấu ba chấm (*'SẮC CỔ ...'* thay vì toàn bộ cụm từ). Kỹ thuật này làm vô hiệu hóa các thuật toán so khớp chuỗi ký tự chính xác (Exact Match) và bắt buộc mô hình phải giải mã ký tự 3D biến dạng quang học phức tạp.
+7. **Dynamic Digital 7-Segment LED Traffic Signal Countdown Reader (Đọc số đếm ngược đèn tín hiệu giao thông LED 7 đoạn ngoài trời):**
+   * Khai thác các con số đếm ngược thời gian phát sáng dạng LED 7 đoạn trên các cột đèn tín hiệu giao thông tại ngã tư (*đèn xanh đếm ngược đến 13 giây*) trong bối cảnh máy quay gắn trên phương tiện di chuyển với vận tốc cao và rung lắc mạnh. Kỹ thuật này triệt tiêu các mô hình OCR văn bản thông thường và đòi hỏi năng lực nhận dạng ký tự quang học phát quang ma trận (Luminous Matrix OCR).
 
 ---
 
