@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 11:07:41 UTC  
-> **Tổng số mẫu đã đánh giá:** 15 | **Đã học (Learned):** 13 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 15:20:41 UTC  
+> **Tổng số mẫu đã đánh giá:** 16 | **Đã học (Learned):** 14 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -22,6 +22,7 @@
 | `query-p2-13-kis` | `L26_V422` | `4292` | `[4200, 4700]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Trans... |
 | `query-p2-14-kis` | `L23_V010` | `625` | `[575, 725]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao... |
 | `query-p2-15-kis` | `L26_V356` | `1270` | `[1000, 1350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Ngu Phap Dien Anh & Chuoi Dong Luc Hoc May Quay (Cinematographic Camera... |
+| `query-p2-16-kis` | `L29_V014` | `20484` | `[20300, 20650]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Mang Do Vat Hau Canh Don Dieu & Boi Canh Lang Nghe Dan Gian (B... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -245,3 +246,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Su dung thuat ngu dien anh chuyen nghiep (chuyen canh, may quay cheo len, cu may tinh toan canh)
   - `MOD-FLOW`: Ngu phap dung phim 3 cu may (Montage Sequence Grammar) trinh dien tuan tu nguyen lieu tu chi tiet den tong the
 - **Bài học chắt lọc:** Ky thuat Ngu Phap Dien Anh & Chuoi Dong Luc Hoc May Quay (Cinematographic Camera Kinematics & Multi-Shot Grammar) trong MOD-FLOW buoc he thong phai phan tich duoc vector chuyen dong camera qua tung cu may.
+
+### Mẫu `query-p2-16-kis` (L29_V014)
+- **Query:** Trong một ngôi nhà nông thôn có cửa sổ lớn, hai người phụ nữ đang làm thủ công trên một bộ ván ngựa, phía sau là một dãy khoảng 10 thớt gỗ được treo thành một hàng ngang.
+- **Dòng 1 CSV:** Video `L29_V014`, Seed Frame `20484`
+- **Intervals:** [{"start_frame": 20300, "end_frame": 20650, "event_desc": "Hai nguoi phu nu ngoi tren bo van ngua dan lat thu cong trong nha nong thon, phia sau treo day 10 thot go tron hang ngang"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac vi tu (nha nong thon co cua so lon, 2 phu nu lam thu cong tren van ngua, day 10 thot go treo ngang phia sau) deu khop 100% frame 20300-20650 cua video L29_V014
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien hoat dong lang nghe dan gian (dan lat tren van ngua) va mang do vat lap lai o hau canh (day ~10 thot go treo ngang)
+  - `MOD-AUD`: Am thanh am huong nong thon va giong noi dia phuong
+  - `MOD-OCR`: Logo kenh HTV Online
+  - `MOD-WORD`: Su dung tu ngu noi that dan gian Nam Bo (bo van ngua) va mo ta khong gian nong thon
+  - `MOD-FLOW`: Bo tri khong gian da tang: tien canh (nan tre), trung canh (2 nguoi phu nu tren van ngua), hau canh (day thot go tren cua so lon)
+- **Bài học chắt lọc:** Ky thuat Diem Neo Mang Do Vat Hau Canh Don Dieu & Boi Canh Lang Nghe Dan Gian (Background Monotonous Object Array & Vernacular Folk Craft Context) trong MOD-VIS ep he thong phai phan tich toan bo cau truc khong gian hau canh.
