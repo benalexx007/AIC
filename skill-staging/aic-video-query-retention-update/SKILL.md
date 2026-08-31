@@ -107,7 +107,15 @@ Trigger another expansion whenever (a) the event touches an inspected edge, (b) 
   --images '<frame-1.jpg>' '<frame-2.jpg>' --output '<run-dir>\ocr.json'
 ```
 
-9. Read [references/query-formats.md](references/query-formats.md), create a provisional query, and validate every claimed fact against a source frame, OCR result, or transcript timestamp. Reject unsupported interpretation even when CLIP or YOLO ranks it highly.
+9. Read [references/query-formats.md](references/query-formats.md) and [references/query-hardening-modules.md](references/query-hardening-modules.md), create a provisional query, and validate every claimed fact against a source frame, OCR result, or transcript timestamp. Reject unsupported interpretation even when CLIP or YOLO ranks it highly.
+
+When higher difficulty is requested, apply the **5 Query Hardening Modules**:
+- `MOD-VIS` (Micro-actions, spatial-temporal relations, occlusions, state transitions)
+- `MOD-AUD` (Non-verbal environmental sounds, prosody, whispering, acoustic overlap)
+- `MOD-OCR` (3D distorted, curved, neon-glared, fragmented multi-frame text)
+- `MOD-WORD` (Defamiliarization/periphrasis, implicit negation, temporal inversion, anti-rerankers)
+- `MOD-FLOW` (Narrative puzzle interlocking: Visual ∩ Audio ∩ OCR ∩ Storytelling = 100% Unique)
+Select the appropriate difficulty tier (Level 1 Standard to Level 5 Grandmaster) as defined in `query-hardening-modules.md`.
 
 10. Before endpoint refinement or export, run the mandatory full-video uniqueness gate. Use two to four short prompts that jointly preserve the provisional query's complete event context and, for Q&A, the question-answer relation. Include at least one visual paraphrase; add a transcript paraphrase when speech is essential. Do not search only for the answer object.
 

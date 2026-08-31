@@ -24,7 +24,8 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AICVideoQuery/1.0"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--url", required=True, help="Public Google Drive file URL")
+    parser.add_argument("--url", required=True, help="Public Google Drive file or folder URL")
+    parser.add_argument("--filename", help="Target filename when url is a Google Drive folder")
     parser.add_argument("--output-dir", help="Destination directory; required unless --probe-only")
     parser.add_argument("--probe-only", action="store_true")
     parser.add_argument("--workers", type=int, default=24)
@@ -32,10 +33,53 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def extract_drive_id(url: str) -> str:
+def is_folder_url(url: str) -> bool:
+    parsed = urlparse(url)
+    return "/folders/" in parsed.path or "folders" in parsed.query
+
+
+def resolve_file_id_from_folder(folder_url_or_id: str, target_filename: str) -> str:
+    import gdown
+    folder_files = gdown.download_folder(url=folder_url_or_id, skip_download=True, quiet=True)
+    if not folder_files:
+        raise RuntimeError(f"Could not retrieve any file listing from folder: {folder_url_or_id}")
+    
+    target_clean = target_filename.strip()
+    # 1. Exact match
+    for item in folder_files:
+        item_name = Path(item.path).name
+        if item_name == target_clean:
+            return item.id
+            
+    # 2. Case-insensitive match
+    for item in folder_files:
+        item_name = Path(item.path).name
+        if item_name.lower() == target_clean.lower():
+            return item.id
+
+    # 3. Stem match (without extension)
+    for item in folder_files:
+        item_name = Path(item.path).name
+        if Path(item_name).stem.lower() == Path(target_clean).stem.lower():
+            return item.id
+
+    available = [Path(item.path).name for item in folder_files[:10]]
+    raise FileNotFoundError(
+        f"File '{target_clean}' was not found in folder. Found {len(folder_files)} files. "
+        f"Sample files in folder: {available}"
+    )
+
+
+def extract_drive_id(url: str, filename: str | None = None) -> str:
     parsed = urlparse(url)
     if parsed.scheme not in {"http", "https"}:
         raise ValueError("Google Drive input must be an HTTP(S) URL")
+    
+    if is_folder_url(url):
+        if not filename:
+            raise ValueError("--filename is required when --url is a Google Drive folder")
+        return resolve_file_id_from_folder(url, filename)
+
     match = re.search(r"/file/d/([^/]+)", parsed.path)
     file_id = match.group(1) if match else parse_qs(parsed.query).get("id", [""])[0]
     if not file_id or not re.fullmatch(r"[A-Za-z0-9_-]+", file_id):
@@ -234,10 +278,16 @@ def download_parallel(url: str, output: Path, total: int, workers: int, retries:
         pass
 
 
-def download_drive(url: str, output_dir: Path, workers: int = 8, retries: int = 6) -> tuple[Path, dict]:
+def download_drive(
+    url: str,
+    output_dir: Path,
+    filename: str | None = None,
+    workers: int = 8,
+    retries: int = 6,
+) -> tuple[Path, dict]:
     if workers < 1 or workers > 64:
         raise ValueError("workers must be between 1 and 64")
-    file_id = extract_drive_id(url)
+    file_id = extract_drive_id(url, filename)
     resolved_url = direct_url(file_id)
     metadata = probe(resolved_url)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -261,7 +311,7 @@ def download_drive(url: str, output_dir: Path, workers: int = 8, retries: int = 
 
 def main() -> int:
     args = parse_args()
-    file_id = extract_drive_id(args.url)
+    file_id = extract_drive_id(args.url, args.filename)
     metadata = probe(direct_url(file_id))
     if args.probe_only:
         print(json.dumps(metadata, ensure_ascii=False))
@@ -269,7 +319,11 @@ def main() -> int:
     if not args.output_dir:
         raise ValueError("--output-dir is required unless --probe-only is used")
     output, metadata = download_drive(
-        args.url, Path(args.output_dir).resolve(), workers=args.workers, retries=args.retries
+        args.url,
+        Path(args.output_dir).resolve(),
+        filename=args.filename,
+        workers=args.workers,
+        retries=args.retries,
     )
     print(json.dumps({"output": str(output), **metadata}, ensure_ascii=False))
     return 0

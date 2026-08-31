@@ -88,7 +88,16 @@ For TRAKE, repeat for every ordered event. Inspect adjacent full-resolution fram
   --images '<frame-1.jpg>' '<frame-2.jpg>' --output '<run-dir>\ocr.json'
 ```
 
-8. Read [references/query-formats.md](references/query-formats.md), create the requested query, and validate every claimed fact against a source frame, OCR result, or transcript timestamp. Reject unsupported interpretation even when CLIP or YOLO ranks it highly.
+8. Read [references/query-formats.md](references/query-formats.md) and [references/query-hardening-modules.md](references/query-hardening-modules.md), create a provisional query, and validate every claimed fact against a source frame, OCR result, or transcript timestamp. Reject unsupported interpretation even when CLIP or YOLO ranks it highly.
+
+When higher difficulty is requested, apply the **5 Query Hardening Modules**:
+- `MOD-VIS` (Micro-actions, spatial-temporal relations, occlusions, state transitions)
+- `MOD-AUD` (Non-verbal environmental sounds, prosody, whispering, acoustic overlap)
+- `MOD-OCR` (3D distorted, curved, neon-glared, fragmented multi-frame text)
+- `MOD-WORD` (Defamiliarization/periphrasis, implicit negation, temporal inversion, anti-rerankers)
+- `MOD-FLOW` (Narrative puzzle interlocking: Visual ∩ Audio ∩ OCR ∩ Storytelling = 100% Unique)
+Select the appropriate difficulty tier (Level 1 Standard to Level 5 Grandmaster) as defined in `query-hardening-modules.md`.
+
 9. Use [references/token-budget.md](references/token-budget.md) for long videos or when reporting/adjusting token use. Run `estimate_tokens.py` on the exact text and images actually inspected when a numeric estimate is requested.
 10. Export exactly one query, its interval-based answer, and the complete YAML record. Let the script choose the next global sequence number unless the user specifies one:
 

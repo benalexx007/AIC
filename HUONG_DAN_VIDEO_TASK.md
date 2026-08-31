@@ -156,6 +156,23 @@ Ví dụ trích boundary:
 
 Query TXT chỉ chứa **một query**, không có nhãn, đáp án, giải thích hoặc video ID. Answer dùng interval thay cho frame point để phản ánh toàn bộ span đã kiểm chứng.
 
+### 6.1. Áp dụng 5 Module tăng độ khó truy vấn (Query Hardening)
+
+Khi cần nâng cao độ khó để kiểm thử hệ thống AI cao cấp, áp dụng **5 Module tăng độ khó** (xem chi tiết tại `references/query-hardening-modules.md`):
+
+1. **`MOD-VIS` (Độ khó Hình ảnh):** Ràng buộc không gian vi mô, khoảnh khắc chuyển giao trạng thái vật lý (state transitions), chi tiết hậu cảnh thứ cấp/bị che khuất.
+2. **`MOD-AUD` (Độ khó Âm thanh):** Khai thác tiếng động môi trường phi ngôn ngữ, ngữ điệu/ngập ngừng, âm thanh nền chồng lấn, tính bất đồng bộ âm - hình.
+3. **`MOD-OCR` (Độ khó OCR):** Khai thác chữ méo góc 3D, bề mặt cong/nhăn, chữ đèn neon lóa sáng, ghép mảnh ký tự phân tán trên nhiều frame.
+4. **`MOD-WORD` (Lạ hóa Ngôn từ & Anti-Reranker):** Lạ hóa khái niệm (defamiliarization), phủ định logic ngầm, đảo ngược thời gian, cài bẫy từ vựng đa nghĩa.
+5. **`MOD-FLOW` (Kể chuyện & Đan cài Đa phương thức):** Điều phối câu đố logic đa mảnh ghép: tách riêng từng kênh (Visual, Audio, OCR) đều cho nhiều ứng viên trùng lặp; **chỉ khi kết hợp cả 3 kênh qua mạch truyện mới tạo ra đáp án duy nhất 100% (Unique)**.
+
+#### Bảng phân cấp độ khó (Difficulty Tiers):
+* **Level 1 (Standard):** Base Pipeline (Mô tả trực diện 1-2 vị từ).
+* **Level 2 (Hard):** `MOD-VIS` + `MOD-WORD` (Vi hành động, nói vòng).
+* **Level 3 (Very Hard):** `MOD-VIS` + `MOD-AUD` + `MOD-WORD` (Âm thanh phi ngôn ngữ, phủ định ngầm).
+* **Level 4 (Adversarial):** `MOD-VIS` + `MOD-AUD` + `MOD-OCR` + `MOD-WORD` (Đủ 3 kênh, bẫy distractor).
+* **Level 5 (Grandmaster):** **Toàn bộ 5 Modules (`MOD-FLOW` chủ đạo)** (Câu đố liên hoàn phi tuyến tính).
+
 ## 7. Export và kiểm tra kết quả
 
 ```powershell

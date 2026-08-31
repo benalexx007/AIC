@@ -29,6 +29,7 @@ DEFAULT_FFMPEG_BIN = Path(r"D:\AIC\tools\ffmpeg\ffmpeg-master-latest-win64-gpl\b
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, help="Local video or public Google Drive URL")
+    parser.add_argument("--filename", help="Target filename when input is a Google Drive folder")
     parser.add_argument("--query-type", required=True, choices=["kis", "qa", "trake"])
     parser.add_argument("--profile", default="high", choices=["high", "xhigh"])
     parser.add_argument("--output")
@@ -77,7 +78,7 @@ def safe_slug(value: str) -> str:
     return slug[:60] or "video"
 
 
-def resolve_input(value: str, run_dir: Path) -> tuple[Path, dict]:
+def resolve_input(value: str, run_dir: Path, filename: str | None = None) -> tuple[Path, dict]:
     local = Path(value)
     if local.is_file():
         resolved = local.resolve()
@@ -89,7 +90,7 @@ def resolve_input(value: str, run_dir: Path) -> tuple[Path, dict]:
     if value.lower().startswith(("http://", "https://")):
         from download_drive import download_drive
 
-        downloaded, drive_metadata = download_drive(value, run_dir)
+        downloaded, drive_metadata = download_drive(value, run_dir, filename=filename)
         return downloaded.resolve(), {
             "origin": "google_drive",
             "downloaded_source": True,
@@ -231,7 +232,7 @@ def main() -> int:
 
     ffmpeg = find_binary("ffmpeg")
     ffprobe = find_binary("ffprobe")
-    video_path, input_info = resolve_input(args.input, run_dir)
+    video_path, input_info = resolve_input(args.input, run_dir, filename=args.filename)
     metadata = probe_video(video_path, ffprobe)
     if metadata["fps"] <= 0 or metadata["frame_count"] <= 0:
         raise RuntimeError("Video FPS/frame count could not be determined")
