@@ -115,7 +115,21 @@ When higher difficulty is requested, apply the **5 Query Hardening Modules**:
 - `MOD-OCR` (3D distorted, curved, neon-glared, fragmented multi-frame text)
 - `MOD-WORD` (Defamiliarization/periphrasis, implicit negation, temporal inversion, anti-rerankers)
 - `MOD-FLOW` (Narrative puzzle interlocking: Visual ∩ Audio ∩ OCR ∩ Storytelling = 100% Unique)
-Select the appropriate difficulty tier (Level 1 Standard to Level 5 Grandmaster) as defined in `query-hardening-modules.md`.
+When evaluating or learning from existing sample test queries, consult [references/sample-evaluation-and-learning.md](references/sample-evaluation-and-learning.md):
+- Strictly read only **line 1** of `ans/*.csv` to obtain `video_id` and `seed_frame_csv`.
+- Decompose complex multi-segment queries into sub-events ($E_1 \dots E_k$) and resolve non-contiguous intervals across the whole video.
+- Compute the 2D evaluation: Difficulty Tier (1-5) and Accuracy Score (0-100%).
+- Record findings via `evaluate_sample.py`:
+```powershell
+& 'D:\AIC\.venv-video\Scripts\python.exe' '<skill-dir>\scripts\evaluate_sample.py' `
+  --query-file 'D:\AIC\test\sample\query\query-p2-1-kis.txt' `
+  --answer-file 'D:\AIC\test\sample\ans\query-p2-1-kis.csv' `
+  --difficulty-tier 3 --accuracy-score 92.0 `
+  --intervals-json '[{"start_frame": 450, "end_frame": 520, "event_desc": "E1"}]' `
+  --accuracy-analysis 'All key predicates verified in dense frames' `
+  --distilled-insights 'Defamiliarization phrasing enhances MOD-WORD'
+```
+- Distill and learn patterns into `query-hardening-modules.md` only when Tier >= 3 and Accuracy >= 85%.
 
 10. Before endpoint refinement or export, run the mandatory full-video uniqueness gate. Use two to four short prompts that jointly preserve the provisional query's complete event context and, for Q&A, the question-answer relation. Include at least one visual paraphrase; add a transcript paraphrase when speech is essential. Do not search only for the answer object.
 

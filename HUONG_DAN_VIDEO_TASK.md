@@ -173,6 +173,17 @@ Khi cần nâng cao độ khó để kiểm thử hệ thống AI cao cấp, áp
 * **Level 4 (Adversarial):** `MOD-VIS` + `MOD-AUD` + `MOD-OCR` + `MOD-WORD` (Đủ 3 kênh, bẫy distractor).
 * **Level 5 (Grandmaster):** **Toàn bộ 5 Modules (`MOD-FLOW` chủ đạo)** (Câu đố liên hoàn phi tuyến tính).
 
+### 6.2. Quy trình Đánh giá, Truy vết Đa Phân Đoạn & Học hỏi từ Query Mẫu
+
+Khi làm việc với các cặp query/answer mẫu trong `test/sample/`:
+1. **Chỉ đọc dòng đầu tiên (Line 1) của file CSV:** Lấy `video_id` và `seed_frame_csv`. Tuyệt đối không đọc các dòng sau.
+2. **Quy tắc 1 video duy nhất:** Chỉ giữ 1 video trong `video-runs/`. Luôn chạy `purge_previous_runs.py` trước khi tải video tiếp theo.
+3. **Phân rã đa phân đoạn (Multi-Segment):** Phân rã query thành các sub-events ($E_1 \dots E_k$), tự động quét ma trận CLIP/Transcript toàn video để tìm các phân đoạn rời nhau, sau đó căn biên `step=1` độc lập.
+4. **Đánh giá 2 chỉ số:**
+   * Độ khó (Tier 1–5 theo 5 Module).
+   * Độ chính xác (% Accuracy so sánh toàn bộ vị từ).
+5. **Cổng học hỏi (Learning Gate):** Nếu $\text{Tier} \ge 3 \land \text{Accuracy} \ge 85\% \to$ Học hỏi cập nhật 5 Module. Ghi kết quả vào `test/sample/evaluation_log.json` qua `evaluate_sample.py`.
+
 ## 7. Export và kiểm tra kết quả
 
 ```powershell
