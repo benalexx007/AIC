@@ -1,0 +1,92 @@
+[
+  {
+    "sample_id": "query-p2-1-kis",
+    "evaluated_at_utc": "2026-08-31T07:18:52.236190+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-1-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-1-kis.csv",
+    "query_text": "Nhóm 5 người đang chơi đùa bên cạnh một con vật màu vàng. Một trong số đó đã mang một vật trông như trái bí đỏ đi giấu. Người đàn ông thức dậy không thấy quả bí đỏ đâu nên đánh thức con vật dậy.",
+    "target_video_id": "L24_V035",
+    "seed_frame_csv_line1": 488,
+    "extracted_intervals": [
+      {
+        "start_frame": 450,
+        "end_frame": 1600,
+        "event_desc": "Nhom 5 nguoi choi dua giau trai bi do, nguoi dan ong thuc day tim khong thay va danh thuc con vat mau vang"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien chuoi vi hanh dong: tu tap choi dua -> lay dao cu bi do giau len cot -> tim kiem tren tham trong -> danh thuc con lan",
+        "MOD-AUD": "Am thanh nhac cu bieu dien lan su rong khong loi thoai truc tiep",
+        "MOD-OCR": "Khong chua manh moi van ban chinh",
+        "MOD-WORD": "La hoa danh tu: goi con lan vang la 'con vat mau vang', goi dao cu la 'vat trong nhu trai bi do' lam vo hieu hoa bo loc Object Detection thong thuong",
+        "MOD-FLOW": "Mach truyen nhan qua 4 nhip hoan chinh dien ra lien tuc tu frame 450 den 1600"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac vi tu (5 nguoi, con vat mau vang, giau trai bi do, thuc day khong thay, danh thuc con vat) deu khop 100% chinh xac trong frame 450-1600 cua video L24_V035"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat la hoa thuc the van hoa/bieu dien dac thu (Cultural/Performance Defamiliarization) giup vo hieu hoa nhan phan lop dinh san, bat buoc he thong giai phai phan tich thi giac nguyen ban"
+  },
+  {
+    "sample_id": "query-p2-2-kis",
+    "evaluated_at_utc": "2026-08-31T07:50:24.280601+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-2-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-2-kis.csv",
+    "query_text": "Đoạn clip bắt đầu với cảnh một người đang dùng điện thoại chụp ảnh bức tranh hình tê giác trên tường. Đoạn clip kết thúc với cảnh một người chụp ảnh các hình graffiti 3 chú khỉ trên một cây cầu",
+    "target_video_id": "L21_V013",
+    "seed_frame_csv_line1": 22410,
+    "extracted_intervals": [
+      {
+        "start_frame": 22335,
+        "end_frame": 22985,
+        "event_desc": "Bat dau bang canh chup anh buc tranh te giac tren tuong va ket thuc bang canh chup anh graffiti 3 chu khi tren cay cau"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien tac pham nghe thuat duong pho tinh vi: buc hoa te giac tren tuong gach va graffiti 3 chu khi du tren cau vuot",
+        "MOD-AUD": "Giong doc thoi su thong thuong",
+        "MOD-OCR": "Khong yeu cau OCR truc tiep",
+        "MOD-WORD": "Su dung mau cau neo thoi gian hai dau (Doan clip bat dau... Doan clip ket thuc...)",
+        "MOD-FLOW": "Ky thuat Dual-Boundary Temporal Framing: dinh vi chinh xac hai su kien o hai dau moc thoi gian cua phan canh"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac vi tu (chup anh tranh te giac o dau doan va chup anh graffiti 3 chu khi o cuoi doan) khop 100% trong khoang frame 22335-22985 cua video L21_V013"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Dinh vi Hai Dau Ranh Gioi Thoi Gian (Dual-Boundary Temporal Framing) buoc mo hinh giai phai truy van dong thoi 2 su kien A va B de cat dung khoang thoi gian mong muon."
+  },
+  {
+    "sample_id": "query-p2-3-kis",
+    "evaluated_at_utc": "2026-08-31T07:56:02.299773+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-3-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-3-kis.csv",
+    "query_text": "Một chú lân (hay rồng/sư tử?) màu vàng nhảy hay rơi từ trên cao xuống, gần với mô hình chiếc tàu thủy nhỏ màu xanh dương.",
+    "target_video_id": "L24_V017",
+    "seed_frame_csv_line1": 270,
+    "extracted_intervals": [
+      {
+        "start_frame": 240,
+        "end_frame": 360,
+        "event_desc": "Chu lan mau trang bac bieu dien tren cot cao canh pano mo hinh thuyen buom"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 2,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Co hanh dong bieu dien lan tren mai hoa thung canh pano thuyen buom, tuy nhien mau sac thuc the bi sai lech (lan trang bac thay vi lan vang, thuyen go nau thay vi xanh duong)",
+        "MOD-AUD": "Tieng trong hoi lan su rong",
+        "MOD-OCR": "Khong co yeu cau OCR",
+        "MOD-WORD": "Dung tu ngu do du (hay rong/su tu?) nhung mo ta sai thuoc tinh mau sac chu the va boi canh",
+        "MOD-FLOW": "Khong co mach truyen phuc tap"
+      },
+      "accuracy_score": 60.0,
+      "accuracy_analysis": "Query bi nham lan thuoc tinh nghiem trong: doan co mo hinh thuyen buom thi lan mau trang/bac (khong phai vang) va thuyen mau nau/trang (khong phai xanh duong). Doan lan vang thi o canh ban dem khong co mo hinh thuyen. Do chinh xac chi dat 60.0%"
+    },
+    "learning_decision": "REJECTED",
+    "distilled_insights": "Rejected due to Tier < 3 or Accuracy < 85%"
+  }
+]

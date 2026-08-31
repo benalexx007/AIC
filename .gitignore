@@ -29,6 +29,8 @@ Video/
 Query/
 data/
 test/
+!test/sample/evaluation_log.json
+!test/sample/evaluation_report.md
 
 # Logs & Temporary Files
 *.log
