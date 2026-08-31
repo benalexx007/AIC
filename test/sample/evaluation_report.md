@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 10:40:17 UTC  
-> **Tổng số mẫu đã đánh giá:** 13 | **Đã học (Learned):** 11 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 11:04:34 UTC  
+> **Tổng số mẫu đã đánh giá:** 14 | **Đã học (Learned):** 12 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -20,6 +20,7 @@
 | `query-p2-11-kis` | `L26_V392` | `4022` | `[3620, 3880]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric ... |
 | `query-p2-12-qa` | `L26_V192` | `5120` | `[4900, 5350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Count... |
 | `query-p2-13-kis` | `L26_V422` | `4292` | `[4200, 4700]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Trans... |
+| `query-p2-14-kis` | `L23_V010` | `625` | `[575, 725]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -215,3 +216,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Menh de quan sat thi giac (nhin bang mat thuong) va quan he nhan qua thoi gian (tat lua truoc khi trut ra dia)
   - `MOD-FLOW`: Tien trinh che bien -> bien doi trang thai nhiet (tat lua) -> gia vi cuoi -> trut ra dia hoan thanh
 - **Bài học chắt lọc:** Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Transition & Post-Heat Seasoning Anchor) trong MOD-VIS buoc mo hinh phai theo doi ca su kien bien doi nhiet va thao tac hoan tat mon an.
+
+### Mẫu `query-p2-14-kis` (L23_V010)
+- **Query:** Cận cảnh một nhóm 3 vận động viên đua xe đạp đang di chuyển sát nhau, hai tay đua mặc áo xanh biển đội mũ bảo hiểm đỏ và trắng, bên cạnh có một tay đua mặc áo vàng đang đua cùng. Bên dưới quai mũ của tay đua nón đỏ có một sợi dây màu trắng treo lủng xuống gần cổ.
+- **Dòng 1 CSV:** Video `L23_V010`, Seed Frame `625`
+- **Intervals:** [{"start_frame": 575, "end_frame": 725, "event_desc": "Can canh 3 tay dua xe dap (2 ao xanh non do va trang, 1 ao vang), tay dua non do co soi day trang thung lung duoi quai non gan co"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca chi tiet (3 tay dua di chuyen sat nhau, 2 ao xanh non do va trang, 1 ao vang, soi day trang lung duoi quai mu tay dua non do) deu khop 100% frame 575-725 cua video L23_V010
+- **Phân tích Module:**
+  - `MOD-VIS`: Rang buoc to hop trang phuc da thuc the (2 ao xanh + non do/trang, 1 ao vang) va chi tiet phu kien vi mo cap duoi 1cm (soi day tai nghe trang duoi quai mu)
+  - `MOD-AUD`: Tieng thuyet minh binh luan vien giai dua xe dap
+  - `MOD-OCR`: Bang thong so chang dua: CHANG 10, 03:39:24, 9.1 Km
+  - `MOD-WORD`: To hop vi tu mieu ta mau sac da lop (ao xanh, non do, non trang, ao vang, soi day trang gan co)
+  - `MOD-FLOW`: Goc quay can canh bam sat doan dua di chuyen toc do cao trong 6 giay
+- **Bài học chắt lọc:** Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao (Sub-Centimeter Accessory Localization & Jersey-Helmet Combinatorial Binding) trong MOD-VIS triet tieu cac he thong nhan dien tong quan.

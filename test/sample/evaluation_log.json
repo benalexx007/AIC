@@ -382,5 +382,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Transition & Post-Heat Seasoning Anchor) trong MOD-VIS buoc mo hinh phai theo doi ca su kien bien doi nhiet va thao tac hoan tat mon an."
+  },
+  {
+    "sample_id": "query-p2-14-kis",
+    "evaluated_at_utc": "2026-08-31T11:04:34.168067+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-14-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-14-kis.csv",
+    "query_text": "Cận cảnh một nhóm 3 vận động viên đua xe đạp đang di chuyển sát nhau, hai tay đua mặc áo xanh biển đội mũ bảo hiểm đỏ và trắng, bên cạnh có một tay đua mặc áo vàng đang đua cùng. Bên dưới quai mũ của tay đua nón đỏ có một sợi dây màu trắng treo lủng xuống gần cổ.",
+    "target_video_id": "L23_V010",
+    "seed_frame_csv_line1": 625,
+    "extracted_intervals": [
+      {
+        "start_frame": 575,
+        "end_frame": 725,
+        "event_desc": "Can canh 3 tay dua xe dap (2 ao xanh non do va trang, 1 ao vang), tay dua non do co soi day trang thung lung duoi quai non gan co"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Rang buoc to hop trang phuc da thuc the (2 ao xanh + non do/trang, 1 ao vang) va chi tiet phu kien vi mo cap duoi 1cm (soi day tai nghe trang duoi quai mu)",
+        "MOD-AUD": "Tieng thuyet minh binh luan vien giai dua xe dap",
+        "MOD-OCR": "Bang thong so chang dua: CHANG 10, 03:39:24, 9.1 Km",
+        "MOD-WORD": "To hop vi tu mieu ta mau sac da lop (ao xanh, non do, non trang, ao vang, soi day trang gan co)",
+        "MOD-FLOW": "Goc quay can canh bam sat doan dua di chuyen toc do cao trong 6 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca chi tiet (3 tay dua di chuyen sat nhau, 2 ao xanh non do va trang, 1 ao vang, soi day trang lung duoi quai mu tay dua non do) deu khop 100% frame 575-725 cua video L23_V010"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Dinh Vi Phu Kien Vi Mo Cap Duoi Centimeter & Rang Buoc Phoi Hop Mu - Ao (Sub-Centimeter Accessory Localization & Jersey-Helmet Combinatorial Binding) trong MOD-VIS triet tieu cac he thong nhan dien tong quan."
   }
 ]
