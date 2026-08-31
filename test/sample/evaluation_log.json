@@ -88,5 +88,29 @@
     },
     "learning_decision": "REJECTED",
     "distilled_insights": "Rejected due to Tier < 3 or Accuracy < 85%"
+  },
+  {
+    "sample_id": "query-p2-4-kis",
+    "evaluated_at_utc": "2026-08-31T08:04:33.019416+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-4-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-4-kis.csv",
+    "query_text": "Hai bạn trẻ đang treo băng-rôn lớn có tông màu xanh dương, được trang trí bằng hình ảnh núi, mây và một con đường dẫn tới trường học. Trên băng rôn còn có hình ảnh 02 em bé vùng khó khăn đang mặc áo màu vàng.",
+    "target_video_id": "L25_V083",
+    "seed_frame_csv_line1": 67,
+    "extracted_intervals": [],
+    "evaluation": {
+      "difficulty_tier": 1,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Video L25_V083 la bai giang sinh hoc ve ADN cua thay Vo Thanh Binh (THPT chuyen Le Hong Phong), khong chua bat ky hinh anh nao ve hai ban tre treo bang ron",
+        "MOD-AUD": "Giong giang bai mon Sinh hoc",
+        "MOD-OCR": "Slide bai giang 'Tong quan ve ADN', 'Co che phan tu'",
+        "MOD-WORD": "Khong ap dung (video khong khop)",
+        "MOD-FLOW": "Khong ap dung"
+      },
+      "accuracy_score": 0.0,
+      "accuracy_analysis": "Dap an o dong 1 (L25_V083, 67) hoan toan sai lech so voi query. Video la bai giang truc tuyen, khong co canh treo bang-ron hoc duong vung cao. Do chinh xac 0.0%"
+    },
+    "learning_decision": "REJECTED",
+    "distilled_insights": "Rejected due to Tier < 3 or Accuracy < 85%"
   }
 ]

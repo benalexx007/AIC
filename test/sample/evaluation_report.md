@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 07:56:02 UTC  
-> **Tổng số mẫu đã đánh giá:** 3 | **Đã học (Learned):** 2 | **Từ chối (Rejected):** 1
+> **Cập nhật lần cuối:** 2026-08-31 08:04:33 UTC  
+> **Tổng số mẫu đã đánh giá:** 4 | **Đã học (Learned):** 2 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -10,6 +10,7 @@
 | `query-p2-1-kis` | `L24_V035` | `488` | `[450, 1600]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat la hoa thuc the van hoa/bieu dien dac thu (Cultural/Performance Defamil... |
 | `query-p2-2-kis` | `L21_V013` | `22410` | `[22335, 22985]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh vi Hai Dau Ranh Gioi Thoi Gian (Dual-Boundary Temporal Framing) bu... |
 | `query-p2-3-kis` | `L24_V017` | `270` | `[240, 360]` | Tier 2 | 60.0% | ❌ REJECTED | Rejected due to Tier < 3 or Accuracy < 85%... |
+| `query-p2-4-kis` | `L25_V083` | `67` | `` | Tier 1 | 0.0% | ❌ REJECTED | Rejected due to Tier < 3 or Accuracy < 85%... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -54,4 +55,18 @@
   - `MOD-OCR`: Khong co yeu cau OCR
   - `MOD-WORD`: Dung tu ngu do du (hay rong/su tu?) nhung mo ta sai thuoc tinh mau sac chu the va boi canh
   - `MOD-FLOW`: Khong co mach truyen phuc tap
+- **Bài học chắt lọc:** Rejected due to Tier < 3 or Accuracy < 85%
+
+### Mẫu `query-p2-4-kis` (L25_V083)
+- **Query:** Hai bạn trẻ đang treo băng-rôn lớn có tông màu xanh dương, được trang trí bằng hình ảnh núi, mây và một con đường dẫn tới trường học. Trên băng rôn còn có hình ảnh 02 em bé vùng khó khăn đang mặc áo màu vàng.
+- **Dòng 1 CSV:** Video `L25_V083`, Seed Frame `67`
+- **Intervals:** []
+- **Đánh giá:** Tier 1 / 5 | Độ chính xác: 0.0% | Quyết định: **REJECTED**
+- **Phân tích Vị từ / Độ chính xác:** Dap an o dong 1 (L25_V083, 67) hoan toan sai lech so voi query. Video la bai giang truc tuyen, khong co canh treo bang-ron hoc duong vung cao. Do chinh xac 0.0%
+- **Phân tích Module:**
+  - `MOD-VIS`: Video L25_V083 la bai giang sinh hoc ve ADN cua thay Vo Thanh Binh (THPT chuyen Le Hong Phong), khong chua bat ky hinh anh nao ve hai ban tre treo bang ron
+  - `MOD-AUD`: Giong giang bai mon Sinh hoc
+  - `MOD-OCR`: Slide bai giang 'Tong quan ve ADN', 'Co che phan tu'
+  - `MOD-WORD`: Khong ap dung (video khong khop)
+  - `MOD-FLOW`: Khong ap dung
 - **Bài học chắt lọc:** Rejected due to Tier < 3 or Accuracy < 85%
