@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 09:53:48 UTC  
-> **Tổng số mẫu đã đánh giá:** 7 | **Đã học (Learned):** 5 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 10:00:23 UTC  
+> **Tổng số mẫu đã đánh giá:** 8 | **Đã học (Learned):** 6 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -14,6 +14,7 @@
 | `query-p2-5-kis` | `L21_V022` | `26076` | `[25830, 26130]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Tách Trang Phuc & Vi Hanh Dong Da Thuc The (Multi-Entity Fine-grai... |
 | `query-p2-6-kis` | `L21_V018` | `15780` | `[15616, 16480]` | Tier 3 | 85.0% | ✅ **LEARNED** | Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Ac... |
 | `query-p2-7-qa` | `L21_V009` | `21172` | `[20950, 21250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW... |
+| `query-p2-8-trake` | `L27_V011` | `3827` | `[3820, 4200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ord... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -115,3 +116,21 @@
   - `MOD-WORD`: Dat cau hoi QA ket hop neo khong gian (hong xe) va rang buoc bien hieu ngoai canh
   - `MOD-FLOW`: Lien ket truyen canh tu ben trong buong lai ra goc nhin toan canh ben ngoai de tra loi cau hoi chi tiet
 - **Bài học chắt lọc:** Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW ket hop Dem Ky Tu Phi Latin & Doc So Than Xe trong MOD-OCR buoc he thong giai phai tracking thuc the xuyen goc quay va doc OCR cuc bo do phan giai cao.
+
+### Mẫu `query-p2-8-trake` (L27_V011)
+- **Query:** Video về một khu vườn cây ăn trái ở miền Tây Nam Bộ. Đây là chuỗi liên tiếp các cảnh quay về 4 loại trái cây trong vườn.
+E1: Cảnh đầu tiên có trái sầu riêng.
+E2: Cảnh đầu tiên có trái măng cụt.
+E3: Cảnh đầu tiên có trái bưởi.
+E4: Cảnh đầu tiên có trái dâu bòn bon.
+- **Dòng 1 CSV:** Video `L27_V011`, Seed Frame `3827`
+- **Intervals:** [{"start_frame": 3820, "end_frame": 4200, "event_desc": "Chuoi 4 canh quay lien tiep trong vuon cay mien Tay: E1 trai sau rieng (3826), E2 trai mang cut (3904), E3 trai buoi (4042), E4 trai dau bon bon (4150)"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca 4 su kien (E1: sau rieng frame 3826, E2: mang cut frame 3904, E3: buoi frame 4042, E4: dau bon bon frame 4150) deu khop 100% hoan hao theo dung thu tu thoi gian trong frame 3820-4200 cua video L27_V011
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien phan loai thuc vat vi mo 4 loai trai cay nhiet doi (sau rieng, mang cut, buoi, bon bon) tren canh la tu nhien
+  - `MOD-AUD`: Am thanh am huong vuon trai cay va giong MC chuong trinh Viet Nam Di La Ghien
+  - `MOD-OCR`: Logo chuong trinh Viet Nam Di La Ghien goc duoi man hinh
+  - `MOD-WORD`: Cau truc TRAKE 4 su kien E1->E2->E3->E4 voi vi tu dinh vi ranh gioi 'Canh dau tien co trai...'
+  - `MOD-FLOW`: Chuoi su kien tuyen tinh nghiem ngat 4 buoc (4-Stage Sequential Pipeline) bat dung frame bat dau cua tung loai trai cay
+- **Bài học chắt lọc:** Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ordering / N-Stage Pipeline) trong MOD-FLOW buoc he thong phai xu ly dong thoi Temporal Logic + Shot Boundary Detection + Fine-grained Visual Classification.

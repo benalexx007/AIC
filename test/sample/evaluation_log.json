@@ -202,5 +202,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW ket hop Dem Ky Tu Phi Latin & Doc So Than Xe trong MOD-OCR buoc he thong giai phai tracking thuc the xuyen goc quay va doc OCR cuc bo do phan giai cao."
+  },
+  {
+    "sample_id": "query-p2-8-trake",
+    "evaluated_at_utc": "2026-08-31T10:00:23.617723+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-8-trake.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-8-trake.csv",
+    "query_text": "Video về một khu vườn cây ăn trái ở miền Tây Nam Bộ. Đây là chuỗi liên tiếp các cảnh quay về 4 loại trái cây trong vườn.\nE1: Cảnh đầu tiên có trái sầu riêng.\nE2: Cảnh đầu tiên có trái măng cụt.\nE3: Cảnh đầu tiên có trái bưởi.\nE4: Cảnh đầu tiên có trái dâu bòn bon.",
+    "target_video_id": "L27_V011",
+    "seed_frame_csv_line1": 3827,
+    "extracted_intervals": [
+      {
+        "start_frame": 3820,
+        "end_frame": 4200,
+        "event_desc": "Chuoi 4 canh quay lien tiep trong vuon cay mien Tay: E1 trai sau rieng (3826), E2 trai mang cut (3904), E3 trai buoi (4042), E4 trai dau bon bon (4150)"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien phan loai thuc vat vi mo 4 loai trai cay nhiet doi (sau rieng, mang cut, buoi, bon bon) tren canh la tu nhien",
+        "MOD-AUD": "Am thanh am huong vuon trai cay va giong MC chuong trinh Viet Nam Di La Ghien",
+        "MOD-OCR": "Logo chuong trinh Viet Nam Di La Ghien goc duoi man hinh",
+        "MOD-WORD": "Cau truc TRAKE 4 su kien E1->E2->E3->E4 voi vi tu dinh vi ranh gioi 'Canh dau tien co trai...'",
+        "MOD-FLOW": "Chuoi su kien tuyen tinh nghiem ngat 4 buoc (4-Stage Sequential Pipeline) bat dung frame bat dau cua tung loai trai cay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca 4 su kien (E1: sau rieng frame 3826, E2: mang cut frame 3904, E3: buoi frame 4042, E4: dau bon bon frame 4150) deu khop 100% hoan hao theo dung thu tu thoi gian trong frame 3820-4200 cua video L27_V011"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ordering / N-Stage Pipeline) trong MOD-FLOW buoc he thong phai xu ly dong thoi Temporal Logic + Shot Boundary Detection + Fine-grained Visual Classification."
   }
 ]

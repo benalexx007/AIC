@@ -127,6 +127,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * Sự kiện ở Phân đoạn 1 chỉ được giải mã trọn vẹn khi kết hợp với manh mối âm thanh hoặc OCR xuất hiện ở Phân đoạn 2.
 3. **Chuyển Tiếp Đa Góc Nhìn Xuyên Buồng Lái - Ngoại Cảnh (Cross-Perspective POV Shift / Interior-Exterior Continuity):**
    * Xâu chuỗi 2 góc quay tương phản của cùng một sự kiện: bắt đầu từ góc nhìn nội bộ (First-Person Interior POV - vô lăng tự xoay trong cabin xe tự lái) rồi cắt sang góc nhìn toàn cảnh ngoại vi (Third-Person Exterior POV - chiếc xe rẽ trên đường phố). Buộc mô hình giải phải theo dõi thực thể xuyên góc máy (Cross-view Entity Tracking) thay vì trích xuất đặc trưng rời rạc.
+4. **Multi-Event Strict Sequential Ordering ($N$-Stage Succession / TRAKE Logic):**
+   * Cấu trúc truy vấn thành một chuỗi $N$ sự kiện liên tiếp ($E_1 \rightarrow E_2 \rightarrow \dots \rightarrow E_N$), trong đó mỗi sự kiện định nghĩa một thuộc tính phân loại hình ảnh vi mô riêng biệt (ví dụ 4 loại hoa quả nhiệt đới khác nhau) và yêu cầu bắt trúng khung hình chuyển cảnh đầu tiên (`First appearance of entity`). Kỹ thuật này ép hệ thống giải phải vượt qua bài toán phối hợp Temporal Logic + Shot Boundary Detection + Fine-Grained Classification.
 
 ---
 
