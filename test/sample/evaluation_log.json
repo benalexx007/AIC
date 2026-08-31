@@ -232,5 +232,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ordering / N-Stage Pipeline) trong MOD-FLOW buoc he thong phai xu ly dong thoi Temporal Logic + Shot Boundary Detection + Fine-grained Visual Classification."
+  },
+  {
+    "sample_id": "query-p2-9-qa",
+    "evaluated_at_utc": "2026-08-31T10:06:25.201272+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-9-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-9-qa.csv",
+    "query_text": "Trong video hướng dẫn nấu ăn, người đầu bếp lần lượt cho các loại hương liệu gồm tiêu xanh, lá chanh và sả vào bên trong bụng của tổng cộng 4 con cá. Đây là loài cá gì?",
+    "target_video_id": "L26_V161",
+    "seed_frame_csv_line1": 2712,
+    "extracted_intervals": [
+      {
+        "start_frame": 2640,
+        "end_frame": 2800,
+        "event_desc": "Dau bep nhet sa, tieu xanh, la chanh vao bung 4 con ca song trong chuong trinh Mon Ngon Moi Ngay"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Thao tac am thuc vi mo (nhet tieu xanh, la chanh, sa vao bung 4 con ca trong to thuy tinh)",
+        "MOD-AUD": "Loi thoai dau bep va MC giai thich cach uop ca",
+        "MOD-OCR": "Bang nguyen lieu: Ca song 4 con, Sa 9 cay, La chanh Thai 10 la, Tieu xanh 3 nhanh",
+        "MOD-WORD": "Cau hoi QA huong vao danh tinh loai ca qua viec mo ta to hop nguyen lieu phu tro",
+        "MOD-FLOW": "Cau noi hanh dong - sieu du lieu (Action-to-Metadata Cross-Bridge) ket noi doan so che voi bang thanh phan"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Mieu ta thao tac nhet 3 loai huong lieu vao bung 4 con ca khop 100% frame 2640-2800, dap an 'ca song' khop 100% voi bang nguyen lieu frame 750 va loi thoai trong video L26_V161"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Bridge) trong MOD-FLOW buoc he thong phai ket noi thao tac che bien thuc te voi bang nguyen lieu OCR hoac loi thoai gioi thieu."
   }
 ]

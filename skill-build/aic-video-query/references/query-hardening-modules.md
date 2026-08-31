@@ -129,6 +129,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * Xâu chuỗi 2 góc quay tương phản của cùng một sự kiện: bắt đầu từ góc nhìn nội bộ (First-Person Interior POV - vô lăng tự xoay trong cabin xe tự lái) rồi cắt sang góc nhìn toàn cảnh ngoại vi (Third-Person Exterior POV - chiếc xe rẽ trên đường phố). Buộc mô hình giải phải theo dõi thực thể xuyên góc máy (Cross-view Entity Tracking) thay vì trích xuất đặc trưng rời rạc.
 4. **Multi-Event Strict Sequential Ordering ($N$-Stage Succession / TRAKE Logic):**
    * Cấu trúc truy vấn thành một chuỗi $N$ sự kiện liên tiếp ($E_1 \rightarrow E_2 \rightarrow \dots \rightarrow E_N$), trong đó mỗi sự kiện định nghĩa một thuộc tính phân loại hình ảnh vi mô riêng biệt (ví dụ 4 loại hoa quả nhiệt đới khác nhau) và yêu cầu bắt trúng khung hình chuyển cảnh đầu tiên (`First appearance of entity`). Kỹ thuật này ép hệ thống giải phải vượt qua bài toán phối hợp Temporal Logic + Shot Boundary Detection + Fine-Grained Classification.
+5. **Cầu Nối Thao Tác - Siêu Dữ Liệu Bảng Nguyên Liệu / Thông Số (Action-to-Metadata Cross-Bridge / Fine-Grained QA):**
+   * Miêu tả chi tiết thao tác thị giác vi mô gắn với danh sách và số lượng nguyên phụ liệu (*nhét tiêu xanh, lá chanh, sả vào bụng 4 con cá*), nhưng mục tiêu câu hỏi lại nhắm vào định danh thực thể chính (*đây là loài cá gì?*). Bắt buộc hệ thống giải phải định vị được phân đoạn thao tác rồi truy vết ngược về bảng thông tin OCR (Ingredient Card) hoặc lời thoại thuyết minh ở đầu chương trình để trích xuất đáp án.
 
 ---
 

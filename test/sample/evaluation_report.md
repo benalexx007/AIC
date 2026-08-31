@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 10:00:23 UTC  
-> **Tổng số mẫu đã đánh giá:** 8 | **Đã học (Learned):** 6 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 10:06:25 UTC  
+> **Tổng số mẫu đã đánh giá:** 9 | **Đã học (Learned):** 7 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -15,6 +15,7 @@
 | `query-p2-6-kis` | `L21_V018` | `15780` | `[15616, 16480]` | Tier 3 | 85.0% | ✅ **LEARNED** | Ky thuat Nhan Dien Tu The Bat Thuong / Hanh Dong Hiem (Extreme Pose & Anomaly Ac... |
 | `query-p2-7-qa` | `L21_V009` | `21172` | `[20950, 21250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phoi Hop Da Goc Nhin (Cross-Perspective Shot Continuity) trong MOD-FLOW... |
 | `query-p2-8-trake` | `L27_V011` | `3827` | `[3820, 4200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ord... |
+| `query-p2-9-qa` | `L26_V161` | `2712` | `[2640, 2800]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Br... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -134,3 +135,17 @@ E4: Cảnh đầu tiên có trái dâu bòn bon.
   - `MOD-WORD`: Cau truc TRAKE 4 su kien E1->E2->E3->E4 voi vi tu dinh vi ranh gioi 'Canh dau tien co trai...'
   - `MOD-FLOW`: Chuoi su kien tuyen tinh nghiem ngat 4 buoc (4-Stage Sequential Pipeline) bat dung frame bat dau cua tung loai trai cay
 - **Bài học chắt lọc:** Ky thuat Chuoi Su Kien Tuyen Tinh Nghiem Ngat (Multi-Event Strict Sequential Ordering / N-Stage Pipeline) trong MOD-FLOW buoc he thong phai xu ly dong thoi Temporal Logic + Shot Boundary Detection + Fine-grained Visual Classification.
+
+### Mẫu `query-p2-9-qa` (L26_V161)
+- **Query:** Trong video hướng dẫn nấu ăn, người đầu bếp lần lượt cho các loại hương liệu gồm tiêu xanh, lá chanh và sả vào bên trong bụng của tổng cộng 4 con cá. Đây là loài cá gì?
+- **Dòng 1 CSV:** Video `L26_V161`, Seed Frame `2712`
+- **Intervals:** [{"start_frame": 2640, "end_frame": 2800, "event_desc": "Dau bep nhet sa, tieu xanh, la chanh vao bung 4 con ca song trong chuong trinh Mon Ngon Moi Ngay"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Mieu ta thao tac nhet 3 loai huong lieu vao bung 4 con ca khop 100% frame 2640-2800, dap an 'ca song' khop 100% voi bang nguyen lieu frame 750 va loi thoai trong video L26_V161
+- **Phân tích Module:**
+  - `MOD-VIS`: Thao tac am thuc vi mo (nhet tieu xanh, la chanh, sa vao bung 4 con ca trong to thuy tinh)
+  - `MOD-AUD`: Loi thoai dau bep va MC giai thich cach uop ca
+  - `MOD-OCR`: Bang nguyen lieu: Ca song 4 con, Sa 9 cay, La chanh Thai 10 la, Tieu xanh 3 nhanh
+  - `MOD-WORD`: Cau hoi QA huong vao danh tinh loai ca qua viec mo ta to hop nguyen lieu phu tro
+  - `MOD-FLOW`: Cau noi hanh dong - sieu du lieu (Action-to-Metadata Cross-Bridge) ket noi doan so che voi bang thanh phan
+- **Bài học chắt lọc:** Ky thuat Cau Noi Hanh Dong - Sieu Du Lieu Thuc Pham (Action-to-Metadata Cross-Bridge) trong MOD-FLOW buoc he thong phai ket noi thao tac che bien thuc te voi bang nguyen lieu OCR hoac loi thoai gioi thieu.
