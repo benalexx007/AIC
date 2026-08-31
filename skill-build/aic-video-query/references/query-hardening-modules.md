@@ -41,6 +41,8 @@ Vượt qua các mô hình Vision-Language cơ bản (như OpenAI CLIP ViT-B/32,
    * Khai thác sự biến đổi góc máy từ góc trung/toàn cảnh (thao tác tổng quan của người) cắt nhanh sang góc máy cận cảnh/siêu cận cảnh (macro close-up trực diện trên bề mặt vật thể/món ăn/công cụ). Ép mô hình giải phải nhận diện được hình thái đặc thù cục bộ của thực thể (ví dụ các lát cắt dồi trường hình ống màu trắng, cuống bông hẹ xanh dài) ngay cả khi tỉ lệ phóng to làm biến mất toàn bộ bối cảnh không gian và nhân vật xung quanh.
 8. **Geometric Array Counting & Transparent Occlusion Distortion (Đếm mảng bố trí hình học & Biến dạng nắp trong suốt):**
    * Định dạng câu hỏi đếm số lượng vật thể/ngăn khuôn bố trí theo mạng hình học đối xứng (ví dụ khuôn tròn 7 ngăn: 1 tâm + 6 ngoài), đồng thời lồng ghép điều kiện kiểm chứng thành phần vi mô trên từng ô (*mỗi chiếc bánh có 1 hạt sen*) dưới nắp kính có hơi nước ngưng tụ hoặc phản quang. Ép mô hình giải phải thực hiện đếm không gian chính xác (Spatial Visual Counting) và xử lý hình ảnh qua mặt phẳng khúc xạ/phản xạ.
+9. **Thermal State Transition & Post-Heat Action Anchor (Chuyển dịch trạng thái nhiệt & Điểm neo thao tác sau khi tắt lửa):**
+   * Kết hợp đồng thời sự xuất hiện của tập hợp nhiều nguyên liệu đa màu sắc ($M \ge 5$: thịt gà, ớt đỏ, ớt xanh, đậu phộng, hành tím) với sự kiện **chuyển đổi trạng thái nhiệt vật lý** (*tắt lửa/ngừng cung cấp nhiệt*) trước khi bổ sung gia vị nhạy cảm với nhiệt (*vỏ chanh mài, nước cốt chanh*) và trút ra đĩa thành phẩm. Kỹ thuật này ép hệ thống giải phải theo dõi sự kiện động (bật/tắt lửa) song hành cùng quan hệ liên kết thuộc tính của món ăn.
 
 ---
 

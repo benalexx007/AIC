@@ -352,5 +352,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Counting & Transparent Occlusion Distortion) trong MOD-VIS buoc mo hinh phai co nang luc dem khong gian chinh xac va xu ly quang hoc bien dang."
+  },
+  {
+    "sample_id": "query-p2-13-kis",
+    "evaluated_at_utc": "2026-08-31T10:40:17.329461+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-13-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-13-kis.csv",
+    "query_text": "Người đầu bếp đảo đều một hỗn hợp các nguyên liệu trong chảo, nhìn bằng mắt thường có thể thấy một số nguyên liệu như thịt gà, ớt đỏ, ớt xanh, đậu phộng và hành tím. Sau đó cô ấy tắt lửa, cho thêm vỏ chanh và nước cốt chanh vào chảo trước khi trút hỗn hợp thức ăn này ra đĩa.",
+    "target_video_id": "L26_V422",
+    "seed_frame_csv_line1": 4292,
+    "extracted_intervals": [
+      {
+        "start_frame": 4200,
+        "end_frame": 4700,
+        "event_desc": "Dao chao hon hop 5 nguyen lieu (thit ga, ot do, ot xanh, dau phong, hanh tim), tat lua cho vo chanh va nuoc cot chanh roi trut ra dia"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 3,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Rang buoc dong thoi 5 nguyen lieu khac mau (ga, ot do, ot xanh, dau phong, hanh tim) va su kien tat lua them vo chanh mai roi trut ra dia",
+        "MOD-AUD": "Tieng xao chao ngung khi tat bep va tieng thuyet minh huong dan",
+        "MOD-OCR": "Dong chu phu huong dan: VO CHANH MAI 1M",
+        "MOD-WORD": "Menh de quan sat thi giac (nhin bang mat thuong) va quan he nhan qua thoi gian (tat lua truoc khi trut ra dia)",
+        "MOD-FLOW": "Tien trinh che bien -> bien doi trang thai nhiet (tat lua) -> gia vi cuoi -> trut ra dia hoan thanh"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (dao hon hop ga, ot do, ot xanh, dau phong, hanh tim; tat lua; cho vo chanh mai; trut ra dia) deu khop 100% frame 4200-4700 cua video L26_V422"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Transition & Post-Heat Seasoning Anchor) trong MOD-VIS buoc mo hinh phai theo doi ca su kien bien doi nhiet va thao tac hoan tat mon an."
   }
 ]

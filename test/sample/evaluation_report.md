@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 10:33:14 UTC  
-> **Tổng số mẫu đã đánh giá:** 12 | **Đã học (Learned):** 10 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-08-31 10:40:17 UTC  
+> **Tổng số mẫu đã đánh giá:** 13 | **Đã học (Learned):** 11 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -19,6 +19,7 @@
 | `query-p2-10-kis` | `L26_V120` | `5350` | `[5180, 5450]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Bien Thien Ti Le Khung Hinh Tu Rong Sang Can Canh (Wide-to-Close Shot S... |
 | `query-p2-11-kis` | `L26_V392` | `4022` | `[3620, 3880]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Hoa Thuc The Bang Hinh Hoc & Mau Sac Thuan Tuy (Pure Geometric ... |
 | `query-p2-12-qa` | `L26_V192` | `5120` | `[4900, 5350]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Count... |
+| `query-p2-13-kis` | `L26_V422` | `4292` | `[4200, 4700]` | Tier 3 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Trans... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -200,3 +201,17 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Cau hoi QA ve so luong banh duoc san xuat tren moi luot khuon ket hop 3 rang buoc nguyen lieu
   - `MOD-FLOW`: Tien trinh do bot -> cho nhan -> dat hat sen -> day nap kin va quan sat so luong banh hoan chinh
 - **Bài học chắt lọc:** Ky thuat Dem Thuc The Bo Tri Hinh Hoc Duoi Nap Trong Suot (Geometric Array Counting & Transparent Occlusion Distortion) trong MOD-VIS buoc mo hinh phai co nang luc dem khong gian chinh xac va xu ly quang hoc bien dang.
+
+### Mẫu `query-p2-13-kis` (L26_V422)
+- **Query:** Người đầu bếp đảo đều một hỗn hợp các nguyên liệu trong chảo, nhìn bằng mắt thường có thể thấy một số nguyên liệu như thịt gà, ớt đỏ, ớt xanh, đậu phộng và hành tím. Sau đó cô ấy tắt lửa, cho thêm vỏ chanh và nước cốt chanh vào chảo trước khi trút hỗn hợp thức ăn này ra đĩa.
+- **Dòng 1 CSV:** Video `L26_V422`, Seed Frame `4292`
+- **Intervals:** [{"start_frame": 4200, "end_frame": 4700, "event_desc": "Dao chao hon hop 5 nguyen lieu (thit ga, ot do, ot xanh, dau phong, hanh tim), tat lua cho vo chanh va nuoc cot chanh roi trut ra dia"}]
+- **Đánh giá:** Tier 3 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (dao hon hop ga, ot do, ot xanh, dau phong, hanh tim; tat lua; cho vo chanh mai; trut ra dia) deu khop 100% frame 4200-4700 cua video L26_V422
+- **Phân tích Module:**
+  - `MOD-VIS`: Rang buoc dong thoi 5 nguyen lieu khac mau (ga, ot do, ot xanh, dau phong, hanh tim) va su kien tat lua them vo chanh mai roi trut ra dia
+  - `MOD-AUD`: Tieng xao chao ngung khi tat bep va tieng thuyet minh huong dan
+  - `MOD-OCR`: Dong chu phu huong dan: VO CHANH MAI 1M
+  - `MOD-WORD`: Menh de quan sat thi giac (nhin bang mat thuong) va quan he nhan qua thoi gian (tat lua truoc khi trut ra dia)
+  - `MOD-FLOW`: Tien trinh che bien -> bien doi trang thai nhiet (tat lua) -> gia vi cuoi -> trut ra dia hoan thanh
+- **Bài học chắt lọc:** Ky thuat Rang Buoc Trang Thai Nhiet & Tuong Tac Gia Vi Cuoi (Thermal State Transition & Post-Heat Seasoning Anchor) trong MOD-VIS buoc mo hinh phai theo doi ca su kien bien doi nhiet va thao tac hoan tat mon an.
