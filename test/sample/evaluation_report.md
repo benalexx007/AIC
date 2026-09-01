@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:25:10 UTC  
-> **Tổng số mẫu đã đánh giá:** 24 | **Đã học (Learned):** 22 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:30:30 UTC  
+> **Tổng số mẫu đã đánh giá:** 25 | **Đã học (Learned):** 23 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -31,6 +31,7 @@
 | `query-p2-22-kis` | `L26_V470` | `2039` | `[1980, 2600]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food En... |
 | `query-p2-23-qa` | `L25_V012` | `14518` | `[14200, 16000]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve... |
 | `query-p2-24-kis` | `L23_V013` | `6777` | `[6650, 6900]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Enti... |
+| `query-p2-25-kis` | `L25_V045` | `16500` | `[16000, 16800]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa ... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -384,3 +385,19 @@ Cảnh 4: Cảnh quay cận cảnh các thùng mì được xếp chồng trên 
   - `MOD-WORD`: Rang buoc da thuc the chi tiet: quoc tich VDV, mau ao chu dao, tu the co hoc dac biet (buong tay lai), va mau ao cua 2 tay dua bam sau
   - `MOD-FLOW`: Dinh vi cao trao ve dich (Climax Sprint Finish) trong 10 giay
 - **Bài học chắt lọc:** Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Entity Pursuit Color Binding & No-Hands Victory Gesture) trong MOD-VIS va MOD-WORD ep he thong phai phan giai dong thoi tu the dong va mau ao nhieu doi tuong.
+
+### Mẫu `query-p2-25-kis` (L25_V045)
+- **Query:** Cảnh giáo viên nam đeo kính, mặc áo sơ mi kẻ sọc ngắn tay, xuất hiện ở góc dưới bên trái và dùng hai tay làm cử chỉ minh họa khi đang giảng bài.
+
+Khung hình chứa một bức ảnh minh họa cô gái trẻ đeo kính, mặc áo sơ mi trắng, ngồi khoanh chân trên ghế sofa màu xám vừa cầm cốc nước vừa nhìn vào laptop mở trên đùi.
+- **Dòng 1 CSV:** Video `L25_V045`, Seed Frame `16500`
+- **Intervals:** [{"start_frame": 16000, "end_frame": 16800, "event_desc": "Slide bai giang Ngu van THPT: thay giao deo kinh o goc trai duoi khoa tay giang bai, slide chua anh co gai deo kinh mac ao trang ngoi khoanh chan tren sofa xam cam coc nhin laptop"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (giao vien nam deo kinh o goc duoi trai khoa tay, anh minh hoa co gai deo kinh ao trang ngoi khoanh chan tren sofa xam cam coc nhin laptop tren dui) deu khop 100% frame 16000-16800 cua video L25_V045
+- **Phân tích Module:**
+  - `MOD-VIS`: Rang buoc thi giac long ghep da tang (Dual-Layer Grounding): tang nguoi giang PIP goc duoi trai va tang anh stock photo minh hoa tren slide (co gai ngoi khoanh chan tren sofa xam, cam coc, nhin laptop tren dui)
+  - `MOD-AUD`: Loi giang cua thay giao Ngu van ve thoi diem vang de hoc va tang kha nang ghi nho
+  - `MOD-OCR`: Tieu de slide: Chon 'thoi diem vang' de hoc va chuong trinh on thi THPT
+  - `MOD-WORD`: Mo ta phan tach 2 vung khong gian doc lap trong mot khung hinh video e-learning ma khong dua vao tu khoa OCR
+  - `MOD-FLOW`: Dinh vi slide thuyet trinh bai giang dien tu trong 32 giay
+- **Bài học chắt lọc:** Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa Slide (Dual-Layer Nested Visual Grounding: Presenter PIP & Slide Stock Photo Binding) trong MOD-VIS buoc he thong phai phan giai dong thoi ca nguoi thuyet trinh va noi dung anh tren slide.

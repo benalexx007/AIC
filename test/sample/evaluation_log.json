@@ -712,5 +712,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Entity Pursuit Color Binding & No-Hands Victory Gesture) trong MOD-VIS va MOD-WORD ep he thong phai phan giai dong thoi tu the dong va mau ao nhieu doi tuong."
+  },
+  {
+    "sample_id": "query-p2-25-kis",
+    "evaluated_at_utc": "2026-09-01T04:30:30.434625+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-25-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-25-kis.csv",
+    "query_text": "Cảnh giáo viên nam đeo kính, mặc áo sơ mi kẻ sọc ngắn tay, xuất hiện ở góc dưới bên trái và dùng hai tay làm cử chỉ minh họa khi đang giảng bài.\n\nKhung hình chứa một bức ảnh minh họa cô gái trẻ đeo kính, mặc áo sơ mi trắng, ngồi khoanh chân trên ghế sofa màu xám vừa cầm cốc nước vừa nhìn vào laptop mở trên đùi.",
+    "target_video_id": "L25_V045",
+    "seed_frame_csv_line1": 16500,
+    "extracted_intervals": [
+      {
+        "start_frame": 16000,
+        "end_frame": 16800,
+        "event_desc": "Slide bai giang Ngu van THPT: thay giao deo kinh o goc trai duoi khoa tay giang bai, slide chua anh co gai deo kinh mac ao trang ngoi khoanh chan tren sofa xam cam coc nhin laptop"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Rang buoc thi giac long ghep da tang (Dual-Layer Grounding): tang nguoi giang PIP goc duoi trai va tang anh stock photo minh hoa tren slide (co gai ngoi khoanh chan tren sofa xam, cam coc, nhin laptop tren dui)",
+        "MOD-AUD": "Loi giang cua thay giao Ngu van ve thoi diem vang de hoc va tang kha nang ghi nho",
+        "MOD-OCR": "Tieu de slide: Chon 'thoi diem vang' de hoc va chuong trinh on thi THPT",
+        "MOD-WORD": "Mo ta phan tach 2 vung khong gian doc lap trong mot khung hinh video e-learning ma khong dua vao tu khoa OCR",
+        "MOD-FLOW": "Dinh vi slide thuyet trinh bai giang dien tu trong 32 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (giao vien nam deo kinh o goc duoi trai khoa tay, anh minh hoa co gai deo kinh ao trang ngoi khoanh chan tren sofa xam cam coc nhin laptop tren dui) deu khop 100% frame 16000-16800 cua video L25_V045"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa Slide (Dual-Layer Nested Visual Grounding: Presenter PIP & Slide Stock Photo Binding) trong MOD-VIS buoc he thong phai phan giai dong thoi ca nguoi thuyet trinh va noi dung anh tren slide."
   }
 ]
