@@ -652,5 +652,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food Entity Anonymization & Geometric Double-Sided Scoring Micro-Action) trong MOD-WORD va MOD-VIS buoc he thong phai nhan dien hanh vi thi giac tinh vi."
+  },
+  {
+    "sample_id": "query-p2-23-qa",
+    "evaluated_at_utc": "2026-09-01T04:20:53.550327+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-23-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-23-qa.csv",
+    "query_text": "Câu hỏi môn Sinh học nằm ở số thứ tự 11 trong đề thi THPTQG 2022. Trong câu hỏi có một biểu đồ đưa ra sự so sánh tốc độ sinh trưởng của các loài thực vật trong các hệ sinh thái ven biển. Hãy cho biết loài cây (II) đạt được tốc độ sinh trưởng tốt nhất khi môi trường sống có độ mặn là bao nhiêu phần nghìn?",
+    "target_video_id": "L25_V012",
+    "seed_frame_csv_line1": 14518,
+    "extracted_intervals": [
+      {
+        "start_frame": 14200,
+        "end_frame": 16000,
+        "event_desc": "Slide bai giang Sinh hoc THPT cau 11 de 2022: bieu do so sanh toc do sinh truong 3 loai cay ngap man theo do man (‰), loai II dat dinh tai do man 15-20‰"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Phan tich bieu do toa do 2D da duong voi cac kieu net ve khac nhau (net lien, net dut, net cham gach), xac dinh diem cuc dai cua duong bieu dien loai II",
+        "MOD-AUD": "Loi giang cua giao vien Sinh hoc huong dan phuong phap doc bieu do sinh thai va giai de thi",
+        "MOD-OCR": "Doc thong tin de thi (Cau 11, de THPTQG 2022 ma 215), doc truc toa do do man (‰) va ky hieu cac loai cay (I, II, III)",
+        "MOD-WORD": "Cau hoi QA hoc thuat ve khoa hoc tu nhien yeu cau giai ma so lieu do thi va don vi do luong chuyen nganh (‰)",
+        "MOD-FLOW": "Theo doi slide bai giang dien tu chuyen de on thi THPT mon Sinh hoc trong 72 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (mon Sinh hoc cau 11 de 2022, bieu do he sinh thai ngap man, loai II sinh truong tot nhat o 15-20‰) deu khop 100% video L25_V012"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve Coordinate Graph Visual Reasoning & Scientific Unit Anchor) trong MOD-VIS va MOD-OCR ep he thong phai co kha nang Chart-QA thi giac."
   }
 ]

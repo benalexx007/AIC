@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:16:22 UTC  
-> **Tổng số mẫu đã đánh giá:** 22 | **Đã học (Learned):** 20 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:20:53 UTC  
+> **Tổng số mẫu đã đánh giá:** 23 | **Đã học (Learned):** 21 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -29,6 +29,7 @@
 | `query-p2-20-kis` | `L25_V060` | `33600` | `[33200, 34500]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Suy Luan Bang Bieu Da Cot & Ma Hoa Mau Sac Du Lieu (Multi-Column Tabula... |
 | `query-p2-21-trake` | `L30_V031` | `2074` | `[2060, 2250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Canh Nhip Nhanh 4 Chang & Tien Trinh Dong Goi Cuu Tro (4-Stage Fas... |
 | `query-p2-22-kis` | `L26_V470` | `2039` | `[1980, 2600]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food En... |
+| `query-p2-23-qa` | `L25_V012` | `14518` | `[14200, 16000]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -354,3 +355,17 @@ Cảnh 4: Cảnh quay cận cảnh các thùng mì được xếp chồng trên 
   - `MOD-WORD`: An danh hoan toan ten thuc the (khong dung tu 'muc', thay bang 'nguyen lieu hai san mau trang') va mo ta chi tiet hinh hoc thao tac dao
   - `MOD-FLOW`: Dinh vi quy trinh so che am thuc lien tuc: khua ca ro -> cat que -> cho vao to -> tron ruou, tieu, hat nem
 - **Bài học chắt lọc:** Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food Entity Anonymization & Geometric Double-Sided Scoring Micro-Action) trong MOD-WORD va MOD-VIS buoc he thong phai nhan dien hanh vi thi giac tinh vi.
+
+### Mẫu `query-p2-23-qa` (L25_V012)
+- **Query:** Câu hỏi môn Sinh học nằm ở số thứ tự 11 trong đề thi THPTQG 2022. Trong câu hỏi có một biểu đồ đưa ra sự so sánh tốc độ sinh trưởng của các loài thực vật trong các hệ sinh thái ven biển. Hãy cho biết loài cây (II) đạt được tốc độ sinh trưởng tốt nhất khi môi trường sống có độ mặn là bao nhiêu phần nghìn?
+- **Dòng 1 CSV:** Video `L25_V012`, Seed Frame `14518`
+- **Intervals:** [{"start_frame": 14200, "end_frame": 16000, "event_desc": "Slide bai giang Sinh hoc THPT cau 11 de 2022: bieu do so sanh toc do sinh truong 3 loai cay ngap man theo do man (‰), loai II dat dinh tai do man 15-20‰"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (mon Sinh hoc cau 11 de 2022, bieu do he sinh thai ngap man, loai II sinh truong tot nhat o 15-20‰) deu khop 100% video L25_V012
+- **Phân tích Module:**
+  - `MOD-VIS`: Phan tich bieu do toa do 2D da duong voi cac kieu net ve khac nhau (net lien, net dut, net cham gach), xac dinh diem cuc dai cua duong bieu dien loai II
+  - `MOD-AUD`: Loi giang cua giao vien Sinh hoc huong dan phuong phap doc bieu do sinh thai va giai de thi
+  - `MOD-OCR`: Doc thong tin de thi (Cau 11, de THPTQG 2022 ma 215), doc truc toa do do man (‰) va ky hieu cac loai cay (I, II, III)
+  - `MOD-WORD`: Cau hoi QA hoc thuat ve khoa hoc tu nhien yeu cau giai ma so lieu do thi va don vi do luong chuyen nganh (‰)
+  - `MOD-FLOW`: Theo doi slide bai giang dien tu chuyen de on thi THPT mon Sinh hoc trong 72 giay
+- **Bài học chắt lọc:** Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve Coordinate Graph Visual Reasoning & Scientific Unit Anchor) trong MOD-VIS va MOD-OCR ep he thong phai co kha nang Chart-QA thi giac.
