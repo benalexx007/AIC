@@ -205,6 +205,16 @@
         "start_frame": 5484,
         "end_frame": 5531
       }
+    },
+    {
+      "query_id": "test-kis-20",
+      "task_type": "kis",
+      "query_text": "Cận cảnh đĩa sứ tròn màu trắng xếp những viên chả tôm sống màu hồng nhạt lấm tấm tiêu và ớt đỏ.",
+      "ground_truth": {
+        "video_id": "L26_V300",
+        "start_frame": 4242,
+        "end_frame": 4302
+      }
     }
   ]
 }

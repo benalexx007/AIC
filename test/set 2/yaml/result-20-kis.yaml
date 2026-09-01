@@ -1,0 +1,16 @@
+sequence: 20
+query_type: kis
+query_vi: Cận cảnh đĩa sứ tròn màu trắng xếp những viên chả tôm sống màu hồng nhạt lấm tấm tiêu và ớt đỏ.
+video_id: L26_V300
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 4242
+  - 4302
+answer_submission: L26_V300, [4242, 4302]
+evidence: 'Video L26_V300, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Canh chả tôm chùm ngây. Exact continuous visible interval [4242, 4302] (169.680-172.080 s): frame 4241 is preceding cucumber slicing shot; frame 4242 is the first frame showing the close-up of raw shrimp paste balls arranged on the white round porcelain plate; frame 4302 is the final frame before frame 4303 cuts to pouring oil into the amber glass pot.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-20-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-20-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-20-kis.yaml
