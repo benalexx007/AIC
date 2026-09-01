@@ -1,0 +1,18 @@
+sequence: 30
+query_type: qa
+query_vi: Trong phân cảnh cận cảnh hai chiếc cờ lê kim loại màu bạc nằm trên nền xi măng cạnh khung sườn xe đạp, dòng chữ tiếng Anh in hoa dập nổi trên thân chiếc cờ lê bên dưới là chữ gì?
+video_id: L30_V001
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 1182
+  - 1221
+  frame_idx: 1201
+  answer: CHROME VANADIUM
+answer_submission: L30_V001, 1201, CHROME VANADIUM
+evidence: 'Video L30_V001, FPS 25.0. Reportage "Chàng trai hồi sinh xe đạp tặng người nghèo" - Tuổi Trẻ TV. Exact continuous visible interval [1182, 1221] (47.280-48.840 s): frame 1181 is preceding close-up transition; frame 1182 is the first frame showing the two silver wrenches lying on the concrete ground next to the bike frame; frame 1201 (48.040 s) clearly displays the embossed uppercase text "CHROME VANADIUM" along the shaft of the bottom size-14 wrench; frame 1221 is the final frame before frame 1222 cuts to the mechanic.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-30-qa.txt
+  answer: D:\AIC\test\set 2\answer\ans-30-qa.txt
+  yaml: D:\AIC\test\set 2\yaml\result-30-qa.yaml

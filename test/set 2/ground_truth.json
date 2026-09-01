@@ -313,6 +313,18 @@
         "start_frame": 16004,
         "end_frame": 16073
       }
+    },
+    {
+      "query_id": "test-qa-30",
+      "task_type": "qa",
+      "query_text": "Trong phân cảnh cận cảnh hai chiếc cờ lê kim loại màu bạc nằm trên nền xi măng cạnh khung sườn xe đạp, dòng chữ tiếng Anh in hoa dập nổi trên thân chiếc cờ lê bên dưới là chữ gì?",
+      "ground_truth": {
+        "video_id": "L30_V001",
+        "start_frame": 1182,
+        "end_frame": 1221,
+        "frame_idx": 1201,
+        "answer": "CHROME VANADIUM"
+      }
     }
   ]
 }
