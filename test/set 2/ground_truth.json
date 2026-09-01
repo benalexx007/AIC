@@ -195,6 +195,16 @@
         "start_frame": 2210,
         "end_frame": 2285
       }
+    },
+    {
+      "query_id": "test-kis-19",
+      "task_type": "kis",
+      "query_text": "Cận cảnh những chiếc bánh hoành thánh vừa được gói xong tạo hình nếp gấp cánh hoa xếp trên chiếc đĩa sứ vuông màu trắng.",
+      "ground_truth": {
+        "video_id": "L26_V249",
+        "start_frame": 5484,
+        "end_frame": 5531
+      }
     }
   ]
 }

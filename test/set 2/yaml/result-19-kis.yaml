@@ -1,0 +1,16 @@
+sequence: 19
+query_type: kis
+query_vi: Cận cảnh những chiếc bánh hoành thánh vừa được gói xong tạo hình nếp gấp cánh hoa xếp trên chiếc đĩa sứ vuông màu trắng.
+video_id: L26_V249
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5484
+  - 5531
+answer_submission: L26_V249, [5484, 5531]
+evidence: 'Video L26_V249, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Hoành thánh chiên giòn. Exact continuous visible interval [5484, 5531] (219.360-221.240 s): frame 5483 is preceding studio view transition; frame 5484 is the first frame showing the close-up of the flower-pleated wontons arranged on a square white porcelain dish; frame 5531 is the final frame before frame 5532 cuts back to the full studio host view.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-19-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-19-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-19-kis.yaml
