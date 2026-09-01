@@ -1,0 +1,16 @@
+sequence: 32
+query_type: kis
+query_vi: Trong quán ăn, cô gái trẻ mặc áo đầm màu đen tay bồng dùng hai tay bưng một tô phở sứ màu trắng bước đi bưng thức ăn cho khách.
+video_id: L30_V064
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 3006
+  - 3081
+answer_submission: L30_V064, [3006, 3081]
+evidence: 'Video L30_V064, FPS 25.0. Reportage "Chia sẻ hơi ấm đến người nghèo - Quán phở Cô Út Hải Hiền" - Tuổi Trẻ TV. Exact continuous visible interval [3006, 3081] (120.240-123.240 s): frame 3005 is preceding dining customer transition; frame 3006 is the first frame showing the young waitress in black puff-sleeve dress carrying a steaming bowl of pho in both hands through the dining area; frame 3081 is the final frame before frame 3082 cuts to the next close-up.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-32-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-32-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-32-kis.yaml

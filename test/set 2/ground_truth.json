@@ -335,6 +335,16 @@
         "start_frame": 1970,
         "end_frame": 2041
       }
+    },
+    {
+      "query_id": "test-kis-32",
+      "task_type": "kis",
+      "query_text": "Trong quán ăn, cô gái trẻ mặc áo đầm màu đen tay bồng dùng hai tay bưng một tô phở sứ màu trắng bước đi bưng thức ăn cho khách.",
+      "ground_truth": {
+        "video_id": "L30_V064",
+        "start_frame": 3006,
+        "end_frame": 3081
+      }
     }
   ]
 }
