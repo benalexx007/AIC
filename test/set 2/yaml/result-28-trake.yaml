@@ -1,0 +1,23 @@
+sequence: 28
+query_type: trake
+query_vi: Hãy tìm và liệt kê theo thứ tự thời gian các phân cảnh liên quan đến sản phẩm thủ công từ cây lục bình: phân cảnh cận cảnh đôi bàn tay đan bím các sợi lục bình khô, phân cảnh cận cảnh bộ bình trà đan bằng lục bình thêu hoa đỏ trên kệ trưng bày, và phân cảnh cận cảnh chiếc túi xách hình bán nguyệt đan bằng lục bình đính hoa hồng đỏ.
+video_id: L29_V001
+fps: 25.0
+ground_truth:
+  intervals:
+  - - 3650
+    - 3797
+  - - 8880
+    - 9185
+  - - 9746
+    - 9779
+answer_submission: |-
+  L29_V001, [3650, 3797]
+  L29_V001, [8880, 9185]
+  L29_V001, [9746, 9779]
+evidence: 'Video L29_V001, FPS 25.0. Documentary "Đôi Mắt Mekong - Vườn Quốc Gia U Minh Hạ". Sequential tracking of water hyacinth handicraft craft: (1) [3650, 3797] (146.000-151.880 s) - close-up hands braiding dried water hyacinth stalks into flat braids; (2) [8880, 9185] (355.200-367.440 s) - close-up panning shot of water hyacinth woven teapot and cups set with embroidered red flowers; (3) [9746, 9779] (389.840-391.160 s) - close-up semi-circular woven water hyacinth handbag decorated with embroidered red roses.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-28-trake.txt
+  answer: D:\AIC\test\set 2\answer\ans-28-trake.txt
+  yaml: D:\AIC\test\set 2\yaml\result-28-trake.yaml

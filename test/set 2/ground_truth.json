@@ -290,6 +290,19 @@
         "frame_idx": 3071,
         "answer": "65A-400.08"
       }
+    },
+    {
+      "query_id": "test-trake-28",
+      "task_type": "trake",
+      "query_text": "Hãy tìm và liệt kê theo thứ tự thời gian các phân cảnh liên quan đến sản phẩm thủ công từ cây lục bình: phân cảnh cận cảnh đôi bàn tay đan bím các sợi lục bình khô, phân cảnh cận cảnh bộ bình trà đan bằng lục bình thêu hoa đỏ trên kệ trưng bày, và phân cảnh cận cảnh chiếc túi xách hình bán nguyệt đan bằng lục bình đính hoa hồng đỏ.",
+      "ground_truth": {
+        "video_id": "L29_V001",
+        "intervals": [
+          [3650, 3797],
+          [8880, 9185],
+          [9746, 9779]
+        ]
+      }
     }
   ]
 }
