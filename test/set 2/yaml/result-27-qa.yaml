@@ -1,0 +1,18 @@
+sequence: 27
+query_type: qa
+query_vi: Trong phân cảnh đường phố có các xe máy đang lưu thông, chiếc xe ô tô màu trắng di chuyển về phía trước có biển số xe là gì?
+video_id: L28_V011
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 3012
+  - 3131
+  frame_idx: 3071
+  answer: 65A-400.08
+answer_submission: L28_V011, 3071, 65A-400.08
+evidence: 'Video L28_V011, FPS 25.0. Documentary "Ký Sự Mê Kông - Tập 11". Exact continuous visible interval [3012, 3131] (120.480-125.240 s): frame 3011 is preceding aerial town transition; frame 3012 is the first frame showing the white Toyota car driving towards camera on the street; frame 3071 (122.840 s) clearly displays the license plate "65A-400.08"; frame 3131 is the final frame before frame 3132 cuts to the palmyra palm fruit vendor.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-27-qa.txt
+  answer: D:\AIC\test\set 2\answer\ans-27-qa.txt
+  yaml: D:\AIC\test\set 2\yaml\result-27-qa.yaml

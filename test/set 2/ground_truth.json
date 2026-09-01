@@ -278,6 +278,18 @@
         "start_frame": 12022,
         "end_frame": 12096
       }
+    },
+    {
+      "query_id": "test-qa-27",
+      "task_type": "qa",
+      "query_text": "Trong phân cảnh đường phố có các xe máy đang lưu thông, chiếc xe ô tô màu trắng di chuyển về phía trước có biển số xe là gì?",
+      "ground_truth": {
+        "video_id": "L28_V011",
+        "start_frame": 3012,
+        "end_frame": 3131,
+        "frame_idx": 3071,
+        "answer": "65A-400.08"
+      }
     }
   ]
 }
