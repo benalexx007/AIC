@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:20:53 UTC  
-> **Tổng số mẫu đã đánh giá:** 23 | **Đã học (Learned):** 21 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:25:10 UTC  
+> **Tổng số mẫu đã đánh giá:** 24 | **Đã học (Learned):** 22 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -30,6 +30,7 @@
 | `query-p2-21-trake` | `L30_V031` | `2074` | `[2060, 2250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Canh Nhip Nhanh 4 Chang & Tien Trinh Dong Goi Cuu Tro (4-Stage Fas... |
 | `query-p2-22-kis` | `L26_V470` | `2039` | `[1980, 2600]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food En... |
 | `query-p2-23-qa` | `L25_V012` | `14518` | `[14200, 16000]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve... |
+| `query-p2-24-kis` | `L23_V013` | `6777` | `[6650, 6900]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Enti... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -369,3 +370,17 @@ Cảnh 4: Cảnh quay cận cảnh các thùng mì được xếp chồng trên 
   - `MOD-WORD`: Cau hoi QA hoc thuat ve khoa hoc tu nhien yeu cau giai ma so lieu do thi va don vi do luong chuyen nganh (‰)
   - `MOD-FLOW`: Theo doi slide bai giang dien tu chuyen de on thi THPT mon Sinh hoc trong 72 giay
 - **Bài học chắt lọc:** Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve Coordinate Graph Visual Reasoning & Scientific Unit Anchor) trong MOD-VIS va MOD-OCR ep he thong phai co kha nang Chart-QA thi giac.
+
+### Mẫu `query-p2-24-kis` (L23_V013)
+- **Query:** Đoạn clip ghi lại khoảnh khắc về đích của một chặng đua xe đạp diễn ra tại thành phố thuộc tỉnh Quảng Nam (cũ, trước ngày 01/7/2025). Vận động viên người Estonia mặc áo xanh nước biển dẫn đầu đoàn. Khi chỉ còn cách đích một đoạn ngắn, anh buông cả hai tay khỏi ghi-đông, giang hai tay lên cao ăn mừng chiến thắng trong khi xe vẫn tiến về phía trước. Ngay phía sau anh là một vận động viên mặc áo vàng và một vận động viên mặc áo cam đang lần lượt lao về đích.
+- **Dòng 1 CSV:** Video `L23_V013`, Seed Frame `6777`
+- **Intervals:** [{"start_frame": 6650, "end_frame": 6900, "event_desc": "Khoanh khac can dich chang dua xe dap: VDV ao xanh nuoc bien Estonia buong 2 tay khoi ghi-dong giang cao an mung, phia sau la VDV ao vang va ao cam"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca chi tiet (chang dua Quang Nam, VDV Estonia ao xanh buong 2 tay khoi ghi-dong giang cao, VDV ao vang va ao cam lao ve dich) deu khop 100% frame 6650-6900 cua video L23_V013
+- **Phân tích Module:**
+  - `MOD-VIS`: Goc may truc dien tren cao (Top-Down Overhead) can canh vach dich, nhan dien tu the buong 2 tay khoi ghi-dong giang len troi an mung va phan biet mau sac 3 ao dau (xanh dan dau, vang va cam bam duoi)
+  - `MOD-AUD`: Loi binh luan vien soi dong ve khoanh khac rut dich thang chang cua tay dua Estonia
+  - `MOD-OCR`: Dong chu Replay va bien quang cao tai vach dich chang dua
+  - `MOD-WORD`: Rang buoc da thuc the chi tiet: quoc tich VDV, mau ao chu dao, tu the co hoc dac biet (buong tay lai), va mau ao cua 2 tay dua bam sau
+  - `MOD-FLOW`: Dinh vi cao trao ve dich (Climax Sprint Finish) trong 10 giay
+- **Bài học chắt lọc:** Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Entity Pursuit Color Binding & No-Hands Victory Gesture) trong MOD-VIS va MOD-WORD ep he thong phai phan giai dong thoi tu the dong va mau ao nhieu doi tuong.

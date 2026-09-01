@@ -682,5 +682,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve Coordinate Graph Visual Reasoning & Scientific Unit Anchor) trong MOD-VIS va MOD-OCR ep he thong phai co kha nang Chart-QA thi giac."
+  },
+  {
+    "sample_id": "query-p2-24-kis",
+    "evaluated_at_utc": "2026-09-01T04:25:10.378332+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-24-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-24-kis.csv",
+    "query_text": "Đoạn clip ghi lại khoảnh khắc về đích của một chặng đua xe đạp diễn ra tại thành phố thuộc tỉnh Quảng Nam (cũ, trước ngày 01/7/2025). Vận động viên người Estonia mặc áo xanh nước biển dẫn đầu đoàn. Khi chỉ còn cách đích một đoạn ngắn, anh buông cả hai tay khỏi ghi-đông, giang hai tay lên cao ăn mừng chiến thắng trong khi xe vẫn tiến về phía trước. Ngay phía sau anh là một vận động viên mặc áo vàng và một vận động viên mặc áo cam đang lần lượt lao về đích.",
+    "target_video_id": "L23_V013",
+    "seed_frame_csv_line1": 6777,
+    "extracted_intervals": [
+      {
+        "start_frame": 6650,
+        "end_frame": 6900,
+        "event_desc": "Khoanh khac can dich chang dua xe dap: VDV ao xanh nuoc bien Estonia buong 2 tay khoi ghi-dong giang cao an mung, phia sau la VDV ao vang va ao cam"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Goc may truc dien tren cao (Top-Down Overhead) can canh vach dich, nhan dien tu the buong 2 tay khoi ghi-dong giang len troi an mung va phan biet mau sac 3 ao dau (xanh dan dau, vang va cam bam duoi)",
+        "MOD-AUD": "Loi binh luan vien soi dong ve khoanh khac rut dich thang chang cua tay dua Estonia",
+        "MOD-OCR": "Dong chu Replay va bien quang cao tai vach dich chang dua",
+        "MOD-WORD": "Rang buoc da thuc the chi tiet: quoc tich VDV, mau ao chu dao, tu the co hoc dac biet (buong tay lai), va mau ao cua 2 tay dua bam sau",
+        "MOD-FLOW": "Dinh vi cao trao ve dich (Climax Sprint Finish) trong 10 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca chi tiet (chang dua Quang Nam, VDV Estonia ao xanh buong 2 tay khoi ghi-dong giang cao, VDV ao vang va ao cam lao ve dich) deu khop 100% frame 6650-6900 cua video L23_V013"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Entity Pursuit Color Binding & No-Hands Victory Gesture) trong MOD-VIS va MOD-WORD ep he thong phai phan giai dong thoi tu the dong va mau ao nhieu doi tuong."
   }
 ]
