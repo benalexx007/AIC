@@ -153,6 +153,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * Cấu trúc câu hỏi ràng buộc sự liên kết của chuỗi $K$ cú máy liên tiếp ($K \ge 3$) với các vector chuyển động máy quay cụ thể (*lia chéo góc thấp hướng lên $\rightarrow$ góc cao quét từ trên xuống $\rightarrow$ cú máy tĩnh toàn cảnh flat-lay*) kết hợp biến đổi tiêu điểm đối tượng qua từng cú máy. Ép hệ thống giải phải phân tích được ngữ pháp biên tập video (Shot Boundary & Video Syntax) và vector chuyển động thị giác của camera (Camera Motion Dynamics).
 7. **Multi-Hop Cross-Scene Geographic Landmark Bridge (Cầu nối truy vết địa danh đa chặng):**
    * Cấu trúc câu hỏi QA xâu chuỗi hai phân cảnh hành động cách xa nhau trong phóng sự (ví dụ: *mạnh thường quân hỗ trợ ngoài vỉa hè $\rightarrow$ chuyển sang trò chuyện cùng tình nguyện viên quốc tế trong phòng nghỉ*) và đặt câu hỏi truy xuất địa danh/tên đường cụ thể của địa điểm. Buộc hệ thống giải phải theo dõi toàn bộ diễn tiến phóng sự và liên kết dữ liệu OCR mặt tiền hoặc lời thoại thuyết minh.
+8. **Micro-Paced 4-Stage Workflow Montage & Action Succession (Phân cảnh nhịp nhanh 4 chặng & Chuỗi tiến trình nghiệp vụ):**
+   * Cấu trúc chuỗi sự kiện gồm 4 cú máy cực ngắn liên tiếp ($\approx 1.5 - 2.0\text{s}$/cú máy) miêu tả một quy trình công việc logic hoàn chỉnh từ khâu chuẩn bị đến khâu hoàn tất (ví dụ: *dán băng keo niêm phong $\rightarrow$ phân loại nhu yếu phẩm $\rightarrow$ người đàn ông bốc vác $\rightarrow$ thùng hàng chất đầy trên thùng xe tải*). Kỹ thuật này triệt tiêu các thuật toán phân đoạn thô và bắt buộc mô hình phải phát hiện chính xác các điểm cắt cảnh chớp nhoáng (Sub-2-second Shot Boundary Detection) và nhận diện chuỗi tiến trình hành động vi mô.
 
 ---
 

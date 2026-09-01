@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-08-31 15:51:47 UTC  
-> **Tổng số mẫu đã đánh giá:** 20 | **Đã học (Learned):** 18 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:11:52 UTC  
+> **Tổng số mẫu đã đánh giá:** 21 | **Đã học (Learned):** 19 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -27,6 +27,7 @@
 | `query-p2-18-kis` | `L23_V017` | `2560` | `[2480, 2680]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Diem Neo Dong Ho Dem Nguoc Den Tin Hieu Giao Thong & Doi Hinh Nhom Di D... |
 | `query-p2-19-qa` | `L30_V043` | `2681` | `[2500, 3750]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Truy Vet Dia Danh Da Chang (Multi-Hop Cross-Scene Geographic La... |
 | `query-p2-20-kis` | `L25_V060` | `33600` | `[33200, 34500]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Suy Luan Bang Bieu Da Cot & Ma Hoa Mau Sac Du Lieu (Multi-Column Tabula... |
+| `query-p2-21-trake` | `L30_V031` | `2074` | `[2060, 2250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Canh Nhip Nhanh 4 Chang & Tien Trinh Dong Goi Cuu Tro (4-Stage Fas... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -320,3 +321,21 @@ Cuối cùng, nguyên liệu đã được phủ kín một lớp bột trắng 
   - `MOD-WORD`: Dien dat menh de suy luan bang bieu so lieu phan tich chuyen sau (vung it do thi nhat lai co dan so do thi cao nhat)
   - `MOD-FLOW`: Phan tich slide thuyet trinh giang day chuyen de THPT trong 52 giay
 - **Bài học chắt lọc:** Ky thuat Suy Luan Bang Bieu Da Cot & Ma Hoa Mau Sac Du Lieu (Multi-Column Tabular OCR Reasoning & Color-Coded Statistical Highlighting) trong MOD-OCR buoc he thong phai nhan dien cau truc bang va suy luan logic so lieu.
+
+### Mẫu `query-p2-21-trake` (L30_V031)
+- **Query:** 4 cảnh này xảy ra liên tiếp nhau. 
+Cảnh 1: Hai người phụ nữ cùng nhau dán niêm phong một thùng carton.
+Cảnh 2: Các thùng mì tôm và bọc bánh mì được sắp xếp ngay ngắn.
+Cảnh 3: Một người đàn ông nhấc thùng mì tôm lên và xếp lên trên chồng thùng mì.
+Cảnh 4: Cảnh quay cận cảnh các thùng mì được xếp chồng trên xe tải.
+- **Dòng 1 CSV:** Video `L30_V031`, Seed Frame `2074`
+- **Intervals:** [{"start_frame": 2060, "end_frame": 2250, "event_desc": "Chuoi 4 canh lien tiep ve cong tac chuan bi cuu tro: dan niem phong thung carton (2074) -> xep mi tom va banh mi (2128) -> nguoi dan ong xep thung mi len xe (2166) -> can canh thung mi tren xe tai (2214)"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Ca 4 canh deu dien ra chinh xac theo dung thu tu thoi gian tai cac frame 2074, 2128, 2166, 2214 cua video L30_V031, do chinh xac 100%
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien quy trinh hanh dong vi mo: dan niem phong bang keo, phan loai mi Hao Hao/Gau Do va tui banh mi, bo xep hang hoa len xe tai
+  - `MOD-AUD`: Am thanh phong su xa hoi va tieng on hien truong boc xep hang hoa cuu tro
+  - `MOD-OCR`: Doc thuong hieu tren bao bi thung mi (Hao Hao, Acecook, Gau Do) va bien so xe tai (17H-013.52)
+  - `MOD-WORD`: Dien dat chuoi logic 4 canh dong goi - van chuyen cuu tro tieu chuan TRAKE
+  - `MOD-FLOW`: Dinh vi 4 cu may cuc ngan lien tiep (~1.8s/canh) tao thanh chuoi tien trinh nghiep vu hoan chinh
+- **Bài học chắt lọc:** Ky thuat Phan Canh Nhip Nhanh 4 Chang & Tien Trinh Dong Goi Cuu Tro (4-Stage Fast-Paced Relief Packaging Workflow & Montage Ordering) trong MOD-FLOW buoc he thong phai bat duoc cac cu cat canh duoi 2 giay.
