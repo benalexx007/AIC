@@ -235,6 +235,16 @@
         "start_frame": 5172,
         "end_frame": 5206
       }
+    },
+    {
+      "query_id": "test-kis-23",
+      "task_type": "kis",
+      "query_text": "Cận cảnh đôi bàn tay cầm chén nhỏ màu vàng đổ những hạt mè đen vào tô bột chiên giòn màu trắng ngà và khuấy đều bằng muỗng kim loại.",
+      "ground_truth": {
+        "video_id": "L26_V449",
+        "start_frame": 4682,
+        "end_frame": 4770
+      }
     }
   ]
 }
