@@ -303,6 +303,16 @@
           [9746, 9779]
         ]
       }
+    },
+    {
+      "query_id": "test-kis-29",
+      "task_type": "kis",
+      "query_text": "Cận cảnh người phụ nữ mặc áo sơ mi trắng đeo hoa tai hình trái tim dùng tay nâng và giới thiệu một chùm nho xanh trước ống kính máy quay.",
+      "ground_truth": {
+        "video_id": "L29_V013",
+        "start_frame": 16004,
+        "end_frame": 16073
+      }
     }
   ]
 }

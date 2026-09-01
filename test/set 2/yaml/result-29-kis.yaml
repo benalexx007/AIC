@@ -1,0 +1,16 @@
+sequence: 29
+query_type: kis
+query_vi: Cận cảnh người phụ nữ mặc áo sơ mi trắng đeo hoa tai hình trái tim dùng tay nâng và giới thiệu một chùm nho xanh trước ống kính máy quay.
+video_id: L29_V013
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 16004
+  - 16073
+answer_submission: L29_V013, [16004, 16073]
+evidence: 'Video L29_V013, FPS 25.0. Documentary "Đôi Mắt Mekong - Cà Mau". Exact continuous visible interval [16004, 16073] (640.160-642.920 s): frame 16003 is preceding two-shot discussion; frame 16004 is the first frame showing the close-up portrait of the vineyard owner in white shirt holding a compact green grape cluster towards camera; frame 16073 is the final frame before frame 16074 cuts back to the wider table conversation.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-29-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-29-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-29-kis.yaml
