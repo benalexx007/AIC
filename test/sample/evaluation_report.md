@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:53:04 UTC  
-> **Tổng số mẫu đã đánh giá:** 29 | **Đã học (Learned):** 27 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:57:29 UTC  
+> **Tổng số mẫu đã đánh giá:** 30 | **Đã học (Learned):** 28 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -36,6 +36,7 @@
 | `query-p2-27-qa` | `L24_V026` | `124` | `[0, 400]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative... |
 | `query-p2-28-qa` | `L26_V450` | `6528` | `[6000, 6600]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Ket Cau Soi Nho & Truy Vet Nguon Goc Dong Vat Cua Topping (Micr... |
 | `query-p2-29-qa` | `L26_V181` | `7808` | `[7750, 7900]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh Vi Bo Cuc Nguyen Lieu Hau Canh Da Thuc The & Trich Xuat Khoi Luong... |
+| `query-p2-30-qa` | `L26_V356` | `300` | `[250, 500]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Bien So Dai So An Danh Thuc The 'X' & Chuoi Thao Tac So Luong Tuong Tac... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -464,3 +465,17 @@ Khung hình chứa một bức ảnh minh họa cô gái trẻ đeo kính, mặc
   - `MOD-WORD`: Cau hoi trich xuat so lieu gram kem don vi tinh va ten loai thit chi tiet tu bang danh muc nguyen lieu
   - `MOD-FLOW`: Khoa chat khung thoi gian do hoa bang thanh phan nguyen lieu 6 giay
 - **Bài học chắt lọc:** Ky thuat Dinh Vi Bo Cuc Nguyen Lieu Hau Canh Da Thuc The & Trich Xuat Khoi Luong OCR Tung Phan Thit (Multi-Prop Culinary Background Spatial Inventory & Multi-Meat Component Gram OCR) trong MOD-VIS va MOD-OCR ep mo hinh phai doc chinh xac key-value danh muc.
+
+### Mẫu `query-p2-30-qa` (L26_V356)
+- **Query:** Một cô gái đeo tạp dề màu trắng, bên cạnh là một lọ hoa riềng tía. Sau đó cô gái này đặt lên 1 dĩa trắng 4 con X, được biết X là nguyên liệu cho món ăn trong tập này. Sau đó người này lại cầm lên 2 con X. Sau đó người này đối thoại với một người đối diện để xem hôm nay nấu món gì. Hỏi X là con gì?
+- **Dòng 1 CSV:** Video `L26_V356`, Seed Frame `300`
+- **Intervals:** [{"start_frame": 250, "end_frame": 500, "event_desc": "Co gai deo tap de trang ben lo hoa rieng tia thao tac voi nguyen lieu hai sam (dat 4 con len dia, cam len 2 con) roi doi thoai voi MC de gioi thieu mon an hai sam hom nay"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Cac chi tiet co gai deo tap de trang, lo hoa rieng tia, nguyen lieu hai sam duoc dat len dia roi cam len doi thoai va dap an 'con hai sam' deu khop 100% video L26_V356
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien dac diem hinh thai sinh vat bien (hai sam da so che mau trang trong) va thao tac tuong tac dem so luong (dat 4 con, cam 2 con)
+  - `MOD-AUD`: Cuoc doi thoai mo dau giua co dau bep va nu MC ve mon an hai sam hom nay
+  - `MOD-OCR`: Khong co chu OCR trong phan canh doi thoai dau video
+  - `MOD-WORD`: An danh thuc the bang bien so dai so 'X' ('4 con X', '2 con X'), hoi nguoc danh tinh sinh vat bien cua 'X'
+  - `MOD-FLOW`: Chuoi hanh dong tuan tu: dat 4 con X len dia -> cam 2 con X -> bat dau doi thoai voi nguoi doi dien
+- **Bài học chắt lọc:** Ky thuat Bien So Dai So An Danh Thuc The 'X' & Chuoi Thao Tac So Luong Tuong Tac Vat The (Algebraic Entity Variable 'X' Masking & Numerical Object Interaction Sequence) trong MOD-WORD va MOD-FLOW ep mo hinh phai giai ma bien so an X.

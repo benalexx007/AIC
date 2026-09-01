@@ -862,5 +862,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Dinh Vi Bo Cuc Nguyen Lieu Hau Canh Da Thuc The & Trich Xuat Khoi Luong OCR Tung Phan Thit (Multi-Prop Culinary Background Spatial Inventory & Multi-Meat Component Gram OCR) trong MOD-VIS va MOD-OCR ep mo hinh phai doc chinh xac key-value danh muc."
+  },
+  {
+    "sample_id": "query-p2-30-qa",
+    "evaluated_at_utc": "2026-09-01T04:57:29.256051+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-30-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-30-qa.csv",
+    "query_text": "Một cô gái đeo tạp dề màu trắng, bên cạnh là một lọ hoa riềng tía. Sau đó cô gái này đặt lên 1 dĩa trắng 4 con X, được biết X là nguyên liệu cho món ăn trong tập này. Sau đó người này lại cầm lên 2 con X. Sau đó người này đối thoại với một người đối diện để xem hôm nay nấu món gì. Hỏi X là con gì?",
+    "target_video_id": "L26_V356",
+    "seed_frame_csv_line1": 300,
+    "extracted_intervals": [
+      {
+        "start_frame": 250,
+        "end_frame": 500,
+        "event_desc": "Co gai deo tap de trang ben lo hoa rieng tia thao tac voi nguyen lieu hai sam (dat 4 con len dia, cam len 2 con) roi doi thoai voi MC de gioi thieu mon an hai sam hom nay"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien dac diem hinh thai sinh vat bien (hai sam da so che mau trang trong) va thao tac tuong tac dem so luong (dat 4 con, cam 2 con)",
+        "MOD-AUD": "Cuoc doi thoai mo dau giua co dau bep va nu MC ve mon an hai sam hom nay",
+        "MOD-OCR": "Khong co chu OCR trong phan canh doi thoai dau video",
+        "MOD-WORD": "An danh thuc the bang bien so dai so 'X' ('4 con X', '2 con X'), hoi nguoc danh tinh sinh vat bien cua 'X'",
+        "MOD-FLOW": "Chuoi hanh dong tuan tu: dat 4 con X len dia -> cam 2 con X -> bat dau doi thoai voi nguoi doi dien"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Cac chi tiet co gai deo tap de trang, lo hoa rieng tia, nguyen lieu hai sam duoc dat len dia roi cam len doi thoai va dap an 'con hai sam' deu khop 100% video L26_V356"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Bien So Dai So An Danh Thuc The 'X' & Chuoi Thao Tac So Luong Tuong Tac Vat The (Algebraic Entity Variable 'X' Masking & Numerical Object Interaction Sequence) trong MOD-WORD va MOD-FLOW ep mo hinh phai giai ma bien so an X."
   }
 ]
