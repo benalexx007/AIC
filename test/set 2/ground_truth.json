@@ -245,6 +245,16 @@
         "start_frame": 4682,
         "end_frame": 4770
       }
+    },
+    {
+      "query_id": "test-kis-24",
+      "task_type": "kis",
+      "query_text": "Cận cảnh người dẫn chương trình mặc áo ngắn tay màu xanh lá cây đeo kính mắt gọng đen viền vuông cầm chiếc vé màu trắng trước cabin cáp treo màu đỏ.",
+      "ground_truth": {
+        "video_id": "L27_V001",
+        "start_frame": 5972,
+        "end_frame": 6036
+      }
     }
   ]
 }

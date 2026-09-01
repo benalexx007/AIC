@@ -1,0 +1,16 @@
+sequence: 24
+query_type: kis
+query_vi: Cận cảnh người dẫn chương trình mặc áo ngắn tay màu xanh lá cây đeo kính mắt gọng đen viền vuông cầm chiếc vé màu trắng trước cabin cáp treo màu đỏ.
+video_id: L27_V001
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5972
+  - 6036
+answer_submission: L27_V001, [5972, 6036]
+evidence: 'Video L27_V001, FPS 25.0. Travel show "Việt Nam Đi Là Ghiền" - An Giang / Miếu Bà Chúa Xứ Núi Sam. Exact continuous visible interval [5972, 6036] (238.880-241.440 s): frame 5971 is preceding cable car machinery transition; frame 5972 is the first frame showing the presenter in green shirt holding the white cable car ticket; frame 6036 is the final frame before frame 6037 cuts to the panoramic exterior shot of cable car gondolas moving across the forest.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-24-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-24-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-24-kis.yaml
