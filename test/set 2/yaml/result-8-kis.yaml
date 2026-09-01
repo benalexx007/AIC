@@ -1,0 +1,16 @@
+sequence: 8
+query_type: kis
+query_vi: Cận cảnh đội nhạc công lễ hội: người thanh niên mặc võ phục màu đỏ viền vàng có cắm cờ ngũ sắc sau lưng giơ cao hai dùi gỗ đánh liên hồi vào quả trống lân lớn, bên cạnh có đồng đội gõ chiêng đồng trên giá đỡ kim loại.
+video_id: L24_V015
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 1734
+  - 1805
+answer_submission: L24_V015, [1734, 1805]
+evidence: 'Video L24_V015, FPS 25.0. Lion dance tournament music accompaniment. Exact continuous visible interval [1734, 1805] (69.360-72.200 s): frame 1733 is preceding wide view of the lion on the competition arena floor; frame 1734 is the first frame of the close-up of the percussionist beating the lion drum with flags on his back; frame 1805 is the final frame before frame 1806 cuts to the high-angle aerial view of the full arena.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-8-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-8-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-8-kis.yaml

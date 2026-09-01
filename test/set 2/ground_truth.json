@@ -78,6 +78,16 @@
         "frame_idx": 225,
         "answer": "lá cờ màu đỏ"
       }
+    },
+    {
+      "query_id": "test-kis-08",
+      "task_type": "kis",
+      "query_text": "Cận cảnh đội nhạc công lễ hội: người thanh niên mặc võ phục màu đỏ viền vàng có cắm cờ ngũ sắc sau lưng giơ cao hai dùi gỗ đánh liên hồi vào quả trống lân lớn, bên cạnh có đồng đội gõ chiêng đồng trên giá đỡ kim loại.",
+      "ground_truth": {
+        "video_id": "L24_V015",
+        "start_frame": 1734,
+        "end_frame": 1805
+      }
     }
   ]
 }
