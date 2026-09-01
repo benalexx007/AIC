@@ -1,0 +1,16 @@
+sequence: 26
+query_type: kis
+query_vi: Góc quay từ trên cao nhìn xuống lề đường chợ: người phụ nữ đội khăn trùm đầu màu đỏ mận ngồi cạnh rổ nhựa tròn màu đỏ đựng cá tươi bán cho người phụ nữ cắp chiếc thùng các-tông dán băng keo đỏ.
+video_id: L28_V001
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 12022
+  - 12096
+answer_submission: L28_V001, [12022, 12096]
+evidence: 'Video L28_V001, FPS 25.0. Documentary "Ký Sự Mê Kông - Tập 1: Tìm về nơi đầu nguồn". Exact continuous visible interval [12022, 12096] (480.880-483.840 s): frame 12021 is preceding portrait transition; frame 12022 is the first frame showing the overhead view of the Cham Muslim woman selling fresh fish from a red plastic basket to a customer carrying a taped carton; frame 12096 is the final frame before frame 12097 cuts to the wide bustling village market street.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-26-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-26-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-26-kis.yaml

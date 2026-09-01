@@ -268,6 +268,16 @@
           [5870, 6117]
         ]
       }
+    },
+    {
+      "query_id": "test-kis-26",
+      "task_type": "kis",
+      "query_text": "Góc quay từ trên cao nhìn xuống lề đường chợ: người phụ nữ đội khăn trùm đầu màu đỏ mận ngồi cạnh rổ nhựa tròn màu đỏ đựng cá tươi bán cho người phụ nữ cắp chiếc thùng các-tông dán băng keo đỏ.",
+      "ground_truth": {
+        "video_id": "L28_V001",
+        "start_frame": 12022,
+        "end_frame": 12096
+      }
     }
   ]
 }
