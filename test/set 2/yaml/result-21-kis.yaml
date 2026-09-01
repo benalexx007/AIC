@@ -1,0 +1,16 @@
+sequence: 21
+query_type: kis
+query_vi: Cận cảnh các viên chả sống được lăn bao phủ một lớp cốm hạt màu xanh lá cây tươi xếp trên chiếc đĩa sứ tròn màu trắng.
+video_id: L26_V348
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5090
+  - 5172
+answer_submission: L26_V348, [5090, 5172]
+evidence: 'Video L26_V348, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Chả cốm tạo hình. Exact continuous visible interval [5090, 5172] (203.600-206.880 s): frame 5089 is preceding plating transition; frame 5090 is the first frame showing the close-up of patties coated in bright green rice flakes on a white plate; frame 5172 is the final frame before frame 5173 cuts to the studio presenter shot.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-21-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-21-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-21-kis.yaml

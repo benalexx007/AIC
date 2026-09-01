@@ -215,6 +215,16 @@
         "start_frame": 4242,
         "end_frame": 4302
       }
+    },
+    {
+      "query_id": "test-kis-21",
+      "task_type": "kis",
+      "query_text": "Cận cảnh các viên chả sống được lăn bao phủ một lớp cốm hạt màu xanh lá cây tươi xếp trên chiếc đĩa sứ tròn màu trắng.",
+      "ground_truth": {
+        "video_id": "L26_V348",
+        "start_frame": 5090,
+        "end_frame": 5172
+      }
     }
   ]
 }
