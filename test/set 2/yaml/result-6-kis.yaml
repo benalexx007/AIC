@@ -1,0 +1,16 @@
+sequence: 6
+query_type: kis
+query_vi: Cảnh quay toàn cảnh flycam từ trên cao nhìn xuống đoạn đường dẫn uốn cong lên cây cầu treo dây võng lớn bắc qua vịnh biển; trên mặt đường có ô tô màu trắng di chuyển phía trước đoàn mô tô mở đường và các tay đua xe đạp.
+video_id: L23_V012
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 2432
+  - 2841
+answer_submission: L23_V012, [2432, 2841]
+evidence: 'Video L23_V012, FPS 25.0. Cycling race stage 12 coverage. Exact continuous visible interval [2432, 2841] (97.280-113.640 s): frame 2431 is preceding 3-screen multi-camera panel; frame 2432 is the first frame of the high-angle aerial drone shot overlooking the curved ramp of the suspension bridge (Thuan Phuoc bridge); frame 2841 is the final frame before frame 2842 cuts to the wide panoramic flyover over the fishing boat harbor.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-6-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-6-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-6-kis.yaml

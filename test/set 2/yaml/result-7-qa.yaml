@@ -1,0 +1,18 @@
+sequence: 7
+query_type: qa
+query_vi: Trong hội trường sự kiện lễ hội, trước dãy bàn đại biểu phủ khăn trắng, người đàn ông mặc áo thun có cổ màu xanh dương đeo thẻ ban tổ chức trước ngực đang dùng hai tay giơ cao vật gì lên trên đầu?
+video_id: L24_V002
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 124
+  - 327
+  frame_idx: 225
+  answer: lá cờ màu đỏ
+answer_submission: L24_V002, [124, 327], lá cờ màu đỏ
+evidence: 'Video L24_V002, FPS 25.0. Dragon dance championship coverage. Exact continuous visible interval [124, 327] (4.960-13.080 s): frame 123 is preceding intro graphics; frame 124 is the start of the referee shot in front of the white judge table; frame 225 clearly shows the referee holding a red rectangular signal flag with both hands above his head; frame 327 is the final frame before frame 328 cuts to the illuminated yellow dragon performing.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-7-qa.txt
+  answer: D:\AIC\test\set 2\answer\ans-7-qa.txt
+  yaml: D:\AIC\test\set 2\yaml\result-7-qa.yaml

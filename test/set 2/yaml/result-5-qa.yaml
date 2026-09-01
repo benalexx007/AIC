@@ -1,0 +1,18 @@
+sequence: 5
+query_type: qa
+query_vi: Ở lề đường của một chặng đua thể thao, cạnh linh vật màu vàng đeo kính râm và người phụ nữ mặc áo dài đội cài tóc lấp lánh, người đứng cạnh cầm bảng điện tử màu đen đang hiển thị chữ số LED màu đỏ nào?
+video_id: L23_V001
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 0
+  - 92
+  frame_idx: 43
+  answer: '2'
+answer_submission: L23_V001, [0, 92], 2
+evidence: 'Video L23_V001, FPS 25.0. Broadcast segment at the start of stage countdown. Exact continuous visible interval [0, 92] (0.000-3.680 s): frame 0 begins with the woman in yellow ao dai and the mascot cheering; frame 43 shows the black handheld electronic lap-counter board clearly displaying the red 7-segment digital LED digit 2; frame 92 is the final frame before frame 93 cuts to the wide shot of the oncoming cyclist peloton.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-5-qa.txt
+  answer: D:\AIC\test\set 2\answer\ans-5-qa.txt
+  yaml: D:\AIC\test\set 2\yaml\result-5-qa.yaml

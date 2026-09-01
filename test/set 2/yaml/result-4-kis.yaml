@@ -1,0 +1,16 @@
+sequence: 4
+query_type: kis
+query_vi: Trong màn biểu diễn võ thuật trên đường phố, ba võ sinh cởi trần thắt băng đỏ trên đầu xếp chồng lên nhau nằm trên các bàn chông nhọn, trong khi một chiến sĩ mặc áo đen đứng phía trên dùng búa tạ đập vỡ tấm đá đặt trên ngực người trên cùng.
+video_id: L22_V018
+fps: 30.0
+ground_truth:
+  frame_interval:
+  - 2274
+  - 2339
+answer_submission: L22_V018, [2274, 2339]
+evidence: 'Video L22_V018, FPS 30.0. Segment 01:15-01:18 features police martial arts exhibition on the street. Exact continuous visible interval [2274, 2339] (75.800-77.967 s): frame 2273 is preceding street interview; frame 2274 is the first frame showing the sledgehammer martial arts stack over nail beds; frame 2339 is the final frame of the stone breaking strike before cutting to the female spear demonstration at frame 2340.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-4-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-4-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-4-kis.yaml

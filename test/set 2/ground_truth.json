@@ -34,6 +34,50 @@
         "start_frame": 1872,
         "end_frame": 1901
       }
+    },
+    {
+      "query_id": "test-kis-04",
+      "task_type": "kis",
+      "query_text": "Trong màn biểu diễn võ thuật trên đường phố, ba võ sinh cởi trần thắt băng đỏ trên đầu xếp chồng lên nhau nằm trên các bàn chông nhọn, trong khi một chiến sĩ mặc áo đen đứng phía trên dùng búa tạ đập vỡ tấm đá đặt trên ngực người trên cùng.",
+      "ground_truth": {
+        "video_id": "L22_V018",
+        "start_frame": 2274,
+        "end_frame": 2339
+      }
+    },
+    {
+      "query_id": "test-qa-05",
+      "task_type": "qa",
+      "query_text": "Ở lề đường của một chặng đua thể thao, cạnh linh vật màu vàng đeo kính râm và người phụ nữ mặc áo dài đội cài tóc lấp lánh, người đứng cạnh cầm bảng điện tử màu đen đang hiển thị chữ số LED màu đỏ nào?",
+      "ground_truth": {
+        "video_id": "L23_V001",
+        "start_frame": 0,
+        "end_frame": 92,
+        "frame_idx": 43,
+        "answer": "2"
+      }
+    },
+    {
+      "query_id": "test-kis-06",
+      "task_type": "kis",
+      "query_text": "Cảnh quay toàn cảnh flycam từ trên cao nhìn xuống đoạn đường dẫn uốn cong lên cây cầu treo dây võng lớn bắc qua vịnh biển; trên mặt đường có ô tô màu trắng di chuyển phía trước đoàn mô tô mở đường và các tay đua xe đạp.",
+      "ground_truth": {
+        "video_id": "L23_V012",
+        "start_frame": 2432,
+        "end_frame": 2841
+      }
+    },
+    {
+      "query_id": "test-qa-07",
+      "task_type": "qa",
+      "query_text": "Trong hội trường sự kiện lễ hội, trước dãy bàn đại biểu phủ khăn trắng, người đàn ông mặc áo thun có cổ màu xanh dương đeo thẻ ban tổ chức trước ngực đang dùng hai tay giơ cao vật gì lên trên đầu?",
+      "ground_truth": {
+        "video_id": "L24_V002",
+        "start_frame": 124,
+        "end_frame": 327,
+        "frame_idx": 225,
+        "answer": "lá cờ màu đỏ"
+      }
     }
   ]
 }
