@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:11:52 UTC  
-> **Tổng số mẫu đã đánh giá:** 21 | **Đã học (Learned):** 19 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:16:22 UTC  
+> **Tổng số mẫu đã đánh giá:** 22 | **Đã học (Learned):** 20 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -28,6 +28,7 @@
 | `query-p2-19-qa` | `L30_V043` | `2681` | `[2500, 3750]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Cau Noi Truy Vet Dia Danh Da Chang (Multi-Hop Cross-Scene Geographic La... |
 | `query-p2-20-kis` | `L25_V060` | `33600` | `[33200, 34500]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Suy Luan Bang Bieu Da Cot & Ma Hoa Mau Sac Du Lieu (Multi-Column Tabula... |
 | `query-p2-21-trake` | `L30_V031` | `2074` | `[2060, 2250]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phan Canh Nhip Nhanh 4 Chang & Tien Trinh Dong Goi Cuu Tro (4-Stage Fas... |
+| `query-p2-22-kis` | `L26_V470` | `2039` | `[1980, 2600]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food En... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -339,3 +340,17 @@ Cảnh 4: Cảnh quay cận cảnh các thùng mì được xếp chồng trên 
   - `MOD-WORD`: Dien dat chuoi logic 4 canh dong goi - van chuyen cuu tro tieu chuan TRAKE
   - `MOD-FLOW`: Dinh vi 4 cu may cuc ngan lien tiep (~1.8s/canh) tao thanh chuoi tien trinh nghiep vu hoan chinh
 - **Bài học chắt lọc:** Ky thuat Phan Canh Nhip Nhanh 4 Chang & Tien Trinh Dong Goi Cuu Tro (4-Stage Fast-Paced Relief Packaging Workflow & Montage Ordering) trong MOD-FLOW buoc he thong phai bat duoc cac cu cat canh duoi 2 giay.
+
+### Mẫu `query-p2-22-kis` (L26_V470)
+- **Query:** Trong video nấu ăn, một loại nguyên liệu hải sản màu trắng được khứa theo những đường thẳng vuông góc nhau, trên cả 2 bề mặt của nguyên liệu này. Nguyên liệu sau đó được cắt thành từng que và cho vào tô, trước khi được trộn đều với các gia vị gồm rượu, tiêu và hạt nêm.
+- **Dòng 1 CSV:** Video `L26_V470`, Seed Frame `2039`
+- **Intervals:** [{"start_frame": 1980, "end_frame": 2600, "event_desc": "Dau bep so che phi le muc trang: khua ca ro vuong goc 2 mat -> cat que -> cho vao to tron ruou, tieu, hat nem"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (hai san mau trang, khua duong vuong goc 2 mat, cat que, cho vao to tron ruou, tieu, hat nem) deu khop 100% frame 1980-2600 cua video L26_V470
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien thao tac dao ky thuat cao: khua luoi carot vuong goc 2 mat tren than muc trang, cat thanh que dai va tron gia vi uop trong to su
+  - `MOD-AUD`: Loi thuyet minh cua dau bep ve cach so che muc va tam uop gia vi
+  - `MOD-OCR`: Logo HTV Online goc tren
+  - `MOD-WORD`: An danh hoan toan ten thuc the (khong dung tu 'muc', thay bang 'nguyen lieu hai san mau trang') va mo ta chi tiet hinh hoc thao tac dao
+  - `MOD-FLOW`: Dinh vi quy trinh so che am thuc lien tuc: khua ca ro -> cat que -> cho vao to -> tron ruou, tieu, hat nem
+- **Bài học chắt lọc:** Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food Entity Anonymization & Geometric Double-Sided Scoring Micro-Action) trong MOD-WORD va MOD-VIS buoc he thong phai nhan dien hanh vi thi giac tinh vi.

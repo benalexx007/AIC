@@ -622,5 +622,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Phan Canh Nhip Nhanh 4 Chang & Tien Trinh Dong Goi Cuu Tro (4-Stage Fast-Paced Relief Packaging Workflow & Montage Ordering) trong MOD-FLOW buoc he thong phai bat duoc cac cu cat canh duoi 2 giay."
+  },
+  {
+    "sample_id": "query-p2-22-kis",
+    "evaluated_at_utc": "2026-09-01T04:16:22.364167+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-22-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-22-kis.csv",
+    "query_text": "Trong video nấu ăn, một loại nguyên liệu hải sản màu trắng được khứa theo những đường thẳng vuông góc nhau, trên cả 2 bề mặt của nguyên liệu này. Nguyên liệu sau đó được cắt thành từng que và cho vào tô, trước khi được trộn đều với các gia vị gồm rượu, tiêu và hạt nêm.",
+    "target_video_id": "L26_V470",
+    "seed_frame_csv_line1": 2039,
+    "extracted_intervals": [
+      {
+        "start_frame": 1980,
+        "end_frame": 2600,
+        "event_desc": "Dau bep so che phi le muc trang: khua ca ro vuong goc 2 mat -> cat que -> cho vao to tron ruou, tieu, hat nem"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien thao tac dao ky thuat cao: khua luoi carot vuong goc 2 mat tren than muc trang, cat thanh que dai va tron gia vi uop trong to su",
+        "MOD-AUD": "Loi thuyet minh cua dau bep ve cach so che muc va tam uop gia vi",
+        "MOD-OCR": "Logo HTV Online goc tren",
+        "MOD-WORD": "An danh hoan toan ten thuc the (khong dung tu 'muc', thay bang 'nguyen lieu hai san mau trang') va mo ta chi tiet hinh hoc thao tac dao",
+        "MOD-FLOW": "Dinh vi quy trinh so che am thuc lien tuc: khua ca ro -> cat que -> cho vao to -> tron ruou, tieu, hat nem"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (hai san mau trang, khua duong vuong goc 2 mat, cat que, cho vao to tron ruou, tieu, hat nem) deu khop 100% frame 1980-2600 cua video L26_V470"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat An Danh Thuc The Thuc Pham & Mieu Ta Hinh Hoc Thao Tac Dao Kep (Food Entity Anonymization & Geometric Double-Sided Scoring Micro-Action) trong MOD-WORD va MOD-VIS buoc he thong phai nhan dien hanh vi thi giac tinh vi."
   }
 ]

@@ -121,6 +121,8 @@ Vượt qua các chiến thuật tối ưu hóa truy vấn hiện đại của t
    * Thay vì dùng danh từ định danh phổ biến (ví dụ: *'con lân sư rồng'*, *'đạo cụ biểu diễn'*, *'võ phục'*), miêu tả bằng hình học, màu sắc và thuộc tính thuần túy (*'con vật màu vàng'*, *'vật trông như trái bí đỏ'*). Kỹ thuật này vô hiệu hóa nhãn phân lớp định sẵn của Object Detection/CLIP và bắt buộc hệ thống giải phải suy luận thị giác nguyên bản.
 6. **Pure Geometric & Chromatic Entity Anonymization (Ẩn danh hóa thực thể bằng hình học & màu sắc thuần túy):**
    * Triệt tiêu hoàn toàn danh từ định danh riêng biệt (*cá xiên que, ớt băm, ngò rí, bột chiên giòn*) và thay thế 100% bằng tập hợp thuộc tính hình học và màu sắc cơ bản (*'nguyên liệu dài được xiên que'*, *'hỗn hợp màu xanh lá cây và màu đỏ băm nhỏ'*, *'bột trắng'*). Kỹ thuật này làm vô hiệu hóa các bộ mở rộng từ khóa (LLM Expansion) và ép các mô hình Vision-Language phải suy luận trực tiếp trên đặc trưng thị giác nguyên thủy.
+7. **Food Entity Anonymization & Geometric Double-Sided Scoring Micro-Action (Ẩn danh thực thể thực phẩm & Miêu tả hình học thao tác dao kép):**
+   * Triệt tiêu hoàn toàn tên gọi danh từ riêng của nguyên liệu (*không gọi là 'mực / cá / thịt'*, thay bằng *'một loại nguyên liệu hải sản màu trắng'*), kết hợp miêu tả chính xác hình học của thao tác dao (*'khứa theo những đường thẳng vuông góc nhau trên cả 2 bề mặt $\rightarrow$ cắt thành từng que'*) và danh mục gia vị tẩm ướp. Đánh bại hoàn toàn các bộ tìm kiếm từ khóa/semantic search đơn giản và ép mô hình phải nhận dạng hành vi xử lý nguyên liệu tinh vi (Fine-Grained Food Prep Action Recognition).
 
 ---
 
