@@ -1,0 +1,16 @@
+sequence: 2
+query_type: kis
+query_vi: Hai người phụ nữ ngồi bệt trên sàn trước những tấm chiếu dệt hoa văn nhiều màu treo trên vách; người phụ nữ bên trái mặc áo màu xanh ngọc bích đeo kính cận, người phụ nữ bên phải mặc áo hoa văn màu đỏ mận cùng ngồi thao tác trên khung dệt chiếu nằm ngang.
+video_id: L21_V016
+fps: 30.0
+ground_truth:
+  frame_interval:
+  - 8216
+  - 8264
+answer_submission: L21_V016, [8216, 8264]
+evidence: 'Video L21_V016, FPS 30.0. Segment 04:33-04:36 features traditional mat weaving craft. Exact visible continuous interval [8216, 8264] (273.867-275.467 s): frame 8215 is preceding fishing net mending scene with woman in purple blouse; frame 8216 is first frame showing the wide shot of two women weaving at the floor loom; frame 8264 is the last wide shot frame before frame 8265 cuts to a close-up macro insert of hand weaving thread.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-2-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-2-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-2-kis.yaml

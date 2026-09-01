@@ -1,0 +1,39 @@
+{
+  "benchmark_version": "2.0",
+  "created_by": "Team AIC 2026",
+  "total_queries": 32,
+  "test_cases": [
+    {
+      "query_id": "test-qa-01",
+      "task_type": "qa",
+      "query_text": "Trong phân cảnh ngoài trời có dải băng cảnh báo đỏ trắng và cột nước phun thẳng đứng lên trời từ mặt đất, người đàn ông mặc áo thun có họa tiết sọc ngang đứng ở tiền cảnh đang đeo phụ kiện gì trên cổ tay phải của mình?",
+      "ground_truth": {
+        "video_id": "L21_V001",
+        "start_frame": 6288,
+        "end_frame": 6370,
+        "frame_idx": 6330,
+        "answer": "chuỗi hạt"
+      }
+    },
+    {
+      "query_id": "test-kis-02",
+      "task_type": "kis",
+      "query_text": "Hai người phụ nữ ngồi bệt trên sàn trước những tấm chiếu dệt hoa văn nhiều màu treo trên vách; người phụ nữ bên trái mặc áo màu xanh ngọc bích đeo kính cận, người phụ nữ bên phải mặc áo hoa văn màu đỏ mận cùng ngồi thao tác trên khung dệt chiếu nằm ngang.",
+      "ground_truth": {
+        "video_id": "L21_V016",
+        "start_frame": 8216,
+        "end_frame": 8264
+      }
+    },
+    {
+      "query_id": "test-kis-03",
+      "task_type": "kis",
+      "query_text": "Trước tấm phông nền màu xanh dương có in danh sách các chuyên khoa y tế, người đàn ông mặc sơ mi trắng dùng hai tay khoác và chỉnh chiếc áo blouse trắng qua vai chàng trai trẻ đeo kính cận đang đeo dây thẻ màu xanh dương trước ngực.",
+      "ground_truth": {
+        "video_id": "L22_V002",
+        "start_frame": 1872,
+        "end_frame": 1901
+      }
+    }
+  ]
+}

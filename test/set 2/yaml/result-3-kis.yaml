@@ -1,0 +1,16 @@
+sequence: 3
+query_type: kis
+query_vi: Trước tấm phông nền màu xanh dương có in danh sách các chuyên khoa y tế, người đàn ông mặc sơ mi trắng dùng hai tay khoác và chỉnh chiếc áo blouse trắng qua vai chàng trai trẻ đeo kính cận đang đeo dây thẻ màu xanh dương trước ngực.
+video_id: L22_V002
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 1872
+  - 1901
+answer_submission: L22_V002, [1872, 1901]
+evidence: 'Video L22_V002, FPS 25.0. Segment 01:14-01:16 features young doctors receiving medical appointments. Exact continuous visible interval [1872, 1901] (74.880-76.040 s): frame 1871 is preceding close-up interview shot; frame 1872 is first frame showing the man adjusting the white blouse onto the young graduate; frame 1901 is the final frame of the adjustment posture; frame 1902 cuts to the 3-person group commemorative photo holding the certificate.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-3-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-3-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-3-kis.yaml

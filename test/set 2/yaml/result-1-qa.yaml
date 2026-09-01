@@ -1,0 +1,18 @@
+sequence: 1
+query_type: qa
+query_vi: Trong phân cảnh ngoài trời có dải băng cảnh báo đỏ trắng và cột nước phun thẳng đứng lên trời từ mặt đất, người đàn ông mặc áo thun có họa tiết sọc ngang đứng ở tiền cảnh đang đeo phụ kiện gì trên cổ tay phải của mình?
+video_id: L21_V001
+fps: 30.0
+ground_truth:
+  frame_interval:
+  - 6288
+  - 6370
+  frame_idx: 6330
+  answer: chuỗi hạt
+answer_submission: L21_V001, [6288, 6370], chuỗi hạt
+evidence: 'Video L21_V001, FPS 30.0. Segment 03:28-03:33 describes geyser water eruption from drilled well in Gia Lai. Exact visible boundary frames 6288-6370 (209.600-212.333 s): frame 6287 is vertical sky shot; frame 6288 is first frame showing man in striped polo standing with plastic bottle and visible brown beaded bracelet on right wrist; frame 6370 is last frame before cutting to ground squatting angle at 6371.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-1-qa.txt
+  answer: D:\AIC\test\set 2\answer\ans-1-qa.txt
+  yaml: D:\AIC\test\set 2\yaml\result-1-qa.yaml
