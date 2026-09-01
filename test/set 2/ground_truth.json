@@ -255,6 +255,19 @@
         "start_frame": 5972,
         "end_frame": 6036
       }
+    },
+    {
+      "query_id": "test-trake-25",
+      "task_type": "trake",
+      "query_text": "Hãy tìm và liệt kê theo thứ tự thời gian các phân cảnh của cô gái mặc áo đen váy trắng dài: phân cảnh ngồi trên xe lôi xích lô màu trắng viền xanh lá vẫy tay chào trước cổng đền thờ họ Mạc, phân cảnh bước lên cầu thang gỗ ngoài trời của nhà lưu niệm Tao đàn Chiêu Anh Các, và phân cảnh đi dạo dọc theo con đường lát đá giữa rặng cây xanh trong khuôn viên lăng mộ.",
+      "ground_truth": {
+        "video_id": "L27_V007",
+        "intervals": [
+          [2842, 2889],
+          [4996, 5068],
+          [5870, 6117]
+        ]
+      }
     }
   ]
 }

@@ -1,0 +1,23 @@
+sequence: 25
+query_type: trake
+query_vi: Hãy tìm và liệt kê theo thứ tự thời gian các phân cảnh của cô gái mặc áo đen váy trắng dài: phân cảnh ngồi trên xe lôi xích lô màu trắng viền xanh lá vẫy tay chào trước cổng đền thờ họ Mạc, phân cảnh bước lên cầu thang gỗ ngoài trời của nhà lưu niệm Tao đàn Chiêu Anh Các, và phân cảnh đi dạo dọc theo con đường lát đá giữa rặng cây xanh trong khuôn viên lăng mộ.
+video_id: L27_V007
+fps: 25.0
+ground_truth:
+  intervals:
+  - - 2842
+    - 2889
+  - - 4996
+    - 5068
+  - - 5870
+    - 6117
+answer_submission: |-
+  L27_V007, [2842, 2889]
+  L27_V007, [4996, 5068]
+  L27_V007, [5870, 6117]
+evidence: 'Video L27_V007, FPS 25.0. Travel show "Việt Nam Đi Là Ghiền" - Hà Tiên / Đền thờ họ Mạc. Sequential tracking of female traveler: (1) [2842, 2889] (113.680-115.560 s) - sitting in decorated pedicab waving hand in front of "Đền thờ Họ Mạc" gate; (2) [4996, 5068] (199.840-202.720 s) - walking up the outdoor wooden stairs of the memorial house; (3) [5870, 6117] (234.800-244.720 s) - strolling along the stone path under the forest canopy in the cemetery grounds.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-25-trake.txt
+  answer: D:\AIC\test\set 2\answer\ans-25-trake.txt
+  yaml: D:\AIC\test\set 2\yaml\result-25-trake.yaml
