@@ -832,5 +832,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat An Danh Ket Cau Soi Nho & Truy Vet Nguon Goc Dong Vat Cua Topping (Micro-Fibrous Texture Anonymization & Animal Biological Origin QA Bridge) trong MOD-WORD va MOD-FLOW ep mo hinh phai truy vet nguoc nguon goc sinh hoc nguyen lieu."
+  },
+  {
+    "sample_id": "query-p2-29-qa",
+    "evaluated_at_utc": "2026-09-01T04:53:04.767030+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-29-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-29-qa.csv",
+    "query_text": "Cảnh quay liệt kê các nguyên liệu để nấu một món ăn. Ảnh nền bao gồm dĩa thịt, bó lá tươi xanh đặt ở góc bên trái, một gói hạt nêm, hũ thủy tinh nhỏ đựng nước cốt dừa, bột cà ri, nấm mèo (mộc nhĩ) khô đặt phía dưới chén gia vị, sả cây và ớt hiểm đỏ đặt ở góc trái phía dưới. Bảng nguyên liệu hiện lên gồm 9 thành phần cụ thể. Hỏi phần thịt có trọng lượng bao nhiêu trong bảng nguyên liệu (số và đơn vị được ghi trong bảng)?",
+    "target_video_id": "L26_V181",
+    "seed_frame_csv_line1": 7808,
+    "extracted_intervals": [
+      {
+        "start_frame": 7750,
+        "end_frame": 7900,
+        "event_desc": "Do hoa bang nguyen lieu mon an hien thi danh sach thanh phan (Thit bo mem 350g, Thit nac dam 100g, Mo heo 100g, La lot 30 la...) tren nen go trang kem cac loai gia vi"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Kiem ke bo cuc hau canh nhieu dao cu nguyen lieu am thuc tinh vi (dia thit, bo la, goi hat nem, hu thuy tinh, bot ca ri, nam meo kho, sa cay, ot hiem)",
+        "MOD-AUD": "Am thanh nhac nen gioi thieu mon an chuong trinh Mon Ngon Moi Ngay",
+        "MOD-OCR": "Doc chinh xac dinh luong khoi luong va don vi tung loai thit trong bang nguyen lieu: '350g thit bo mem, 100g thit nac dam'",
+        "MOD-WORD": "Cau hoi trich xuat so lieu gram kem don vi tinh va ten loai thit chi tiet tu bang danh muc nguyen lieu",
+        "MOD-FLOW": "Khoa chat khung thoi gian do hoa bang thanh phan nguyen lieu 6 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Bang nguyen lieu ghi ro 'THIT BO MEM 350g' va 'THIT NAC DAM 100g', dap an '350g thit bo mem, 100g thit nac dam' khop 100% video L26_V181"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Dinh Vi Bo Cuc Nguyen Lieu Hau Canh Da Thuc The & Trich Xuat Khoi Luong OCR Tung Phan Thit (Multi-Prop Culinary Background Spatial Inventory & Multi-Meat Component Gram OCR) trong MOD-VIS va MOD-OCR ep mo hinh phai doc chinh xac key-value danh muc."
   }
 ]

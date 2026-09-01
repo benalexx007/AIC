@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:47:37 UTC  
-> **Tổng số mẫu đã đánh giá:** 28 | **Đã học (Learned):** 26 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:53:04 UTC  
+> **Tổng số mẫu đã đánh giá:** 29 | **Đã học (Learned):** 27 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -35,6 +35,7 @@
 | `query-p2-26-kis` | `L25_V062` | `13800` | `[13400, 14200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-... |
 | `query-p2-27-qa` | `L24_V026` | `124` | `[0, 400]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative... |
 | `query-p2-28-qa` | `L26_V450` | `6528` | `[6000, 6600]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Ket Cau Soi Nho & Truy Vet Nguon Goc Dong Vat Cua Topping (Micr... |
+| `query-p2-29-qa` | `L26_V181` | `7808` | `[7750, 7900]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Dinh Vi Bo Cuc Nguyen Lieu Hau Canh Da Thuc The & Trich Xuat Khoi Luong... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -449,3 +450,17 @@ Khung hình chứa một bức ảnh minh họa cô gái trẻ đeo kính, mặc
   - `MOD-WORD`: An danh hoan toan ten nguyen lieu ('topping mau cam ket cau hoi giong nhung soi nho trong chen den'), hoi nguoc ve nguon goc dong vat ('thit cua con gi?')
   - `MOD-FLOW`: Cau noi da phuong thuc truy vet nguoc tu canh bay tri thanh pham ve bang nguyen lieu so che ban dau de xac dinh loai ca (ca hoi)
 - **Bài học chắt lọc:** Ky thuat An Danh Ket Cau Soi Nho & Truy Vet Nguon Goc Dong Vat Cua Topping (Micro-Fibrous Texture Anonymization & Animal Biological Origin QA Bridge) trong MOD-WORD va MOD-FLOW ep mo hinh phai truy vet nguoc nguon goc sinh hoc nguyen lieu.
+
+### Mẫu `query-p2-29-qa` (L26_V181)
+- **Query:** Cảnh quay liệt kê các nguyên liệu để nấu một món ăn. Ảnh nền bao gồm dĩa thịt, bó lá tươi xanh đặt ở góc bên trái, một gói hạt nêm, hũ thủy tinh nhỏ đựng nước cốt dừa, bột cà ri, nấm mèo (mộc nhĩ) khô đặt phía dưới chén gia vị, sả cây và ớt hiểm đỏ đặt ở góc trái phía dưới. Bảng nguyên liệu hiện lên gồm 9 thành phần cụ thể. Hỏi phần thịt có trọng lượng bao nhiêu trong bảng nguyên liệu (số và đơn vị được ghi trong bảng)?
+- **Dòng 1 CSV:** Video `L26_V181`, Seed Frame `7808`
+- **Intervals:** [{"start_frame": 7750, "end_frame": 7900, "event_desc": "Do hoa bang nguyen lieu mon an hien thi danh sach thanh phan (Thit bo mem 350g, Thit nac dam 100g, Mo heo 100g, La lot 30 la...) tren nen go trang kem cac loai gia vi"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Bang nguyen lieu ghi ro 'THIT BO MEM 350g' va 'THIT NAC DAM 100g', dap an '350g thit bo mem, 100g thit nac dam' khop 100% video L26_V181
+- **Phân tích Module:**
+  - `MOD-VIS`: Kiem ke bo cuc hau canh nhieu dao cu nguyen lieu am thuc tinh vi (dia thit, bo la, goi hat nem, hu thuy tinh, bot ca ri, nam meo kho, sa cay, ot hiem)
+  - `MOD-AUD`: Am thanh nhac nen gioi thieu mon an chuong trinh Mon Ngon Moi Ngay
+  - `MOD-OCR`: Doc chinh xac dinh luong khoi luong va don vi tung loai thit trong bang nguyen lieu: '350g thit bo mem, 100g thit nac dam'
+  - `MOD-WORD`: Cau hoi trich xuat so lieu gram kem don vi tinh va ten loai thit chi tiet tu bang danh muc nguyen lieu
+  - `MOD-FLOW`: Khoa chat khung thoi gian do hoa bang thanh phan nguyen lieu 6 giay
+- **Bài học chắt lọc:** Ky thuat Dinh Vi Bo Cuc Nguyen Lieu Hau Canh Da Thuc The & Trich Xuat Khoi Luong OCR Tung Phan Thit (Multi-Prop Culinary Background Spatial Inventory & Multi-Meat Component Gram OCR) trong MOD-VIS va MOD-OCR ep mo hinh phai doc chinh xac key-value danh muc.
