@@ -772,5 +772,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-Style Graphical Metaphor Binding & Lecture Concept Anonymization) trong MOD-VIS va MOD-WORD ep mo hinh phai nhan dien duoc nhieu kieu clipart/vector an du thi giac."
+  },
+  {
+    "sample_id": "query-p2-27-qa",
+    "evaluated_at_utc": "2026-09-01T04:39:28.992944+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-27-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-27-qa.csv",
+    "query_text": "Cảnh quay một chú lân đang biểu diễn từ đầu video, các cột để chú lân biểu diễn được dán những con số. Phía sau có 1 mô hình con rồng uốn lượn hình xoắn ốc. Trong các số từ 16 giây đầu tiên của video, số nào không được nhìn thấy từ góc nhìn của camera trong các số từ 1-8.",
+    "target_video_id": "L24_V026",
+    "seed_frame_csv_line1": 124,
+    "extracted_intervals": [
+      {
+        "start_frame": 0,
+        "end_frame": 400,
+        "event_desc": "16 giay dau video: chu lan bieu dien tren cac cot Mai Hoa Thung dan so (1, 3, 4, 6, 7, 8 nhin thay tu camera; so 2 va 5 bi khuat khong nhin thay)"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Kiem ke khong gian tren cac cot tru Mai Hoa Thung hinh tru, nhan dien cac the so va xac dinh goc khuat thi giac cua camera",
+        "MOD-AUD": "Tieng trong hoi lan su rong ron ra o dau video",
+        "MOD-OCR": "Doc cac the so dan tren than cot (1, 3, 4, 6, 7, 8) va thuc hien phep tru tap hop de tim ra cac so khong nhin thay: 2 va 5",
+        "MOD-WORD": "Cau hoi QA theo logic phu dinh tap hop (Negative Set Subtraction): hoi nhung con so KHONG duoc nhin thay tu goc may camera trong day 1-8",
+        "MOD-FLOW": "Khoa chat khung thoi gian 16 giay dau tien cua video"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Cac so nhin thay tren cot la 1, 3, 4, 6, 7, 8; cac so 2 va 5 khong nhin thay tu goc may camera, dap an '2 va 5' khop 100% video L24_V026"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative OCR Set Subtraction & Occluded Pillar Inventory) trong MOD-OCR va MOD-WORD ep he thong phai suy luan logic phu dinh tap hop."
   }
 ]

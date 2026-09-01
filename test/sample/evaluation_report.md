@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:35:14 UTC  
-> **Tổng số mẫu đã đánh giá:** 26 | **Đã học (Learned):** 24 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:39:28 UTC  
+> **Tổng số mẫu đã đánh giá:** 27 | **Đã học (Learned):** 25 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -33,6 +33,7 @@
 | `query-p2-24-kis` | `L23_V013` | `6777` | `[6650, 6900]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Enti... |
 | `query-p2-25-kis` | `L25_V045` | `16500` | `[16000, 16800]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa ... |
 | `query-p2-26-kis` | `L25_V062` | `13800` | `[13400, 14200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-... |
+| `query-p2-27-qa` | `L24_V026` | `124` | `[0, 400]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -419,3 +420,17 @@ Khung hình chứa một bức ảnh minh họa cô gái trẻ đeo kính, mặc
   - `MOD-WORD`: An danh hoan toan thuat ngu kinh te / bai giang, chi mieu ta hinh anh an du thi giac da phong cach
   - `MOD-FLOW`: Dinh vi slide bai giang dien tu thuyet trinh so do kinh te trong 32 giay
 - **Bài học chắt lọc:** Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-Style Graphical Metaphor Binding & Lecture Concept Anonymization) trong MOD-VIS va MOD-WORD ep mo hinh phai nhan dien duoc nhieu kieu clipart/vector an du thi giac.
+
+### Mẫu `query-p2-27-qa` (L24_V026)
+- **Query:** Cảnh quay một chú lân đang biểu diễn từ đầu video, các cột để chú lân biểu diễn được dán những con số. Phía sau có 1 mô hình con rồng uốn lượn hình xoắn ốc. Trong các số từ 16 giây đầu tiên của video, số nào không được nhìn thấy từ góc nhìn của camera trong các số từ 1-8.
+- **Dòng 1 CSV:** Video `L24_V026`, Seed Frame `124`
+- **Intervals:** [{"start_frame": 0, "end_frame": 400, "event_desc": "16 giay dau video: chu lan bieu dien tren cac cot Mai Hoa Thung dan so (1, 3, 4, 6, 7, 8 nhin thay tu camera; so 2 va 5 bi khuat khong nhin thay)"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Cac so nhin thay tren cot la 1, 3, 4, 6, 7, 8; cac so 2 va 5 khong nhin thay tu goc may camera, dap an '2 va 5' khop 100% video L24_V026
+- **Phân tích Module:**
+  - `MOD-VIS`: Kiem ke khong gian tren cac cot tru Mai Hoa Thung hinh tru, nhan dien cac the so va xac dinh goc khuat thi giac cua camera
+  - `MOD-AUD`: Tieng trong hoi lan su rong ron ra o dau video
+  - `MOD-OCR`: Doc cac the so dan tren than cot (1, 3, 4, 6, 7, 8) va thuc hien phep tru tap hop de tim ra cac so khong nhin thay: 2 va 5
+  - `MOD-WORD`: Cau hoi QA theo logic phu dinh tap hop (Negative Set Subtraction): hoi nhung con so KHONG duoc nhin thay tu goc may camera trong day 1-8
+  - `MOD-FLOW`: Khoa chat khung thoi gian 16 giay dau tien cua video
+- **Bài học chắt lọc:** Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative OCR Set Subtraction & Occluded Pillar Inventory) trong MOD-OCR va MOD-WORD ep he thong phai suy luan logic phu dinh tap hop.
