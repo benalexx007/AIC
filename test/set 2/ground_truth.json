@@ -225,6 +225,16 @@
         "start_frame": 5090,
         "end_frame": 5172
       }
+    },
+    {
+      "query_id": "test-kis-22",
+      "task_type": "kis",
+      "query_text": "Cận cảnh đôi bàn tay dùng bay kim loại phết lớp nhân màu vàng lên mặt chiếc bánh pancake tròn màu nâu đặt trên đĩa sứ màu đỏ viền tròn.",
+      "ground_truth": {
+        "video_id": "L26_V400",
+        "start_frame": 5172,
+        "end_frame": 5206
+      }
     }
   ]
 }

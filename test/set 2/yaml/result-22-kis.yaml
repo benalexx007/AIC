@@ -1,0 +1,16 @@
+sequence: 22
+query_type: kis
+query_vi: Cận cảnh đôi bàn tay dùng bay kim loại phết lớp nhân màu vàng lên mặt chiếc bánh pancake tròn màu nâu đặt trên đĩa sứ màu đỏ viền tròn.
+video_id: L26_V400
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5172
+  - 5206
+answer_submission: L26_V400, [5172, 5206]
+evidence: 'Video L26_V400, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Pancake socola giáng sinh. Exact continuous visible interval [5172, 5206] (206.880-208.240 s): frame 5171 is preceding plating transition; frame 5172 is the first frame showing the close-up top-down view of the chef spreading yellow pumpkin-taro paste with an icing spatula onto the chocolate pancake on a red ribbed plate; frame 5206 is the final frame before frame 5207 cuts to placing the black grape.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-22-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-22-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-22-kis.yaml
