@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:30:30 UTC  
-> **Tổng số mẫu đã đánh giá:** 25 | **Đã học (Learned):** 23 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:35:14 UTC  
+> **Tổng số mẫu đã đánh giá:** 26 | **Đã học (Learned):** 24 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -32,6 +32,7 @@
 | `query-p2-23-qa` | `L25_V012` | `14518` | `[14200, 16000]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Giai Ma Bieu Do Toa Do Da Duong & Don Vi Do Luong Khoa Hoc (Multi-Curve... |
 | `query-p2-24-kis` | `L23_V013` | `6777` | `[6650, 6900]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Da Thuc The Duoi Bat & Tu The An Mung Roi Tay Lai (Multi-Enti... |
 | `query-p2-25-kis` | `L25_V045` | `16500` | `[16000, 16800]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa ... |
+| `query-p2-26-kis` | `L25_V062` | `13800` | `[13400, 14200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -401,3 +402,20 @@ Khung hình chứa một bức ảnh minh họa cô gái trẻ đeo kính, mặc
   - `MOD-WORD`: Mo ta phan tach 2 vung khong gian doc lap trong mot khung hinh video e-learning ma khong dua vao tu khoa OCR
   - `MOD-FLOW`: Dinh vi slide thuyet trinh bai giang dien tu trong 32 giay
 - **Bài học chắt lọc:** Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa Slide (Dual-Layer Nested Visual Grounding: Presenter PIP & Slide Stock Photo Binding) trong MOD-VIS buoc he thong phai phan giai dong thoi ca nguoi thuyet trinh va noi dung anh tren slide.
+
+### Mẫu `query-p2-26-kis` (L25_V062)
+- **Query:** Đây là một đoạn trong bài giảng. Trên slide bao gồm:
+- Một nhóm nhân vật người 3D màu trắng vây quanh một nhân vật màu đỏ ở chính giữa.
+
+- Hai nhân vật hoạt hình nam đang trong tư thế thi đấu kéo co, đối đầu nhau với sợi dây thừng.
+- **Dòng 1 CSV:** Video `L25_V062`, Seed Frame `13800`
+- **Intervals:** [{"start_frame": 13400, "end_frame": 14200, "event_desc": "Slide bai giang GDCD Quy luat canh tranh: chua hinh 3D nguoi mau trang chay dua quanh nhan vat mau do o chinh giua va hinh hoat hinh 2 nguoi dan ong keo co doi dau bang soi day thung"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** Tat ca cac chi tiet (slide bai giang, nhom nguoi 3D trang quanh nguoi do o giua, 2 nguoi hoat hinh nam keo co bang day thung) deu khop 100% frame 13400-14200 cua video L25_V062
+- **Phân tích Module:**
+  - `MOD-VIS`: Nhan dien dong thoi 2 phong cach do hoa an du tren slide: nhan vat 3D mau trang quanh nhan vat do o giua va tranh hoat hinh 2D 2 nguoi dan ong thi dau keo co
+  - `MOD-AUD`: Loi giang cua co giao GDCD ve quy luat canh tranh va chu the kinh te
+  - `MOD-OCR`: Tieu de slide: Noi dung 2 Quy luat canh tranh, Khai niem, Muc dich
+  - `MOD-WORD`: An danh hoan toan thuat ngu kinh te / bai giang, chi mieu ta hinh anh an du thi giac da phong cach
+  - `MOD-FLOW`: Dinh vi slide bai giang dien tu thuyet trinh so do kinh te trong 32 giay
+- **Bài học chắt lọc:** Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-Style Graphical Metaphor Binding & Lecture Concept Anonymization) trong MOD-VIS va MOD-WORD ep mo hinh phai nhan dien duoc nhieu kieu clipart/vector an du thi giac.

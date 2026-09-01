@@ -742,5 +742,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa Slide (Dual-Layer Nested Visual Grounding: Presenter PIP & Slide Stock Photo Binding) trong MOD-VIS buoc he thong phai phan giai dong thoi ca nguoi thuyet trinh va noi dung anh tren slide."
+  },
+  {
+    "sample_id": "query-p2-26-kis",
+    "evaluated_at_utc": "2026-09-01T04:35:14.494782+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-26-kis.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-26-kis.csv",
+    "query_text": "Đây là một đoạn trong bài giảng. Trên slide bao gồm:\n- Một nhóm nhân vật người 3D màu trắng vây quanh một nhân vật màu đỏ ở chính giữa.\n\n- Hai nhân vật hoạt hình nam đang trong tư thế thi đấu kéo co, đối đầu nhau với sợi dây thừng.",
+    "target_video_id": "L25_V062",
+    "seed_frame_csv_line1": 13800,
+    "extracted_intervals": [
+      {
+        "start_frame": 13400,
+        "end_frame": 14200,
+        "event_desc": "Slide bai giang GDCD Quy luat canh tranh: chua hinh 3D nguoi mau trang chay dua quanh nhan vat mau do o chinh giua va hinh hoat hinh 2 nguoi dan ong keo co doi dau bang soi day thung"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Nhan dien dong thoi 2 phong cach do hoa an du tren slide: nhan vat 3D mau trang quanh nhan vat do o giua va tranh hoat hinh 2D 2 nguoi dan ong thi dau keo co",
+        "MOD-AUD": "Loi giang cua co giao GDCD ve quy luat canh tranh va chu the kinh te",
+        "MOD-OCR": "Tieu de slide: Noi dung 2 Quy luat canh tranh, Khai niem, Muc dich",
+        "MOD-WORD": "An danh hoan toan thuat ngu kinh te / bai giang, chi mieu ta hinh anh an du thi giac da phong cach",
+        "MOD-FLOW": "Dinh vi slide bai giang dien tu thuyet trinh so do kinh te trong 32 giay"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "Tat ca cac chi tiet (slide bai giang, nhom nguoi 3D trang quanh nguoi do o giua, 2 nguoi hoat hinh nam keo co bang day thung) deu khop 100% frame 13400-14200 cua video L25_V062"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-Style Graphical Metaphor Binding & Lecture Concept Anonymization) trong MOD-VIS va MOD-WORD ep mo hinh phai nhan dien duoc nhieu kieu clipart/vector an du thi giac."
   }
 ]
