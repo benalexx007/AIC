@@ -802,5 +802,35 @@
     },
     "learning_decision": "LEARNED",
     "distilled_insights": "Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative OCR Set Subtraction & Occluded Pillar Inventory) trong MOD-OCR va MOD-WORD ep he thong phai suy luan logic phu dinh tap hop."
+  },
+  {
+    "sample_id": "query-p2-28-qa",
+    "evaluated_at_utc": "2026-09-01T04:47:36.997722+00:00",
+    "query_file": "D:\\AIC\\test\\sample\\query\\query-p2-28-qa.txt",
+    "answer_file": "D:\\AIC\\test\\sample\\ans\\query-p2-28-qa.csv",
+    "query_text": "Cảnh quay một tô cháo đã được nấu và trang trí hoàn chỉnh (đã xong các giai đoạn trang trí). Kế bên tô cháo có 1 chén nhỏ màu đen, để chứa 1 loại topping màu cam kết cấu hơi giống những sợi nhỏ. Loại topping này trước đó đã được rắc lên tô cháo. Xung quanh topping là các loại rau, hành,... Hỏi topping trong video là thịt của con gì?",
+    "target_video_id": "L26_V450",
+    "seed_frame_csv_line1": 6528,
+    "extracted_intervals": [
+      {
+        "start_frame": 6000,
+        "end_frame": 6600,
+        "event_desc": "Canh trinh bay hoan thien to chao ca hoi va chen nho mau den dung cha bong ca hoi mau cam dang soi nho, kem rau củ va am thanh nhan xet cua dau bep"
+      }
+    ],
+    "evaluation": {
+      "difficulty_tier": 4,
+      "difficulty_breakdown": {
+        "MOD-VIS": "Canh quay can canh macro cuc dai voi do sau truong anh nong (shallow DOF) to chao co rac cha bong ca hoi mau cam soi nho, ca rot hat luu, rau xanh va chen nho mau den ke ben",
+        "MOD-AUD": "Loi thuyet minh cua dau bep va MC ve mon chao ca hoi nong thom bo duong",
+        "MOD-OCR": "Chu Nóng thơm va logo chuong trinh Mon Ngon Moi Ngay",
+        "MOD-WORD": "An danh hoan toan ten nguyen lieu ('topping mau cam ket cau hoi giong nhung soi nho trong chen den'), hoi nguoc ve nguon goc dong vat ('thit cua con gi?')",
+        "MOD-FLOW": "Cau noi da phuong thuc truy vet nguoc tu canh bay tri thanh pham ve bang nguyen lieu so che ban dau de xac dinh loai ca (ca hoi)"
+      },
+      "accuracy_score": 100.0,
+      "accuracy_analysis": "To chao ca hoi, chen nho mau den chua cha bong ca hoi mau cam dang soi nho, rau hanh xung quanh va dap an 'con ca hoi' deu khop 100% video L26_V450"
+    },
+    "learning_decision": "LEARNED",
+    "distilled_insights": "Ky thuat An Danh Ket Cau Soi Nho & Truy Vet Nguon Goc Dong Vat Cua Topping (Micro-Fibrous Texture Anonymization & Animal Biological Origin QA Bridge) trong MOD-WORD va MOD-FLOW ep mo hinh phai truy vet nguoc nguon goc sinh hoc nguyen lieu."
   }
 ]

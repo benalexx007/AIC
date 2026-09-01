@@ -1,7 +1,7 @@
 # Báo Cáo Đánh Giá & Học Hỏi Từ Query Mẫu (Sample Evaluation Report)
 
-> **Cập nhật lần cuối:** 2026-09-01 04:39:28 UTC  
-> **Tổng số mẫu đã đánh giá:** 27 | **Đã học (Learned):** 25 | **Từ chối (Rejected):** 2
+> **Cập nhật lần cuối:** 2026-09-01 04:47:37 UTC  
+> **Tổng số mẫu đã đánh giá:** 28 | **Đã học (Learned):** 26 | **Từ chối (Rejected):** 2
 
 ## 📊 Bảng Tổng Hợp Đánh Giá
 
@@ -34,6 +34,7 @@
 | `query-p2-25-kis` | `L25_V045` | `16500` | `[16000, 16800]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Rang Buoc Thi Giac Long Ghep Da Tang Nguoi Thuyet Trinh - Anh Minh Hoa ... |
 | `query-p2-26-kis` | `L25_V062` | `13800` | `[13400, 14200]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Du Do Hoa Da Phong Cach & Truu Tuong Hoa Khai Niem Bai Giang (Multi-... |
 | `query-p2-27-qa` | `L24_V026` | `124` | `[0, 400]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative... |
+| `query-p2-28-qa` | `L26_V450` | `6528` | `[6000, 6600]` | Tier 4 | 100.0% | ✅ **LEARNED** | Ky thuat An Danh Ket Cau Soi Nho & Truy Vet Nguon Goc Dong Vat Cua Topping (Micr... |
 
 ---
 ## 📝 Chi Tiết Từng Mẫu Kiểm Thử
@@ -434,3 +435,17 @@ Khung hình chứa một bức ảnh minh họa cô gái trẻ đeo kính, mặc
   - `MOD-WORD`: Cau hoi QA theo logic phu dinh tap hop (Negative Set Subtraction): hoi nhung con so KHONG duoc nhin thay tu goc may camera trong day 1-8
   - `MOD-FLOW`: Khoa chat khung thoi gian 16 giay dau tien cua video
 - **Bài học chắt lọc:** Ky thuat Phep Tru Tap Hop Ky Tu OCR & Logic Nhan Dien Phan Tu Vang Mat (Negative OCR Set Subtraction & Occluded Pillar Inventory) trong MOD-OCR va MOD-WORD ep he thong phai suy luan logic phu dinh tap hop.
+
+### Mẫu `query-p2-28-qa` (L26_V450)
+- **Query:** Cảnh quay một tô cháo đã được nấu và trang trí hoàn chỉnh (đã xong các giai đoạn trang trí). Kế bên tô cháo có 1 chén nhỏ màu đen, để chứa 1 loại topping màu cam kết cấu hơi giống những sợi nhỏ. Loại topping này trước đó đã được rắc lên tô cháo. Xung quanh topping là các loại rau, hành,... Hỏi topping trong video là thịt của con gì?
+- **Dòng 1 CSV:** Video `L26_V450`, Seed Frame `6528`
+- **Intervals:** [{"start_frame": 6000, "end_frame": 6600, "event_desc": "Canh trinh bay hoan thien to chao ca hoi va chen nho mau den dung cha bong ca hoi mau cam dang soi nho, kem rau củ va am thanh nhan xet cua dau bep"}]
+- **Đánh giá:** Tier 4 / 5 | Độ chính xác: 100.0% | Quyết định: **LEARNED**
+- **Phân tích Vị từ / Độ chính xác:** To chao ca hoi, chen nho mau den chua cha bong ca hoi mau cam dang soi nho, rau hanh xung quanh va dap an 'con ca hoi' deu khop 100% video L26_V450
+- **Phân tích Module:**
+  - `MOD-VIS`: Canh quay can canh macro cuc dai voi do sau truong anh nong (shallow DOF) to chao co rac cha bong ca hoi mau cam soi nho, ca rot hat luu, rau xanh va chen nho mau den ke ben
+  - `MOD-AUD`: Loi thuyet minh cua dau bep va MC ve mon chao ca hoi nong thom bo duong
+  - `MOD-OCR`: Chu Nóng thơm va logo chuong trinh Mon Ngon Moi Ngay
+  - `MOD-WORD`: An danh hoan toan ten nguyen lieu ('topping mau cam ket cau hoi giong nhung soi nho trong chen den'), hoi nguoc ve nguon goc dong vat ('thit cua con gi?')
+  - `MOD-FLOW`: Cau noi da phuong thuc truy vet nguoc tu canh bay tri thanh pham ve bang nguyen lieu so che ban dau de xac dinh loai ca (ca hoi)
+- **Bài học chắt lọc:** Ky thuat An Danh Ket Cau Soi Nho & Truy Vet Nguon Goc Dong Vat Cua Topping (Micro-Fibrous Texture Anonymization & Animal Biological Origin QA Bridge) trong MOD-WORD va MOD-FLOW ep mo hinh phai truy vet nguoc nguon goc sinh hoc nguyen lieu.
