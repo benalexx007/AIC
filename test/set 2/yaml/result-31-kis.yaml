@@ -1,0 +1,16 @@
+sequence: 31
+query_type: kis
+query_vi: Cận cảnh cô gái đeo khăn vải hoa nhiều màu che kín mắt nằm ngửa ngâm mình dưới dòng nước suối trong khi có người nhỏ giọt nước lên trán.
+video_id: L30_V033
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 1970
+  - 2041
+answer_submission: L30_V033, [1970, 2041]
+evidence: 'Video L30_V033, FPS 25.0. Reportage "Trekking sườn đông Tam Đảo" - Tuổi Trẻ TV. Exact continuous visible interval [1970, 2041] (78.800-81.640 s): frame 1969 is preceding medium shot transition; frame 1970 is the first frame showing the close-up profile of the girl with colorful cloth blindfold floating on her back in the stream while companion drips water onto her forehead; frame 2041 is the final frame before frame 2042 cuts to a waterfall cascade.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-31-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-31-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-31-kis.yaml

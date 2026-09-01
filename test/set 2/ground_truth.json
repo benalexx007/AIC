@@ -325,6 +325,16 @@
         "frame_idx": 1201,
         "answer": "CHROME VANADIUM"
       }
+    },
+    {
+      "query_id": "test-kis-31",
+      "task_type": "kis",
+      "query_text": "Cận cảnh cô gái đeo khăn vải hoa nhiều màu che kín mắt nằm ngửa ngâm mình dưới dòng nước suối trong khi có người nhỏ giọt nước lên trán.",
+      "ground_truth": {
+        "video_id": "L30_V033",
+        "start_frame": 1970,
+        "end_frame": 2041
+      }
     }
   ]
 }
