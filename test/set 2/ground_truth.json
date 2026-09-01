@@ -172,6 +172,19 @@
         "start_frame": 1846,
         "end_frame": 1947
       }
+    },
+    {
+      "query_id": "test-trake-17",
+      "task_type": "trake",
+      "query_text": "Hãy tìm và liệt kê theo thứ tự thời gian các phân cảnh liên quan đến phi lê cá trê: phân cảnh thái sợi phi lê cá trên thớt gỗ, phân cảnh chiên các miếng cá trong chảo dầu sôi, và phân cảnh gắp cá chiên giòn để lên đĩa lót giấy thấm dầu màu trắng.",
+      "ground_truth": {
+        "video_id": "L26_V148",
+        "intervals": [
+          [2176, 2277],
+          [5196, 5291],
+          [5326, 5389]
+        ]
+      }
     }
   ]
 }

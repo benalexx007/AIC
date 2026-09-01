@@ -1,0 +1,23 @@
+sequence: 17
+query_type: trake
+query_vi: Hãy tìm và liệt kê theo thứ tự thời gian các phân cảnh liên quan đến phi lê cá trê: phân cảnh thái sợi phi lê cá trên thớt gỗ, phân cảnh chiên các miếng cá trong chảo dầu sôi, và phân cảnh gắp cá chiên giòn để lên đĩa lót giấy thấm dầu màu trắng.
+video_id: L26_V148
+fps: 25.0
+ground_truth:
+  intervals:
+  - - 2176
+    - 2277
+  - - 5196
+    - 5291
+  - - 5326
+    - 5389
+answer_submission: |
+  L26_V148, [2176, 2277]
+  L26_V148, [5196, 5291]
+  L26_V148, [5326, 5389]
+evidence: 'Video L26_V148, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Gỏi xoài cá trê. Tracking the 3 sequential steps of preparing and cooking catfish fillet: (1) slicing fillet strips on cutting board [2176, 2277]; (2) deep-frying fillet strips in bubbling oil pan [5196, 5291]; (3) lifting and placing fried crispy fish onto paper towel [5326, 5389].'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-17-trake.txt
+  answer: D:\AIC\test\set 2\answer\ans-17-trake.txt
+  yaml: D:\AIC\test\set 2\yaml\result-17-trake.yaml
