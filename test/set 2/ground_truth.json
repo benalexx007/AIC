@@ -185,6 +185,16 @@
           [5326, 5389]
         ]
       }
+    },
+    {
+      "query_id": "test-kis-18",
+      "task_type": "kis",
+      "query_text": "Cận cảnh đôi bàn tay đeo găng ni lông trong suốt dùng dao thái và xếp các lát chuối chín cùng những lát dâu tây đỏ tươi lên một chiếc đĩa thủy tinh trong suốt.",
+      "ground_truth": {
+        "video_id": "L26_V200",
+        "start_frame": 2210,
+        "end_frame": 2285
+      }
     }
   ]
 }
