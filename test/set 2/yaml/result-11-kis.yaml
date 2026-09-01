@@ -1,0 +1,16 @@
+sequence: 11
+query_type: kis
+query_vi: Trong phòng thực hành công nghệ, người đàn ông mặc sơ mi trắng đeo dây thẻ màu xanh dương chỉ ngón tay vào màn hình cảm ứng gắn trước ngực của robot hình người màu trắng phối cam.
+video_id: L25_V029
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 5174
+  - 5197
+answer_submission: L25_V029, [5174, 5197]
+evidence: 'Video L25_V029, FPS 25.0. AI and robotics department showcase. Exact continuous visible interval [5174, 5197] (206.960-207.880 s): frame 5173 is preceding lab close-up; frame 5174 is the first frame showing the instructor pointing to the robot chest tablet screen; frame 5197 is the final frame before frame 5198 cuts to the wider studio perspective with the female student.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-11-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-11-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-11-kis.yaml

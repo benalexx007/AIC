@@ -1,0 +1,16 @@
+sequence: 12
+query_type: kis
+query_vi: Trước phông nền rèm sọc đứng màu trắng, ba nam sinh đeo kính mặc áo sơ mi đồng phục trắng có thêu logo trước ngực ngồi trên ghế tròn cùng gảy đàn guitar acoustic và hát.
+video_id: L25_V059
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 6858
+  - 6881
+answer_submission: L25_V059, [6858, 6881]
+evidence: 'Video L25_V059, FPS 25.0. Campus life music club performance. Exact continuous visible interval [6858, 6881] (274.320-275.240 s): frame 6857 is the preceding shot transition; frame 6858 is the first fully visible frame of the three students playing acoustic guitars side-by-side; frame 6881 is the final frame before frame 6882 transitions with an optical flare.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-12-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-12-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-12-kis.yaml

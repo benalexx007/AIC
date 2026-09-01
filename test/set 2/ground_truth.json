@@ -88,6 +88,46 @@
         "start_frame": 1734,
         "end_frame": 1805
       }
+    },
+    {
+      "query_id": "test-kis-09",
+      "task_type": "kis",
+      "query_text": "Cận cảnh hai nhạc công hóa trang vẽ mặt nạ tuồng hoa văn đỏ đen mặc trang phục màu trắng viền đỏ: người phía trước giơ bắt chéo hai dùi trống màu đen trên đầu trước quả trống lớn, người phía sau gõ chiêng đồng.",
+      "ground_truth": {
+        "video_id": "L24_V030",
+        "start_frame": 546,
+        "end_frame": 663
+      }
+    },
+    {
+      "query_id": "test-kis-10",
+      "task_type": "kis",
+      "query_text": "Cảnh quay góc nhìn thẳng từ trên cao nhìn xuống sân bóng rổ màu xanh lá: các cầu thủ mặc áo đấu màu xanh lá viền vàng và áo đỏ cùng nhảy lên tranh chấp khi quả bóng rổ màu đỏ đang bay về phía bảng rổ màu trắng.",
+      "ground_truth": {
+        "video_id": "L25_V001",
+        "start_frame": 2463,
+        "end_frame": 2501
+      }
+    },
+    {
+      "query_id": "test-kis-11",
+      "task_type": "kis",
+      "query_text": "Trong phòng thực hành công nghệ, người đàn ông mặc sơ mi trắng đeo dây thẻ màu xanh dương chỉ ngón tay vào màn hình cảm ứng gắn trước ngực của robot hình người màu trắng phối cam.",
+      "ground_truth": {
+        "video_id": "L25_V029",
+        "start_frame": 5174,
+        "end_frame": 5197
+      }
+    },
+    {
+      "query_id": "test-kis-12",
+      "task_type": "kis",
+      "query_text": "Trước phông nền rèm sọc đứng màu trắng, ba nam sinh đeo kính mặc áo sơ mi đồng phục trắng có thêu logo trước ngực ngồi trên ghế tròn cùng gảy đàn guitar acoustic và hát.",
+      "ground_truth": {
+        "video_id": "L25_V059",
+        "start_frame": 6858,
+        "end_frame": 6881
+      }
     }
   ]
 }

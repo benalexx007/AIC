@@ -1,0 +1,16 @@
+sequence: 9
+query_type: kis
+query_vi: Cận cảnh hai nhạc công hóa trang vẽ mặt nạ tuồng hoa văn đỏ đen mặc trang phục màu trắng viền đỏ: người phía trước giơ bắt chéo hai dùi trống màu đen trên đầu trước quả trống lớn, người phía sau gõ chiêng đồng.
+video_id: L24_V030
+fps: 30.0
+ground_truth:
+  frame_interval:
+  - 546
+  - 663
+answer_submission: L24_V030, [546, 663]
+evidence: 'Video L24_V030, FPS 30.0. Dragon and lion dance championship. Exact continuous visible interval [546, 663] (18.200-22.100 s): frame 545 is preceding arena view; frame 546 is the first frame of the close-up showing two musicians with Chinese opera facial facepaint in white silk uniforms; frame 663 is the final frame before frame 664 cuts to the wide arena overview.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-9-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-9-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-9-kis.yaml

@@ -1,0 +1,16 @@
+sequence: 10
+query_type: kis
+query_vi: Cảnh quay góc nhìn thẳng từ trên cao nhìn xuống sân bóng rổ màu xanh lá: các cầu thủ mặc áo đấu màu xanh lá viền vàng và áo đỏ cùng nhảy lên tranh chấp khi quả bóng rổ màu đỏ đang bay về phía bảng rổ màu trắng.
+video_id: L25_V001
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 2463
+  - 2501
+answer_submission: L25_V001, [2463, 2501]
+evidence: 'Video L25_V001, FPS 25.0. Educational campus lifestyle montage. Exact continuous visible interval [2463, 2501] (98.520-100.040 s): frame 2462 is preceding swimming pool shot; frame 2463 is the first frame of the top-down 90-degree overhead shot of the green basketball court; frame 2501 is the final frame before frame 2502 transitions into the bright optical flare effect.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-10-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-10-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-10-kis.yaml
