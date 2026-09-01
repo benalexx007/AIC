@@ -1,0 +1,18 @@
+sequence: 15
+query_type: qa
+query_vi: Trong phân cảnh đầu bếp mặc áo trắng cầm chiếc hộp đựng gia vị hình vuông màu trắng, chữ màu trắng in bên trong biểu tượng màu đỏ ở thân hộp là chữ gì?
+video_id: L26_V065
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 2372
+  - 2403
+  frame_idx: 2387
+  answer: ĐƯỜNG
+answer_submission: L26_V065, 2387, ĐƯỜNG
+evidence: 'Video L26_V065, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Ba chỉ rim mắm ruốc. In the ingredient seasoning close-up shot [2372, 2403] (94.880-96.120 s), at frame 2387 (95.480 s), the chef holds up a white square ceramic spice container bearing a red diamond label printed with the white text "ĐƯỜNG".'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-15-qa.txt
+  answer: D:\AIC\test\set 2\answer\ans-15-qa.txt
+  yaml: D:\AIC\test\set 2\yaml\result-15-qa.yaml

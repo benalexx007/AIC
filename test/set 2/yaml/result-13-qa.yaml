@@ -1,0 +1,18 @@
+sequence: 13
+query_type: qa
+query_vi: Trong phân cảnh giới thiệu món ăn có bảng chữ màu đỏ 'ĐÙI ẾCH CHIÊN MÈ' đặt trên bàn gỗ, chén đựng nước sốt chấm hình bông hoa ở góc dưới bên phải có màu gì?
+video_id: L26_V001
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 576
+  - 699
+  frame_idx: 637
+  answer: màu vàng
+answer_submission: L26_V001, 637, màu vàng
+evidence: 'Video L26_V001, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Đùi ếch chiên mè. In the title showcase shot [576, 699] (23.040-27.960 s), at frame 637 (25.480 s), the small ceramic sauce dish shaped like a flower placed next to the pink serving plate is distinctly bright yellow (màu vàng).'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-13-qa.txt
+  answer: D:\AIC\test\set 2\answer\ans-13-qa.txt
+  yaml: D:\AIC\test\set 2\yaml\result-13-qa.yaml

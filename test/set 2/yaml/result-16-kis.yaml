@@ -1,0 +1,16 @@
+sequence: 16
+query_type: kis
+query_vi: Cận cảnh đôi bàn tay dùng dao bếp bản lớn cán nâu thái quả xoài chín màu vàng thành các lát dài mỏng trên mặt thớt gỗ.
+video_id: L26_V100
+fps: 25.0
+ground_truth:
+  frame_interval:
+  - 1846
+  - 1947
+answer_submission: L26_V100, [1846, 1947]
+evidence: 'Video L26_V100, FPS 25.0. Culinary show "Món Ngon Mỗi Ngày" - Tôm càng sốt xoài. Exact continuous visible interval [1846, 1947] (73.840-77.880 s): frame 1845 is preceding studio view; frame 1846 is the first frame of the close-up showing the chef cutting long strips of yellow mango on the wooden board; frame 1947 is the final frame before frame 1948 cuts to top-down dicing of the mango.'
+confidence: high
+files:
+  query: D:\AIC\test\set 2\query\query-16-kis.txt
+  answer: D:\AIC\test\set 2\answer\ans-16-kis.txt
+  yaml: D:\AIC\test\set 2\yaml\result-16-kis.yaml

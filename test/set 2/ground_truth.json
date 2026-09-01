@@ -128,6 +128,50 @@
         "start_frame": 6858,
         "end_frame": 6881
       }
+    },
+    {
+      "query_id": "test-qa-13",
+      "task_type": "qa",
+      "query_text": "Trong phân cảnh giới thiệu món ăn có bảng chữ màu đỏ 'ĐÙI ẾCH CHIÊN MÈ' đặt trên bàn gỗ, chén đựng nước sốt chấm hình bông hoa ở góc dưới bên phải có màu gì?",
+      "ground_truth": {
+        "video_id": "L26_V001",
+        "start_frame": 576,
+        "end_frame": 699,
+        "frame_idx": 637,
+        "answer": "màu vàng"
+      }
+    },
+    {
+      "query_id": "test-kis-14",
+      "task_type": "kis",
+      "query_text": "Cận cảnh chiếc vá lưới kim loại vớt các miếng mề gà đã chần chín ra khỏi nồi thủy tinh màu hổ phách đang sôi trên bếp.",
+      "ground_truth": {
+        "video_id": "L26_V033",
+        "start_frame": 3048,
+        "end_frame": 3110
+      }
+    },
+    {
+      "query_id": "test-qa-15",
+      "task_type": "qa",
+      "query_text": "Trong phân cảnh đầu bếp mặc áo trắng cầm chiếc hộp đựng gia vị hình vuông màu trắng, chữ màu trắng in bên trong biểu tượng màu đỏ ở thân hộp là chữ gì?",
+      "ground_truth": {
+        "video_id": "L26_V065",
+        "start_frame": 2372,
+        "end_frame": 2403,
+        "frame_idx": 2387,
+        "answer": "ĐƯỜNG"
+      }
+    },
+    {
+      "query_id": "test-kis-16",
+      "task_type": "kis",
+      "query_text": "Cận cảnh đôi bàn tay dùng dao bếp bản lớn cán nâu thái quả xoài chín màu vàng thành các lát dài mỏng trên mặt thớt gỗ.",
+      "ground_truth": {
+        "video_id": "L26_V100",
+        "start_frame": 1846,
+        "end_frame": 1947
+      }
     }
   ]
 }
